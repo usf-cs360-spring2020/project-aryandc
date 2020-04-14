@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- TODO: Change title -->
-    <title>Website Template</title>
+    <title>Homepage</title>
 
     <!-- Load Bulma from CDN (consider saving it to repository instead) -->
     <!-- https://bulma.io/ -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css">
 
     <!-- Load Font Awesome 5 (free) icons -->
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
@@ -17,7 +18,8 @@
 
   <body>
 
-    <section class="hero is-info is-medium is-bold"">
+    <section class="hero is-info is-medium is-bold" style="background-image: url('resources/images/sf_corona.jpg'); background-repeat: no-repeat; object-fit: cover; width: 100%;
+    background-size: cover;">
   <div class="hero-head">
     <nav class="navbar">
       <div class="container">
@@ -37,36 +39,44 @@
                       <ul>
 
                           <li class="is-active">
-                            <a href="index.html">
-                              <span class="icon"><i class="fas fa-home"></i></span>
-                              Home
-                            </a>
+                            <a class=" is-black" href="index.html" style="color: black;">
+                              <span class="icon">
+                                  <i class="fas fa-home"></i>
+                              </span>
+                              <span >Home</span>
+                          </a>
                           </li>
 
                           <li>
-                            <a href="data.html">
-                              <span class="icon"><i class="fas fa-table"></i></span>
-                              Data
-                            </a>
+                          <a class=" is-black" href="data.html" style="color: black;">
+                            <span class="icon">
+                                <i class="fas fa-table"></i>
+                            </span>
+                            <span >Data</span>
+                        </a>
                           </li>
 
                           <li>
-                            <a href="prototype1.html">
-                              <span class="icon"><i class="fas fa-chart-bar"></i></span>
-                              Bar Chart
-                            </a>
+                            <a class=" is-black" href="prototype1.html" style="color: black;">
+                              <span class="icon">
+                                  <i class="fas fa-chart-bar"></i>
+                              </span>
+                              <span >Bar Chart</span>
+                          </a>
                           </li>
                           <li>
-                            <a href="acknowledgement.html">
-                              <span class="icon"><i class="fas fa-tasks"></i></span>
-                              Acknowledgement
-                            </a>
+                            <a class=" is-black" href="acknowledgement.html" style="color: black;">
+                              <span class="icon">
+                                  <i class="fas fa-tasks"></i>
+                              </span>
+                              <span >Acknowledgement</span>
+                          </a>
                           </li>
                       </ul>
                       <div class="navbar-end">
                           <div class="tabs is-right">
                               <span class="navbar-item">
-                                  <a class="button is-white is-outlined" href="about.html">
+                                  <a class=" is-black" href="about.html" style="color: black;">
                                       <span class="icon">
                                           <i class="far fa-address-card"></i>
                                       </span>
@@ -101,6 +111,7 @@
   <section class="section">
     <div class="container">
       <div class="content">
+        <p style="font-family: sans-serif; font-style: italic; text-align: right; font-size: smaller;">- (Image Source - <a href="https://www.sfchronicle.com/crime/article/Coronavirus-creates-new-challenges-for-Bay-Area-15141570.php#photo-19189846" target="_blank">Coronavirus creates new challenges for Bay Area</a> - March 18, 2020)</p>
 
         <h3>Introduction</h3>
         <p>This project visualizes the police incident reports filled by officers or individuals (online reporting for non-emergency case) for the city of San Francisco. The data is collected from [<a href="https://datasf.org/opendata/" target="_blank">Data SF</a>].</p>
