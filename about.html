@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- TODO: Change title -->
+    <title>Website Template</title>
+
+    <!-- Load Bulma from CDN (consider saving it to repository instead) -->
+    <!-- https://bulma.io/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+
+    <!-- Load Font Awesome 5 (free) icons -->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+
+  <body>
+
+<section class="hero is-dark is-medium is-bold">
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+          <div class="navbar-brand">
+            <span class="navbar-item">
+              <h1 style="font-size: 20px">Final Project</h1>
+            </span>
+              <span class="navbar-burger burger" data-target="navbarMenu">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </span>
+          </div>
+          <div id="navbarMenu" class="navbar-menu">
+              <div class="navbar-end">
+                  <div class="tabs is-right">
+                      <ul>
+
+                          <li>
+                            <a href="index.html">
+                              <span class="icon"><i class="fas fa-home"></i></span>
+                              Home
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="data.html">
+                              <span class="icon"><i class="fas fa-table"></i></span>
+                              Data
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="prototype1.html">
+                              <span class="icon"><i class="fas fa-chart-bar"></i></span>
+                              Bar Chart
+                            </a>
+                          </li>
+                          <li>
+                            <a href="acknowledgement.html">
+                              <span class="icon"><i class="fas fa-tasks"></i></span>
+                              Acknowledgement
+                            </a>
+                          </li>
+                      </ul>
+                      <div id="navbarMenu" class="navbar-menu">
+                          <div class="navbar-end">
+                              <div class="tabs is-right">
+                                  <span class="navbar-item">
+                                      <a class="button is-white is-outlined" target="_blank" href="https://github.com/usf-cs360-spring2020/project-aryandc">
+                                          <span class="icon">
+                                              <i class="fab fa-github"></i>
+                                          </span>
+                                          <span title="Hello from the other side">View Source</span>
+                                      </a>
+                                  </span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <p class="title" style="font-size: 60px">
+        About Me
+      </p>
+      <!-- <p class="subtitle">
+        Project Title
+      </p> -->
+    </div>
+  </div>
+
+  <div class="hero-foot">
+  </div>
+</section>
+
+  <!-- Page header -->
+  <!-- https://bulma.io/documentation/layout/hero/ -->
+
+
+  <section class="section">
+    <div class="container">
+      <!-- Begin page content -->
+      <div class="content">
+
+        <article class="media">
+          <!-- TODO: Replace with profile photo -->
+          <figure class="image is-128x128">
+            <p class="image is-128x128"><img class="is-rounded" style="border-radius: 10%" src="profile.png"></p>
+          </figure>
+
+          <div class="media-content">
+            <div class="content">
+              <!-- TODO: Replace with contact information -->
+              <p>
+                <strong>Aryan Choudhary</strong><br/>
+                MS in Computer Science, <a href="https://www.usfca.edu/">University of San Francisco</a><br/>
+                <em>Expected Graduation: 2022</em><br/>
+                <i class="fas fa-envelope"></i> <a href="mailto:adchoudhary@dons.usfca.edu">adchoudhary@dons.usfca.edu</a>
+              </p>
+
+              <p>
+                I am a First year Computer Science Masters student at University of San Francisco. I completed my Bachelors from <a href="https://www.iitbhu.ac.in/" target="_blank">Indian Institute of Technology (BHU), Varanasi</a> in the field of "Mechanical Engineering" and specialization in "Industrial Engineering".
+              </p>
+
+              <p>
+                I am a former research scholar at <a href="https://www.upc.edu/en" target="_blank">Universidad Polytecnia de Catalunya, Barcelona</a> in the field of Robot-Motion Planning. I also have a two year Research experience in the field of Control Systems
+              </p>
+
+              <p>My favourite field in computer science is Security Systems.</p>
+
+              <!-- TODO: Replace or remove tags -->
+              <!-- https://bulma.io/documentation/elements/tag/ -->
+              <div class="heading">Skills</div>
+
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">C</span>
+                <span class="tag">Java</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">SVG</span>
+              </div>
+
+              <div class="heading">Links</div>
+
+              <div class="tags">
+                <span class="tag is-medium">
+                  <a href="https://www.linkedin.com/in/aryan-d-choudhary/" target="_blank">
+                    <i class="fab fa-linkedin-in" style="border-radius: 20px;"></i>
+                  </a>
+                </span>
+                <span class="tag is-medium">
+                  <a href="https://github.com/aryandc" target="_blank">
+                    <i class="fab fa-github" style="border-radius: 20px;"></i>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- End profile box -->
+        <br>
+        <h4>Why I choose this dataset?</h4>
+        <p>I chose <a target="_blank" href="https://data.sfgov.org/Public-Safety/Police-Department-Incident-Reports-2018-to-Present/wg3w-h783">SF Police Department Incident Reports</a> dataset because, I wanted to figure out weather the crime is reduced due to the current circumstance in San Francisco, and what incident type is prevalent in each neighborhood.<br>
+        Also, this dataset has over 337k incident records for - 
+        <ul>
+          <li>75 different types of crimes</li>
+          <li>15 neighborhoods</li>
+          <li>11 district</li>
+        </ul>
+        </p> 
+      </div>
+      <!-- End page content -->
+    </div>
+  </section>
+
+  <!-- Page footer -->
+  <!-- https://bulma.io/documentation/layout/footer/ -->
+  <footer class="footer" style="footer-background-color: black">
+    <div class="content has-text-centered is-size-7">
+      <p>
+        <a href="#top">
+          <span class="fas fa-arrow-up"></span>
+          <span class="has-text-weight-medium">Back to Top</span>
+        </a>
+      </p>
+
+      <p>
+        <!-- TODO: Change to link to your Github repository -->
+        <a href="https://github.com/usf-cs360-spring2020/project-aryandc" class="button is-small" style="padding-left: 1em; padding-right: 1em;">
+          <i class="fab fa-github-alt"></i>&nbsp;<strong>Github</strong>
+        </a>
+
+        <a href="https://fontawesome.com/" class="button is-small" style="padding-left: 1em; padding-right: 1em;">
+          <i class="fab fa-font-awesome"></i>&nbsp;<strong>FontAwesome</strong>
+        </a>
+
+        <a href="https://bulma.io" class="button is-small">
+          <img src="https://bulma.io/images/made-with-bulma--semiblack.png" alt="Made with Bulma" width="128" height="24">
+        </a>
+      </p>
+    </div>
+  </footer>
+  <!-- End page footer -->
+
+  <!-- Mobile menu responsiveness -->
+  <!-- https://bulma.io/documentation/components/navbar/ -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    if ($navbarBurgers.length > 0) {
+      $navbarBurgers.forEach( el => {
+        el.addEventListener('click', () => {
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+        });
+      });
+    }
+  });
+  </script>
+  <!-- End mobile menu responsiveness -->
+  </body>
+
+</html>

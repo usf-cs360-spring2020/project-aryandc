@@ -1,0 +1,576 @@
+Incident Datetime,Report Datetime,Incident Date,Incident ID,Incident Number,Incident Code,Incident Category,Incident Subcategory,Incident Description,Resolution,Police District,Analysis Neighborhood,Supervisor District
+2020/03/01,2020/03/01,2020/03/01,908243,200154243,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Northern,Nob Hill,3
+2020/03/01,2020/03/01,2020/03/01,908254,200154312,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Southern,South of Market,6
+2020/03/01,2020/03/01,2020/03/01,908259,200154384,04136,Assault,Simple Assault,Battery with Serious Injuries,Open or Active,Ingleside,Bernal Heights,9
+2020/03/01,2020/03/01,2020/03/01,908310,200154469,04134,Assault,Simple Assault,Battery,Open or Active,Mission,Mission,8
+2020/03/01,2020/03/01,2020/03/01,908327,200154685,04136,Assault,Simple Assault,Battery with Serious Injuries,Open or Active,Tenderloin,Tenderloin,6
+2020/03/01,2020/03/01,2020/03/01,908333,200154845,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Tenderloin,Tenderloin,6
+2020/03/01,2020/03/01,2020/03/01,908333,200154845,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/01,2020/03/01,2020/03/01,908337,200154748,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Taraval,Sunset/Parkside,4
+2020/03/01,2020/03/01,2020/03/01,908424,200155144,04134,Assault,Simple Assault,Battery,Open or Active,Mission,Mission,8
+2020/03/01,2020/03/01,2020/03/01,908435,200155417,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/01,2020/03/01,2020/03/01,908454,200155843,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Central,Tenderloin,6
+2020/03/01,2020/03/01,2020/03/01,908458,200156045,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Open or Active,Mission,Mission,9
+2020/03/01,2020/03/01,2020/03/01,908464,200156136,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/01,2020/03/01,2020/03/01,908465,200130607,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Tenderloin,Tenderloin,6
+2020/03/01,2020/03/01,2020/03/01,908480,200156249,04134,Assault,Simple Assault,Battery,Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/01,2020/03/01,2020/03/01,908483,200156255,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/01,2020/03/01,2020/03/01,908485,200156205,04136,Assault,Simple Assault,Battery with Serious Injuries,Open or Active,Tenderloin,Tenderloin,6
+2020/03/01,2020/03/01,2020/03/01,908490,200156302,04170,Assault,Simple Assault,False Imprisonment,Cite or Arrest Adult,Mission,Mission,9
+2020/03/01,2020/03/01,2020/03/01,908516,200154782,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Tenderloin,6
+2020/03/01,2020/03/01,2020/03/01,908867,200156302,04170,Assault,Simple Assault,False Imprisonment,Cite or Arrest Adult,Mission,Mission,9
+2020/03/01,2020/03/09,2020/03/01,910994,200174934,04134,Assault,Simple Assault,Battery,Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/02,2020/03/02,2020/03/02,908504,200156437,04138,Assault,Simple Assault,"Battery, former Spouse or Dating Relationship",Cite or Arrest Adult,Taraval,Lakeshore,7
+2020/03/02,2020/03/02,2020/03/02,908518,200156487,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Cite or Arrest Adult,Central,Chinatown,3
+2020/03/02,2020/03/02,2020/03/02,908649,200156647,04136,Assault,Simple Assault,Battery with Serious Injuries,Cite or Arrest Adult,Ingleside,Excelsior,9
+2020/03/02,2020/03/02,2020/03/02,908658,200156631,04134,Assault,Simple Assault,Battery,Open or Active,Southern,South of Market,6
+2020/03/02,2020/03/02,2020/03/02,908672,200157043,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Tenderloin,Tenderloin,6
+2020/03/02,2020/03/02,2020/03/02,908672,200157043,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/02,2020/03/02,2020/03/02,908672,200157043,04136,Assault,Simple Assault,Battery with Serious Injuries,Open or Active,Tenderloin,Tenderloin,6
+2020/03/02,2020/03/02,2020/03/02,908701,200157322,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Tenderloin,6
+2020/03/02,2020/03/02,2020/03/02,908702,200157281,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/02,2020/03/02,2020/03/02,908705,200157413,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Tenderloin,South of Market,6
+2020/03/02,2020/03/02,2020/03/02,908721,200157015,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Southern,Financial District/South Beach,6
+2020/03/02,2020/03/02,2020/03/02,908742,200157861,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/02,2020/03/02,2020/03/02,908748,200128997,04054,Assault,Aggravated Assault,"Assault, Att. Mayhem, W/ Force",Cite or Arrest Adult,Ingleside,Excelsior,11
+2020/03/02,2020/03/02,2020/03/02,908765,200157883,04134,Assault,Simple Assault,Battery,Open or Active,Ingleside,Noe Valley,8
+2020/03/02,2020/03/02,2020/03/02,908766,200157617,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Northern,Russian Hill,3
+2020/03/02,2020/03/02,2020/03/02,908770,200158041,04134,Assault,Simple Assault,Battery,Open or Active,Taraval,Sunset/Parkside,4
+2020/03/02,2020/03/02,2020/03/02,908780,200158239,04134,Assault,Simple Assault,Battery,Open or Active,Central,Financial District/South Beach,3
+2020/03/02,2020/03/02,2020/03/02,908783,200158336,04134,Assault,Simple Assault,Battery,Open or Active,Southern,Financial District/South Beach,6
+2020/03/02,2020/03/02,2020/03/02,908785,200158449,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Ingleside,Excelsior,11
+2020/03/02,2020/03/02,2020/03/02,908796,200158029,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Richmond,Outer Richmond,1
+2020/03/02,2020/03/02,2020/03/02,908798,200157792,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Tenderloin,Tenderloin,6
+2020/03/02,2020/03/02,2020/03/02,908805,200158643,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Tenderloin,Tenderloin,6
+2020/03/02,2020/03/02,2020/03/02,908818,200157946,04134,Assault,Simple Assault,Battery,Open or Active,Taraval,Sunset/Parkside,4
+2020/03/02,2020/03/02,2020/03/02,908833,200157918,04138,Assault,Simple Assault,"Battery, former Spouse or Dating Relationship",Cite or Arrest Adult,Central,North Beach,3
+2020/03/02,2020/03/02,2020/03/02,908845,200157930,04134,Assault,Simple Assault,Battery,Open or Active,Mission,Mission,9
+2020/03/02,2020/03/02,2020/03/02,908846,200158461,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Southern,Financial District/South Beach,6
+2020/03/02,2020/03/02,2020/03/02,908860,200158831,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/02,2020/03/02,2020/03/02,909358,200156590,04134,Assault,Simple Assault,Battery,Open or Active,Southern,Financial District/South Beach,6
+2020/03/02,2020/03/03,2020/03/02,908990,200159259,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Cite or Arrest Adult,Taraval,Sunset/Parkside,4
+2020/03/02,2020/03/03,2020/03/02,908990,200159259,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Taraval,Sunset/Parkside,4
+2020/03/02,2020/03/16,2020/03/02,913847,200195902,04134,Assault,Simple Assault,Battery,Open or Active,Mission,Mission,9
+2020/03/03,2020/03/03,2020/03/03,908871,200159027,04136,Assault,Simple Assault,Battery with Serious Injuries,Open or Active,Tenderloin,Tenderloin,6
+2020/03/03,2020/03/03,2020/03/03,908877,200158988,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Mission,Mission,9
+2020/03/03,2020/03/03,2020/03/03,909019,200159613,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Open or Active,Northern,Tenderloin,6
+2020/03/03,2020/03/03,2020/03/03,909026,200159403,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Cite or Arrest Adult,Mission,Mission,9
+2020/03/03,2020/03/03,2020/03/03,909047,200159635,04134,Assault,Simple Assault,Battery,Open or Active,Southern,South of Market,6
+2020/03/03,2020/03/03,2020/03/03,909055,200159908,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/03,2020/03/03,2020/03/03,909081,200160159,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Northern,Western Addition,5
+2020/03/03,2020/03/03,2020/03/03,909086,200160278,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Tenderloin,Tenderloin,6
+2020/03/03,2020/03/03,2020/03/03,909110,200160046,04134,Assault,Simple Assault,Battery,Open or Active,Central,Financial District/South Beach,3
+2020/03/03,2020/03/03,2020/03/03,909122,200159516,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Southern,South of Market,6
+2020/03/03,2020/03/03,2020/03/03,909168,200161141,04092,Assault,Aggravated Assault,"Assault, Aggravated, W/ Gun",Cite or Arrest Adult,Tenderloin,Tenderloin,6
+2020/03/03,2020/03/03,2020/03/03,909182,200157015,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Southern,Financial District/South Beach,6
+2020/03/03,2020/03/03,2020/03/03,909185,200160751,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/03,2020/03/03,2020/03/03,909236,200161834,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Central,North Beach,3
+2020/03/03,2020/03/03,2020/03/03,909249,200159271,04134,Assault,Simple Assault,Battery,Open or Active,Mission,Castro/Upper Market,8
+2020/03/03,2020/03/03,2020/03/03,909253,200161737,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Cite or Arrest Adult,Central,Tenderloin,3
+2020/03/03,2020/03/04,2020/03/03,909365,200162218,04134,Assault,Simple Assault,Battery,Open or Active,Park,Lone Mountain/USF,2
+2020/03/03,2020/03/06,2020/03/03,910215,200161107,04134,Assault,Simple Assault,Battery,Open or Active,Mission,Mission,9
+2020/03/04,2020/03/04,2020/03/04,909252,200161862,04134,Assault,Simple Assault,Battery,Open or Active,Mission,Castro/Upper Market,8
+2020/03/04,2020/03/04,2020/03/04,909254,200161878,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Tenderloin,Tenderloin,6
+2020/03/04,2020/03/04,2020/03/04,909362,200162296,04134,Assault,Simple Assault,Battery,Open or Active,Mission,Mission,9
+2020/03/04,2020/03/04,2020/03/04,909378,200162406,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Northern,Japantown,5
+2020/03/04,2020/03/04,2020/03/04,909408,200162688,04011,Assault,Aggravated Assault,"Assault, Aggravated, W/ Gun",Open or Active,Taraval,Oceanview/Merced/Ingleside,11
+2020/03/04,2020/03/04,2020/03/04,909440,200163131,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Tenderloin,Financial District/South Beach,3
+2020/03/04,2020/03/04,2020/03/04,909478,200162854,04134,Assault,Simple Assault,Battery,Open or Active,Southern,Financial District/South Beach,6
+2020/03/04,2020/03/04,2020/03/04,909495,200163551,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Tenderloin,Tenderloin,6
+2020/03/04,2020/03/04,2020/03/04,909500,200163012,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Tenderloin,Tenderloin,6
+2020/03/04,2020/03/04,2020/03/04,909537,200164026,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Cite or Arrest Adult,Park,Lone Mountain/USF,5
+2020/03/04,2020/03/04,2020/03/04,909539,200164145,04134,Assault,Simple Assault,Battery,Open or Active,Southern,South of Market,6
+2020/03/04,2020/03/04,2020/03/04,909550,200164242,04134,Assault,Simple Assault,Battery,Open or Active,Richmond,Lone Mountain/USF,1
+2020/03/04,2020/03/04,2020/03/04,909552,200163620,04144,Assault,Simple Assault,"Battery, Sexual",Open or Active,Northern,Nob Hill,2
+2020/03/04,2020/03/04,2020/03/04,909558,200163921,04134,Assault,Simple Assault,Battery,Open or Active,Southern,South of Market,6
+2020/03/04,2020/03/04,2020/03/04,909569,200164286,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Open or Active,Bayview,Potrero Hill,10
+2020/03/04,2020/03/04,2020/03/04,909588,200164399,04138,Assault,Simple Assault,"Battery, former Spouse or Dating Relationship",Open or Active,Southern,Mission,6
+2020/03/04,2020/03/05,2020/03/04,909576,200164480,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Richmond,Inner Richmond,1
+2020/03/04,2020/03/05,2020/03/04,909576,200164480,04170,Assault,Simple Assault,False Imprisonment,Open or Active,Richmond,Inner Richmond,1
+2020/03/04,2020/03/05,2020/03/04,909589,200164496,04138,Assault,Simple Assault,"Battery, former Spouse or Dating Relationship",Cite or Arrest Adult,Bayview,Bayview Hunters Point,10
+2020/03/05,2020/03/05,2020/03/05,909591,200164565,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Southern,South of Market,6
+2020/03/05,2020/03/05,2020/03/05,909596,200164606,04134,Assault,Simple Assault,Battery,Open or Active,Ingleside,Visitacion Valley,10
+2020/03/05,2020/03/05,2020/03/05,909802,200165450,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Western Addition,5
+2020/03/05,2020/03/05,2020/03/05,909804,200165290,04138,Assault,Simple Assault,"Battery, former Spouse or Dating Relationship",Cite or Arrest Adult,Bayview,Bayview Hunters Point,10
+2020/03/05,2020/03/05,2020/03/05,909825,200165381,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Northern,Hayes Valley,5
+2020/03/05,2020/03/05,2020/03/05,909825,200165381,04136,Assault,Simple Assault,Battery with Serious Injuries,Open or Active,Northern,Hayes Valley,5
+2020/03/05,2020/03/05,2020/03/05,909827,200165472,04138,Assault,Simple Assault,"Battery, former Spouse or Dating Relationship",Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/05,2020/03/05,2020/03/05,909834,200165626,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Central,Financial District/South Beach,3
+2020/03/05,2020/03/05,2020/03/05,909847,200164838,04104,Assault,Simple Assault,"Assault, Non-Aggravated",Cite or Arrest Adult,Southern,South of Market,6
+2020/03/05,2020/03/05,2020/03/05,909883,200165400,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Ingleside,Outer Mission,11
+2020/03/05,2020/03/05,2020/03/05,909901,200166527,04144,Assault,Simple Assault,"Battery, Sexual",Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/05,2020/03/05,2020/03/05,909911,200166129,04134,Assault,Simple Assault,Battery,Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/05,2020/03/05,2020/03/05,909919,200166709,04134,Assault,Simple Assault,Battery,Open or Active,Southern,South of Market,6
+2020/03/05,2020/03/05,2020/03/05,909925,200166232,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Central,Chinatown,3
+2020/03/05,2020/03/05,2020/03/05,909929,200166737,04134,Assault,Simple Assault,Battery,Open or Active,Southern,Mission,8
+2020/03/05,2020/03/05,2020/03/05,909936,200165892,04134,Assault,Simple Assault,Battery,Open or Active,Mission,Castro/Upper Market,8
+2020/03/05,2020/03/05,2020/03/05,909953,200166878,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Cite or Arrest Adult,Taraval,Sunset/Parkside,4
+2020/03/05,2020/03/05,2020/03/05,909954,200166969,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Hayes Valley,5
+2020/03/05,2020/03/05,2020/03/05,909955,200166828,04011,Assault,Aggravated Assault,"Assault, Aggravated, W/ Gun",Open or Active,Ingleside,Bernal Heights,9
+2020/03/05,2020/03/05,2020/03/05,909955,200166828,04082,Assault,Aggravated Assault,"Firearm, Discharging at Occupied Bldg, Vehicle, or Aircraft",Open or Active,Ingleside,Bernal Heights,9
+2020/03/05,2020/03/05,2020/03/05,909965,200166975,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Richmond,Inner Richmond,1
+2020/03/05,2020/03/06,2020/03/05,910110,200168034,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Tenderloin,Tenderloin,6
+2020/03/05,2020/03/06,2020/03/05,910184,200168761,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Hayes Valley,5
+2020/03/05,2020/03/06,2020/03/05,910221,200164565,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Southern,South of Market,6
+2020/03/05,2020/03/07,2020/03/05,910545,200171372,04134,Assault,Simple Assault,Battery,Open or Active,Central,North Beach,3
+2020/03/06,2020/03/06,2020/03/06,909988,200167155,04134,Assault,Simple Assault,Battery,Open or Active,Southern,Financial District/South Beach,6
+2020/03/06,2020/03/06,2020/03/06,910050,200167315,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Northern,Hayes Valley,5
+2020/03/06,2020/03/06,2020/03/06,910060,200167531,04134,Assault,Simple Assault,Battery,Open or Active,Southern,Mission,6
+2020/03/06,2020/03/06,2020/03/06,910076,200167553,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/06,2020/03/06,2020/03/06,910106,200167440,04134,Assault,Simple Assault,Battery,Open or Active,Southern,South of Market,6
+2020/03/06,2020/03/06,2020/03/06,910139,200168131,04138,Assault,Simple Assault,"Battery, former Spouse or Dating Relationship",Cite or Arrest Adult,Taraval,Sunset/Parkside,7
+2020/03/06,2020/03/06,2020/03/06,910167,200167826,04134,Assault,Simple Assault,Battery,Open or Active,Ingleside,Bernal Heights,8
+2020/03/06,2020/03/06,2020/03/06,910177,200168153,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Cite or Arrest Adult,Central,Financial District/South Beach,3
+2020/03/06,2020/03/06,2020/03/06,910190,200168391,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Cite or Arrest Adult,Richmond,Outer Richmond,1
+2020/03/06,2020/03/06,2020/03/06,910190,200168391,04170,Assault,Simple Assault,False Imprisonment,Cite or Arrest Adult,Richmond,Outer Richmond,1
+2020/03/06,2020/03/06,2020/03/06,910217,200168971,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Open or Active,Ingleside,Visitacion Valley,10
+2020/03/06,2020/03/06,2020/03/06,910217,200168971,04170,Assault,Simple Assault,False Imprisonment,Open or Active,Ingleside,Visitacion Valley,10
+2020/03/06,2020/03/06,2020/03/06,910231,200169032,04134,Assault,Simple Assault,Battery,Open or Active,Ingleside,Excelsior,11
+2020/03/06,2020/03/06,2020/03/06,910232,200168733,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Marina,2
+2020/03/06,2020/03/06,2020/03/06,910239,200168664,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Park,Lone Mountain/USF,2
+2020/03/06,2020/03/06,2020/03/06,910247,200169305,04081,Assault,Aggravated Assault,Shooting into Inhabited Dwelling or Occupied Vehicle,Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/06,2020/03/06,2020/03/06,910258,200168915,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Ingleside,Outer Mission,11
+2020/03/06,2020/03/06,2020/03/06,910280,200169468,04134,Assault,Simple Assault,Battery,Open or Active,Ingleside,Glen Park,8
+2020/03/06,2020/03/06,2020/03/06,910287,200169559,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Nob Hill,3
+2020/03/06,2020/03/06,2020/03/06,910290,200169587,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Mission,Mission,9
+2020/03/06,2020/03/06,2020/03/06,910297,200169565,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Mission,Castro/Upper Market,8
+2020/03/06,2020/03/07,2020/03/06,910304,200169775,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Mission,Mission,10
+2020/03/06,2020/03/07,2020/03/06,910311,200169731,04134,Assault,Simple Assault,Battery,Open or Active,Taraval,Outer Mission,11
+2020/03/06,2020/03/07,2020/03/06,910311,200169731,04170,Assault,Simple Assault,False Imprisonment,Open or Active,Taraval,Outer Mission,11
+2020/03/06,2020/03/10,2020/03/06,911483,200178099,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Nob Hill,3
+2020/03/06,2020/03/13,2020/03/06,912432,200167531,04134,Assault,Simple Assault,Battery,Open or Active,Southern,Mission,6
+2020/03/07,2020/03/07,2020/03/07,910387,200169844,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/07,2020/03/07,2020/03/07,910387,200169844,04170,Assault,Simple Assault,False Imprisonment,Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/07,2020/03/07,2020/03/07,910417,200170164,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Southern,Financial District/South Beach,6
+2020/03/07,2020/03/07,2020/03/07,910417,200170164,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Southern,Financial District/South Beach,6
+2020/03/07,2020/03/07,2020/03/07,910427,200169305,04081,Assault,Aggravated Assault,Shooting into Inhabited Dwelling or Occupied Vehicle,Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/07,2020/03/07,2020/03/07,910445,200170493,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Tenderloin,Tenderloin,6
+2020/03/07,2020/03/07,2020/03/07,910446,200170368,04138,Assault,Simple Assault,"Battery, former Spouse or Dating Relationship",Cite or Arrest Adult,Southern,Financial District/South Beach,6
+2020/03/07,2020/03/07,2020/03/07,910472,200170352,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/07,2020/03/07,2020/03/07,910474,200170631,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/07,2020/03/07,2020/03/07,910486,200170960,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/07,2020/03/07,2020/03/07,910528,200171134,04134,Assault,Simple Assault,Battery,Open or Active,Mission,Mission,9
+2020/03/07,2020/03/07,2020/03/07,910546,200171184,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Tenderloin,Financial District/South Beach,6
+2020/03/07,2020/03/07,2020/03/07,910565,200171645,04134,Assault,Simple Assault,Battery,Open or Active,Southern,Financial District/South Beach,6
+2020/03/07,2020/03/07,2020/03/07,910577,200171435,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Hayes Valley,5
+2020/03/07,2020/03/07,2020/03/07,910583,200171758,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Southern,Tenderloin,6
+2020/03/07,2020/03/07,2020/03/07,910588,200171792,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Cite or Arrest Adult,Southern,South of Market,6
+2020/03/07,2020/03/07,2020/03/07,910589,200171811,04011,Assault,Aggravated Assault,"Assault, Aggravated, W/ Gun",Cite or Arrest Adult,Ingleside,Visitacion Valley,10
+2020/03/07,2020/03/08,2020/03/07,910859,200173873,04138,Assault,Simple Assault,"Battery, former Spouse or Dating Relationship",Open or Active,Northern,Marina,2
+2020/03/07,2020/03/09,2020/03/07,911132,200176344,04134,Assault,Simple Assault,Battery,Open or Active,Mission,Mission,8
+2020/03/07,2020/03/10,2020/03/07,911394,200177201,04138,Assault,Simple Assault,"Battery, former Spouse or Dating Relationship",Open or Active,Mission,Castro/Upper Market,8
+2020/03/07,2020/03/12,2020/03/07,912177,200183781,04144,Assault,Simple Assault,"Battery, Sexual",Open or Active,Northern,Marina,2
+2020/03/07,2020/03/14,2020/03/07,912794,200170493,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Tenderloin,Tenderloin,6
+2020/03/08,2020/03/08,2020/03/08,910591,200171861,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/08,2020/03/08,2020/03/08,910592,200171877,04134,Assault,Simple Assault,Battery,Open or Active,Mission,Castro/Upper Market,8
+2020/03/08,2020/03/08,2020/03/08,910597,200171902,04134,Assault,Simple Assault,Battery,Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/08,2020/03/08,2020/03/08,910600,200171899,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Northern,Hayes Valley,5
+2020/03/08,2020/03/08,2020/03/08,910687,200172273,04033,Assault,Aggravated Assault,"Assault, W/ Caustic Chemical to Injure or Disfigure",Open or Active,Tenderloin,Tenderloin,6
+2020/03/08,2020/03/08,2020/03/08,910731,200172706,04134,Assault,Simple Assault,Battery,Open or Active,Mission,Castro/Upper Market,8
+2020/03/08,2020/03/08,2020/03/08,910785,200173378,04134,Assault,Simple Assault,Battery,Open or Active,Southern,Mission Bay,6
+2020/03/08,2020/03/08,2020/03/08,910834,200173710,04134,Assault,Simple Assault,Battery,Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/08,2020/03/08,2020/03/08,910850,200173594,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Southern,Financial District/South Beach,6
+2020/03/08,2020/03/08,2020/03/08,910854,200168131,04138,Assault,Simple Assault,"Battery, former Spouse or Dating Relationship",Cite or Arrest Adult,Taraval,Sunset/Parkside,7
+2020/03/08,2020/03/08,2020/03/08,910862,200173920,04134,Assault,Simple Assault,Battery,Open or Active,Central,Chinatown,3
+2020/03/08,2020/03/08,2020/03/08,910866,200173914,04134,Assault,Simple Assault,Battery,Open or Active,Mission,Mission,9
+2020/03/08,2020/03/08,2020/03/08,910870,200173986,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Richmond,Japantown,5
+2020/03/08,2020/03/08,2020/03/08,910874,200173992,04154,Assault,Simple Assault,"Battery, Of A Police Officer",Open or Active,Central,Nob Hill,3
+2020/03/08,2020/03/08,2020/03/08,910882,200174003,04134,Assault,Simple Assault,Battery,Open or Active,Southern,Financial District/South Beach,6
+2020/03/08,2020/03/09,2020/03/08,910958,200174605,04134,Assault,Simple Assault,Battery,Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/08,2020/03/09,2020/03/08,911165,200176316,04136,Assault,Simple Assault,Battery with Serious Injuries,Cite or Arrest Adult,Ingleside,Outer Mission,11
+2020/03/08,2020/03/15,2020/03/08,913013,200190071,04134,Assault,Simple Assault,Battery,Open or Active,Southern,South of Market,6
+2020/03/09,2020/03/09,2020/03/09,910887,200174150,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Western Addition,5
+2020/03/09,2020/03/09,2020/03/09,910888,200174122,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Northern,Hayes Valley,5
+2020/03/09,2020/03/09,2020/03/09,910959,200174536,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,South of Market,6
+2020/03/09,2020/03/09,2020/03/09,910972,200174451,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Tenderloin,Tenderloin,6
+2020/03/09,2020/03/09,2020/03/09,910981,200174649,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Ingleside,Excelsior,11
+2020/03/09,2020/03/09,2020/03/09,910992,200174508,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Ingleside,Visitacion Valley,10
+2020/03/09,2020/03/09,2020/03/09,911017,200175073,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Northern,Tenderloin,6
+2020/03/09,2020/03/09,2020/03/09,911031,200174633,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Central,Financial District/South Beach,3
+2020/03/09,2020/03/09,2020/03/09,911045,200175255,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Northern,Tenderloin,6
+2020/03/09,2020/03/09,2020/03/09,911045,200175255,04154,Assault,Simple Assault,"Battery, Of A Police Officer",Cite or Arrest Adult,Northern,Tenderloin,6
+2020/03/09,2020/03/09,2020/03/09,911054,200174605,04134,Assault,Simple Assault,Battery,Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/09,2020/03/09,2020/03/09,911061,200175330,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Richmond,Presidio Heights,5
+2020/03/09,2020/03/09,2020/03/09,911129,200176275,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Cite or Arrest Adult,Richmond,Presidio Heights,2
+2020/03/09,2020/03/09,2020/03/09,911131,200171899,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Northern,Hayes Valley,5
+2020/03/09,2020/03/09,2020/03/09,911149,200175829,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Park,Lone Mountain/USF,1
+2020/03/09,2020/03/09,2020/03/09,911161,200176225,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Northern,Japantown,5
+2020/03/09,2020/03/09,2020/03/09,911168,200176491,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,South of Market,6
+2020/03/09,2020/03/09,2020/03/09,911171,200176617,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/09,2020/03/09,2020/03/09,911188,200176639,04134,Assault,Simple Assault,Battery,Open or Active,Mission,Potrero Hill,10
+2020/03/09,2020/03/09,2020/03/09,911195,200176695,04136,Assault,Simple Assault,Battery with Serious Injuries,Open or Active,Central,Financial District/South Beach,3
+2020/03/09,2020/03/09,2020/03/09,911196,200176554,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Mission,Castro/Upper Market,8
+2020/03/09,2020/03/09,2020/03/09,911577,200176554,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Mission,Castro/Upper Market,8
+2020/03/09,2020/03/09,2020/03/09,911755,200175330,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Richmond,Presidio Heights,5
+2020/03/09,2020/03/10,2020/03/09,911206,200176792,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Mission,Mission,9
+2020/03/09,2020/03/10,2020/03/09,911206,200176792,04138,Assault,Simple Assault,"Battery, former Spouse or Dating Relationship",Open or Active,Mission,Mission,9
+2020/03/09,2020/03/10,2020/03/09,911480,200178083,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Southern,Financial District/South Beach,6
+2020/03/09,2020/03/11,2020/03/09,911828,200178083,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Southern,Financial District/South Beach,6
+2020/03/09,2020/03/12,2020/03/09,911980,200182341,04134,Assault,Simple Assault,Battery,Open or Active,Central,Presidio,2
+2020/03/09,2020/03/13,2020/03/09,912468,200185947,04134,Assault,Simple Assault,Battery,Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/09,2020/04/03,2020/03/09,917186,200174633,04134,Assault,Simple Assault,Battery,Open or Active,Central,Financial District/South Beach,3
+2020/03/10,2020/03/10,2020/03/10,911212,200176861,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Mission,Mission,8
+2020/03/10,2020/03/10,2020/03/10,911213,200176849,04073,Assault,Aggravated Assault,"Assault, Aggravated, On Police Off., W/ Other Weapon",Cite or Arrest Adult,Ingleside,Bernal Heights,9
+2020/03/10,2020/03/10,2020/03/10,911214,200176883,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Southern,Financial District/South Beach,6
+2020/03/10,2020/03/10,2020/03/10,911217,200176918,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Central,Financial District/South Beach,3
+2020/03/10,2020/03/10,2020/03/10,911221,200176974,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Southern,Financial District/South Beach,3
+2020/03/10,2020/03/10,2020/03/10,911447,200177819,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Taraval,Sunset/Parkside,4
+2020/03/10,2020/03/10,2020/03/10,911460,200177778,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/10,2020/03/10,2020/03/10,911495,200178055,04134,Assault,Simple Assault,Battery,Open or Active,Central,Tenderloin,3
+2020/03/10,2020/03/10,2020/03/10,911512,200178356,04134,Assault,Simple Assault,Battery,Open or Active,Mission,Mission,9
+2020/03/10,2020/03/10,2020/03/10,911518,200178102,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/10,2020/03/10,2020/03/10,911526,200178431,04114,Assault,Simple Assault,"Assault, Non-Aggravated, Att.",Cite or Arrest Adult,Central,Financial District/South Beach,3
+2020/03/10,2020/03/10,2020/03/10,911552,200178823,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Tenderloin,South of Market,6
+2020/03/10,2020/03/10,2020/03/10,911561,200178378,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Tenderloin,Tenderloin,6
+2020/03/10,2020/03/10,2020/03/10,911574,200179019,04033,Assault,Aggravated Assault,"Assault, W/ Caustic Chemical to Injure or Disfigure",Open or Active,Park,Lone Mountain/USF,2
+2020/03/10,2020/03/10,2020/03/10,911578,200179144,04033,Assault,Aggravated Assault,"Assault, W/ Caustic Chemical to Injure or Disfigure",Open or Active,Tenderloin,Tenderloin,6
+2020/03/10,2020/03/10,2020/03/10,911580,200179025,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Central,Financial District/South Beach,3
+2020/03/10,2020/03/10,2020/03/10,911589,200178243,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Western Addition,5
+2020/03/10,2020/03/10,2020/03/10,911609,200179257,04170,Assault,Simple Assault,False Imprisonment,Open or Active,Ingleside,Outer Mission,11
+2020/03/10,2020/03/10,2020/03/10,911636,200179536,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Cite or Arrest Adult,Mission,Mission,9
+2020/03/10,2020/03/10,2020/03/10,911638,200179473,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Tenderloin,Tenderloin,6
+2020/03/10,2020/03/10,2020/03/10,911811,200160751,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/10,2020/03/10,2020/03/10,911949,200179508,04134,Assault,Simple Assault,Battery,Open or Active,Mission,Mission,9
+2020/03/10,2020/03/12,2020/03/10,912120,200183208,04134,Assault,Simple Assault,Battery,Open or Active,Central,Nob Hill,3
+2020/03/11,2020/03/11,2020/03/11,911644,200179633,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Southern,Hayes Valley,5
+2020/03/11,2020/03/11,2020/03/11,911649,200179661,04154,Assault,Simple Assault,"Battery, Of A Police Officer",Cite or Arrest Adult,Central,Nob Hill,3
+2020/03/11,2020/03/11,2020/03/11,911650,200179655,04114,Assault,Simple Assault,"Assault, Non-Aggravated, Att.",Open or Active,Park,Haight Ashbury,8
+2020/03/11,2020/03/11,2020/03/11,911722,200179746,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Mission,Mission,9
+2020/03/11,2020/03/11,2020/03/11,911731,200179774,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/11,2020/03/11,2020/03/11,911796,200180373,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Open or Active,Central,Financial District/South Beach,3
+2020/03/11,2020/03/11,2020/03/11,911815,200180765,04134,Assault,Simple Assault,Battery,Open or Active,Southern,Mission Bay,6
+2020/03/11,2020/03/11,2020/03/11,911860,200180793,04134,Assault,Simple Assault,Battery,Open or Active,Ingleside,Outer Mission,11
+2020/03/11,2020/03/11,2020/03/11,911910,200181230,04134,Assault,Simple Assault,Battery,Open or Active,Ingleside,Bernal Heights,9
+2020/03/11,2020/03/11,2020/03/11,911913,200181070,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Tenderloin,6
+2020/03/11,2020/03/11,2020/03/11,911927,200181359,04134,Assault,Simple Assault,Battery,Open or Active,Southern,South of Market,6
+2020/03/11,2020/03/11,2020/03/11,911928,200181713,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Tenderloin,South of Market,6
+2020/03/11,2020/03/11,2020/03/11,911931,200181707,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Pacific Heights,2
+2020/03/11,2020/03/11,2020/03/11,911948,200182090,04136,Assault,Simple Assault,Battery with Serious Injuries,Open or Active,Richmond,Golden Gate Park,1
+2020/03/11,2020/03/11,2020/03/11,912056,200180373,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Open or Active,Central,Financial District/South Beach,3
+2020/03/11,2020/03/12,2020/03/11,912094,200182909,04134,Assault,Simple Assault,Battery,Open or Active,Richmond,Inner Richmond,1
+2020/03/11,2020/03/12,2020/03/11,912102,200182915,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Central,Financial District/South Beach,3
+2020/03/11,2020/03/16,2020/03/11,913316,200182090,04136,Assault,Simple Assault,Battery with Serious Injuries,Exceptional Adult,Richmond,Golden Gate Park,1
+2020/03/12,2020/03/12,2020/03/12,911969,200182222,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Park,Lone Mountain/USF,5
+2020/03/12,2020/03/12,2020/03/12,911973,200182244,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Mission,Mission,9
+2020/03/12,2020/03/12,2020/03/12,911973,200182244,04138,Assault,Simple Assault,"Battery, former Spouse or Dating Relationship",Cite or Arrest Adult,Mission,Mission,9
+2020/03/12,2020/03/12,2020/03/12,911990,200182357,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Tenderloin,6
+2020/03/12,2020/03/12,2020/03/12,912147,200183446,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Mission,Mission,9
+2020/03/12,2020/03/12,2020/03/12,912160,200183399,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Mission,Mission,9
+2020/03/12,2020/03/12,2020/03/12,912220,200183894,04104,Assault,Simple Assault,"Assault, Non-Aggravated",Open or Active,Northern,Pacific Heights,5
+2020/03/12,2020/03/12,2020/03/12,912247,200184472,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Western Addition,5
+2020/03/12,2020/03/12,2020/03/12,912251,200184052,04134,Assault,Simple Assault,Battery,Open or Active,Bayview,Portola,9
+2020/03/12,2020/03/12,2020/03/12,912260,200184541,04134,Assault,Simple Assault,Battery,Open or Active,Ingleside,Bernal Heights,8
+2020/03/12,2020/03/12,2020/03/12,912264,200184212,04134,Assault,Simple Assault,Battery,Open or Active,Central,Financial District/South Beach,3
+2020/03/12,2020/03/12,2020/03/12,912274,200184648,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,South of Market,6
+2020/03/12,2020/03/12,2020/03/12,912292,200184535,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Park,Lone Mountain/USF,5
+2020/03/12,2020/03/12,2020/03/12,912294,200184723,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Cite or Arrest Adult,Ingleside,Bernal Heights,9
+2020/03/12,2020/03/12,2020/03/12,912647,200182244,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Mission,Mission,9
+2020/03/12,2020/03/12,2020/03/12,912647,200182244,04138,Assault,Simple Assault,"Battery, former Spouse or Dating Relationship",Cite or Arrest Adult,Mission,Mission,9
+2020/03/12,2020/03/12,2020/03/12,916389,200184698,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Park,Inner Sunset,5
+2020/03/12,2020/03/12,2020/03/12,916389,200184698,04154,Assault,Simple Assault,"Battery, Of A Police Officer",Cite or Arrest Adult,Park,Inner Sunset,5
+2020/03/12,2020/03/13,2020/03/12,912305,200184933,04136,Assault,Simple Assault,Battery with Serious Injuries,Open or Active,Tenderloin,Tenderloin,6
+2020/03/12,2020/03/13,2020/03/12,912305,200184933,04170,Assault,Simple Assault,False Imprisonment,Open or Active,Tenderloin,Tenderloin,6
+2020/03/12,2020/03/13,2020/03/12,912309,200184911,04134,Assault,Simple Assault,Battery,Open or Active,Southern,South of Market,6
+2020/03/12,2020/03/13,2020/03/12,912456,200185709,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Taraval,Oceanview/Merced/Ingleside,11
+2020/03/13,2020/03/13,2020/03/13,912310,200184949,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Open or Active,Mission,Mission,9
+2020/03/13,2020/03/13,2020/03/13,912443,200185765,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Southern,Treasure Island,6
+2020/03/13,2020/03/13,2020/03/13,912455,200185301,04134,Assault,Simple Assault,Battery,Open or Active,Central,Financial District/South Beach,3
+2020/03/13,2020/03/13,2020/03/13,912463,200185903,04134,Assault,Simple Assault,Battery,Open or Active,Richmond,Lone Mountain/USF,1
+2020/03/13,2020/03/13,2020/03/13,912476,200185135,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/13,2020/03/13,2020/03/13,912493,200185602,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Tenderloin,South of Market,6
+2020/03/13,2020/03/13,2020/03/13,912496,200185981,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Western Addition,5
+2020/03/13,2020/03/13,2020/03/13,912514,200186406,04134,Assault,Simple Assault,Battery,Open or Active,Southern,Financial District/South Beach,6
+2020/03/13,2020/03/13,2020/03/13,912551,200185765,04134,Assault,Simple Assault,Battery,Open or Active,Southern,Treasure Island,6
+2020/03/13,2020/03/13,2020/03/13,912559,200186763,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Mission,Mission,8
+2020/03/13,2020/03/13,2020/03/13,912562,200186832,04134,Assault,Simple Assault,Battery,Open or Active,Taraval,West of Twin Peaks,7
+2020/03/13,2020/03/13,2020/03/13,912570,200186876,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Mission,Mission,9
+2020/03/13,2020/03/13,2020/03/13,912591,200186597,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Western Addition,5
+2020/03/13,2020/03/13,2020/03/13,912596,200186547,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Ingleside,Bernal Heights,9
+2020/03/13,2020/03/13,2020/03/13,912600,200186365,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Taraval,Lakeshore,7
+2020/03/13,2020/03/13,2020/03/13,912604,200186218,04134,Assault,Simple Assault,Battery,Open or Active,Southern,South of Market,6
+2020/03/13,2020/03/13,2020/03/13,912607,200186412,04154,Assault,Simple Assault,"Battery, Of A Police Officer",Cite or Arrest Adult,Northern,Hayes Valley,5
+2020/03/13,2020/03/13,2020/03/13,912617,200187062,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Tenderloin,Tenderloin,6
+2020/03/13,2020/03/14,2020/03/13,912631,200187266,04134,Assault,Simple Assault,Battery,Open or Active,Ingleside,Bernal Heights,8
+2020/03/13,2020/03/14,2020/03/13,912731,200187727,04134,Assault,Simple Assault,Battery,Open or Active,Southern,Financial District/South Beach,6
+2020/03/13,2020/03/20,2020/03/13,914350,200199891,04084,Assault,Aggravated Assault,"Firearm, Discharging at Unoccupied Bldg, Vehicle or Aircraft",Open or Active,Ingleside,Visitacion Valley,10
+2020/03/14,2020/03/14,2020/03/14,912637,200187363,04134,Assault,Simple Assault,Battery,Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/14,2020/03/14,2020/03/14,912638,200187379,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Tenderloin,Tenderloin,6
+2020/03/14,2020/03/14,2020/03/14,912643,200187385,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Mission,Mission,9
+2020/03/14,2020/03/14,2020/03/14,912648,200187404,04134,Assault,Simple Assault,Battery,Open or Active,Ingleside,Bernal Heights,9
+2020/03/14,2020/03/14,2020/03/14,912653,200187448,04134,Assault,Simple Assault,Battery,Open or Active,Southern,Mission,8
+2020/03/14,2020/03/14,2020/03/14,912728,200187636,04144,Assault,Simple Assault,"Battery, Sexual",Open or Active,Tenderloin,Tenderloin,6
+2020/03/14,2020/03/14,2020/03/14,912730,200187545,04134,Assault,Simple Assault,Battery,Open or Active,Mission,Mission,9
+2020/03/14,2020/03/14,2020/03/14,912743,200187874,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/14,2020/03/14,2020/03/14,912745,200187608,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Cite or Arrest Adult,Ingleside,Glen Park,8
+2020/03/14,2020/03/14,2020/03/14,912745,200187608,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Ingleside,Glen Park,8
+2020/03/14,2020/03/14,2020/03/14,912745,200187608,04170,Assault,Simple Assault,False Imprisonment,Cite or Arrest Adult,Ingleside,Glen Park,8
+2020/03/14,2020/03/14,2020/03/14,912758,200187868,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Open or Active,Tenderloin,Tenderloin,6
+2020/03/14,2020/03/14,2020/03/14,912777,200187404,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Ingleside,Bernal Heights,9
+2020/03/14,2020/03/14,2020/03/14,912803,200188402,04081,Assault,Aggravated Assault,Shooting into Inhabited Dwelling or Occupied Vehicle,Open or Active,Ingleside,Visitacion Valley,10
+2020/03/14,2020/03/14,2020/03/14,912811,200188311,04134,Assault,Simple Assault,Battery,Open or Active,Southern,Financial District/South Beach,6
+2020/03/14,2020/03/14,2020/03/14,912843,200188769,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Bayview,Bernal Heights,9
+2020/03/14,2020/03/14,2020/03/14,912868,200189193,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Open or Active,Mission,Mission,10
+2020/03/14,2020/03/14,2020/03/14,912875,200188991,04134,Assault,Simple Assault,Battery,Open or Active,Central,Russian Hill,2
+2020/03/14,2020/03/14,2020/03/14,912894,200189353,04114,Assault,Simple Assault,"Assault, Non-Aggravated, Att.",Open or Active,Mission,Mission,9
+2020/03/14,2020/03/14,2020/03/14,912916,200189472,04134,Assault,Simple Assault,Battery,Open or Active,Taraval,Sunset/Parkside,4
+2020/03/14,2020/03/14,2020/03/14,912998,200187868,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Open or Active,Tenderloin,Tenderloin,6
+2020/03/14,2020/03/14,2020/03/14,915510,200189193,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Open or Active,Mission,Mission,9
+2020/03/14,2020/03/15,2020/03/14,912918,200189604,04134,Assault,Simple Assault,Battery,Open or Active,Southern,Mission Bay,6
+2020/03/14,2020/03/15,2020/03/14,912927,200189591,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Northern,Marina,2
+2020/03/14,2020/03/15,2020/03/14,912927,200189591,04136,Assault,Simple Assault,Battery with Serious Injuries,Open or Active,Northern,Marina,2
+2020/03/15,2020/03/15,2020/03/15,912936,200189610,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Southern,South of Market,6
+2020/03/15,2020/03/15,2020/03/15,912994,200189767,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/15,2020/03/15,2020/03/15,913006,200189892,04170,Assault,Simple Assault,False Imprisonment,Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/15,2020/03/15,2020/03/15,913030,200190037,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Southern,South of Market,6
+2020/03/15,2020/03/15,2020/03/15,913033,200190190,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/15,2020/03/15,2020/03/15,913058,200190429,04134,Assault,Simple Assault,Battery,Open or Active,Central,Financial District/South Beach,6
+2020/03/15,2020/03/15,2020/03/15,913072,200190667,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Southern,South of Market,6
+2020/03/15,2020/03/15,2020/03/15,913072,200190667,04134,Assault,Simple Assault,Battery,Open or Active,Southern,South of Market,6
+2020/03/15,2020/03/15,2020/03/15,913090,200190714,04073,Assault,Aggravated Assault,"Assault, Aggravated, On Police Off., W/ Other Weapon",Cite or Arrest Adult,Taraval,West of Twin Peaks,7
+2020/03/15,2020/03/15,2020/03/15,913092,200190952,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Southern,Financial District/South Beach,6
+2020/03/15,2020/03/15,2020/03/15,913107,200191176,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Tenderloin,Tenderloin,6
+2020/03/15,2020/03/15,2020/03/15,913114,200190708,04134,Assault,Simple Assault,Battery,Open or Active,Ingleside,Outer Mission,11
+2020/03/15,2020/03/15,2020/03/15,913115,200191217,04136,Assault,Simple Assault,Battery with Serious Injuries,Cite or Arrest Adult,Central,Russian Hill,2
+2020/03/15,2020/03/15,2020/03/15,913135,200191320,04083,Assault,Aggravated Assault,"Firearm, Discharging in Grossly Negligent Manner",Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/15,2020/03/15,2020/03/15,913143,200191405,04134,Assault,Simple Assault,Battery,Open or Active,Taraval,West of Twin Peaks,7
+2020/03/15,2020/03/15,2020/03/15,913145,200190651,04134,Assault,Simple Assault,Battery,Open or Active,Central,Nob Hill,3
+2020/03/15,2020/03/15,2020/03/15,913156,200191433,04134,Assault,Simple Assault,Battery,Open or Active,Ingleside,Visitacion Valley,10
+2020/03/15,2020/03/15,2020/03/15,913162,200191217,04136,Assault,Simple Assault,Battery with Serious Injuries,Cite or Arrest Adult,Central,Russian Hill,2
+2020/03/15,2020/03/16,2020/03/15,913359,200191433,04134,Assault,Simple Assault,Battery,Open or Active,Ingleside,Visitacion Valley,10
+2020/03/15,2020/03/17,2020/03/15,913644,200194885,04138,Assault,Simple Assault,"Battery, former Spouse or Dating Relationship",Cite or Arrest Adult,Taraval,Sunset/Parkside,4
+2020/03/16,2020/03/16,2020/03/16,913158,200191530,04138,Assault,Simple Assault,"Battery, former Spouse or Dating Relationship",Open or Active,Bayview,Potrero Hill,10
+2020/03/16,2020/03/16,2020/03/16,913256,200191875,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Southern,Financial District/South Beach,6
+2020/03/16,2020/03/16,2020/03/16,913281,200192152,04138,Assault,Simple Assault,"Battery, former Spouse or Dating Relationship",Open or Active,Richmond,Presidio Heights,2
+2020/03/16,2020/03/16,2020/03/16,913283,200191900,04138,Assault,Simple Assault,"Battery, former Spouse or Dating Relationship",Open or Active,Tenderloin,South of Market,6
+2020/03/16,2020/03/16,2020/03/16,913329,200192500,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Mission,Mission,9
+2020/03/16,2020/03/16,2020/03/16,913332,200192588,04011,Assault,Aggravated Assault,"Assault, Aggravated, W/ Gun",Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/16,2020/03/16,2020/03/16,913336,200190714,04073,Assault,Aggravated Assault,"Assault, Aggravated, On Police Off., W/ Other Weapon",Cite or Arrest Adult,Taraval,West of Twin Peaks,7
+2020/03/16,2020/03/16,2020/03/16,913364,200188402,04081,Assault,Aggravated Assault,Shooting into Inhabited Dwelling or Occupied Vehicle,Open or Active,Ingleside,Visitacion Valley,10
+2020/03/16,2020/03/16,2020/03/16,913388,200192215,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Mission,Mission,9
+2020/03/16,2020/03/16,2020/03/16,913399,200192992,04134,Assault,Simple Assault,Battery,Open or Active,Central,Chinatown,3
+2020/03/16,2020/03/16,2020/03/16,913400,200193116,04011,Assault,Aggravated Assault,"Assault, Aggravated, W/ Gun",Open or Active,Ingleside,Visitacion Valley,10
+2020/03/16,2020/03/16,2020/03/16,913400,200193116,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Open or Active,Ingleside,Visitacion Valley,10
+2020/03/16,2020/03/16,2020/03/16,913423,200193188,12026,Assault,Aggravated Assault,"Firearm, Discharging At An Inhabited Dwelling",Open or Active,Mission,Mission,10
+2020/03/16,2020/03/16,2020/03/16,913428,200193520,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Bayview,Bernal Heights,9
+2020/03/16,2020/03/16,2020/03/16,914146,200193188,12026,Assault,Aggravated Assault,"Firearm, Discharging At An Inhabited Dwelling",Open or Active,Mission,Mission,10
+2020/03/16,2020/03/24,2020/03/16,915157,200192992,04134,Assault,Simple Assault,Battery,Open or Active,Central,Chinatown,3
+2020/03/16,2020/03/25,2020/03/16,915401,200192992,04134,Assault,Simple Assault,Battery,Open or Active,Central,Chinatown,3
+2020/03/17,2020/03/17,2020/03/17,913534,200193990,04134,Assault,Simple Assault,Battery,Open or Active,Park,Hayes Valley,8
+2020/03/17,2020/03/17,2020/03/17,913595,200194493,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Ingleside,Bernal Heights,9
+2020/03/17,2020/03/17,2020/03/17,913600,200194653,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,South of Market,6
+2020/03/17,2020/03/17,2020/03/17,913603,200194700,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Cite or Arrest Adult,Central,Financial District/South Beach,3
+2020/03/17,2020/03/17,2020/03/17,913606,200194863,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Hayes Valley,5
+2020/03/17,2020/03/17,2020/03/17,913609,200194625,04104,Assault,Simple Assault,"Assault, Non-Aggravated",Open or Active,Southern,Financial District/South Beach,6
+2020/03/17,2020/03/17,2020/03/17,913634,200195059,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Cite or Arrest Adult,Mission,Mission,9
+2020/03/17,2020/03/17,2020/03/17,913636,200195134,04134,Assault,Simple Assault,Battery,Open or Active,Southern,South of Market,6
+2020/03/18,2020/03/18,2020/03/18,913664,200195338,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/18,2020/03/18,2020/03/18,913671,200195435,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Central,Treasure Island,6
+2020/03/18,2020/03/18,2020/03/18,913794,200195510,04134,Assault,Simple Assault,Battery,Open or Active,Southern,South of Market,6
+2020/03/18,2020/03/18,2020/03/18,913802,200195582,04134,Assault,Simple Assault,Battery,Open or Active,Central,Tenderloin,3
+2020/03/18,2020/03/18,2020/03/18,913805,200195435,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Central,Treasure Island,6
+2020/03/18,2020/03/18,2020/03/18,913810,200195827,04134,Assault,Simple Assault,Battery,Open or Active,Southern,Mission Bay,6
+2020/03/18,2020/03/18,2020/03/18,913832,200195786,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Cite or Arrest Adult,Northern,Western Addition,5
+2020/03/18,2020/03/18,2020/03/18,913832,200195786,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Cite or Arrest Adult,Northern,Western Addition,5
+2020/03/18,2020/03/18,2020/03/18,913853,200195435,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Central,Treasure Island,6
+2020/03/18,2020/03/18,2020/03/18,913878,200195980,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Tenderloin,6
+2020/03/18,2020/03/18,2020/03/18,913889,200196182,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Ingleside,Excelsior,11
+2020/03/18,2020/03/18,2020/03/18,913900,200196706,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Haight Ashbury,5
+2020/03/18,2020/03/18,2020/03/18,913901,200196449,04134,Assault,Simple Assault,Battery,Open or Active,Central,Nob Hill,3
+2020/03/18,2020/03/18,2020/03/18,913912,200196621,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,South of Market,6
+2020/03/18,2020/03/18,2020/03/18,913928,200196881,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Cite or Arrest Adult,Mission,Mission,8
+2020/03/18,2020/03/18,2020/03/18,913928,200196881,04074,Assault,Aggravated Assault,"Assault, Aggravated, On Police Officer, W/ Force",Cite or Arrest Adult,Mission,Mission,8
+2020/03/18,2020/03/18,2020/03/18,913928,200196881,04154,Assault,Simple Assault,"Battery, Of A Police Officer",Cite or Arrest Adult,Mission,Mission,8
+2020/03/18,2020/03/18,2020/03/18,913929,200196922,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Tenderloin,South of Market,6
+2020/03/18,2020/03/18,2020/03/18,913936,200196665,04134,Assault,Simple Assault,Battery,Open or Active,Mission,Mission,9
+2020/03/18,2020/03/18,2020/03/18,913941,200196972,04134,Assault,Simple Assault,Battery,Open or Active,Ingleside,Visitacion Valley,10
+2020/03/18,2020/03/18,2020/03/18,913961,200196994,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Mission,Castro/Upper Market,8
+2020/03/18,2020/03/18,2020/03/18,913970,200195786,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Open or Active,Mission,Mission,9
+2020/03/19,2020/03/19,2020/03/19,913995,200197180,04134,Assault,Simple Assault,Battery,Open or Active,Central,Financial District/South Beach,3
+2020/03/19,2020/03/19,2020/03/19,913997,200195435,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Central,Financial District/South Beach,3
+2020/03/19,2020/03/19,2020/03/19,914011,200197334,04134,Assault,Simple Assault,Battery,Open or Active,Taraval,West of Twin Peaks,7
+2020/03/19,2020/03/19,2020/03/19,914048,200197390,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Southern,South of Market,6
+2020/03/19,2020/03/19,2020/03/19,914069,200197679,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Bayview,Bayview Hunters Point,10
+2020/03/19,2020/03/19,2020/03/19,914087,200197328,04011,Assault,Aggravated Assault,"Assault, Aggravated, W/ Gun",Cite or Arrest Adult,Bayview,Bayview Hunters Point,10
+2020/03/19,2020/03/19,2020/03/19,914087,200197328,04136,Assault,Simple Assault,Battery with Serious Injuries,Cite or Arrest Adult,Bayview,Bayview Hunters Point,10
+2020/03/19,2020/03/19,2020/03/19,914095,200198047,04134,Assault,Simple Assault,Battery,Open or Active,Central,North Beach,3
+2020/03/19,2020/03/19,2020/03/19,914102,200198241,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Tenderloin,Tenderloin,6
+2020/03/19,2020/03/19,2020/03/19,914122,200197970,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/19,2020/03/19,2020/03/19,914131,200198398,04134,Assault,Simple Assault,Battery,Open or Active,Ingleside,West of Twin Peaks,7
+2020/03/19,2020/03/19,2020/03/19,914143,200198213,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Tenderloin,Financial District/South Beach,6
+2020/03/19,2020/03/19,2020/03/19,914150,200198172,04138,Assault,Simple Assault,"Battery, former Spouse or Dating Relationship",Cite or Arrest Adult,Mission,Castro/Upper Market,8
+2020/03/19,2020/03/19,2020/03/19,914154,200198611,04138,Assault,Simple Assault,"Battery, former Spouse or Dating Relationship",Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/19,2020/03/19,2020/03/19,914160,200198683,04134,Assault,Simple Assault,Battery,Open or Active,Southern,Treasure Island,6
+2020/03/19,2020/03/19,2020/03/19,917931,200197061,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Park,Inner Sunset,5
+2020/03/19,2020/03/19,2020/03/19,917934,200197544,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Southern,South of Market,6
+2020/03/19,2020/03/20,2020/03/19,914240,200199352,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Open or Active,Tenderloin,Tenderloin,6
+2020/03/19,2020/03/22,2020/03/19,914711,200198241,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Tenderloin,Tenderloin,6
+2020/03/20,2020/03/20,2020/03/20,914163,200198746,04170,Assault,Simple Assault,False Imprisonment,Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/20,2020/03/20,2020/03/20,914164,200198724,04138,Assault,Simple Assault,"Battery, former Spouse or Dating Relationship",Open or Active,Southern,Mission Bay,6
+2020/03/20,2020/03/20,2020/03/20,914232,200199158,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Cite or Arrest Adult,Southern,South of Market,6
+2020/03/20,2020/03/20,2020/03/20,914247,180302279,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Northern,Western Addition,5
+2020/03/20,2020/03/20,2020/03/20,914264,200199534,04134,Assault,Simple Assault,Battery,Open or Active,Central,Financial District/South Beach,3
+2020/03/20,2020/03/20,2020/03/20,914290,200199603,04134,Assault,Simple Assault,Battery,Open or Active,Southern,South of Market,6
+2020/03/20,2020/03/20,2020/03/20,914291,200199443,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Central,Financial District/South Beach,3
+2020/03/20,2020/03/20,2020/03/20,914297,200199722,04134,Assault,Simple Assault,Battery,Open or Active,Park,Haight Ashbury,5
+2020/03/20,2020/03/20,2020/03/20,914336,200200012,04114,Assault,Simple Assault,"Assault, Non-Aggravated, Att.",Open or Active,Richmond,Inner Richmond,1
+2020/03/20,2020/03/20,2020/03/20,914343,200200169,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Central,Financial District/South Beach,3
+2020/03/20,2020/03/20,2020/03/20,914357,200200200,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Mission,Mission,9
+2020/03/20,2020/03/20,2020/03/20,914357,200200200,04136,Assault,Simple Assault,Battery with Serious Injuries,Open or Active,Mission,Mission,9
+2020/03/20,2020/03/20,2020/03/20,914361,200198172,04138,Assault,Simple Assault,"Battery, former Spouse or Dating Relationship",Cite or Arrest Adult,Mission,Castro/Upper Market,8
+2020/03/20,2020/03/20,2020/03/20,914366,200200266,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Bayview,Bayview Hunters Point,10
+2020/03/20,2020/03/20,2020/03/20,914376,200198752,04104,Assault,Simple Assault,"Assault, Non-Aggravated",Open or Active,Mission,Mission,9
+2020/03/20,2020/03/21,2020/03/20,914389,200200391,04134,Assault,Simple Assault,Battery,Open or Active,Taraval,West of Twin Peaks,7
+2020/03/20,2020/03/21,2020/03/20,914541,200201468,04134,Assault,Simple Assault,Battery,Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/21,2020/03/21,2020/03/21,914378,200200404,04134,Assault,Simple Assault,Battery,Open or Active,Ingleside,Excelsior,9
+2020/03/21,2020/03/21,2020/03/21,914388,200200460,04136,Assault,Simple Assault,Battery with Serious Injuries,Open or Active,Mission,Mission,9
+2020/03/21,2020/03/21,2020/03/21,914477,200200802,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/21,2020/03/21,2020/03/21,914479,200200727,04134,Assault,Simple Assault,Battery,Open or Active,Southern,South of Market,6
+2020/03/21,2020/03/21,2020/03/21,914491,200200971,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Mission,Castro/Upper Market,8
+2020/03/21,2020/03/21,2020/03/21,914514,200200987,12026,Assault,Aggravated Assault,"Firearm, Discharging At An Inhabited Dwelling",Open or Active,Southern,South of Market,6
+2020/03/21,2020/03/21,2020/03/21,914531,200201151,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Western Addition,5
+2020/03/21,2020/03/21,2020/03/21,914542,200201355,04138,Assault,Simple Assault,"Battery, former Spouse or Dating Relationship",Cite or Arrest Adult,Ingleside,Bernal Heights,9
+2020/03/21,2020/03/21,2020/03/21,914547,200201349,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Open or Active,Richmond,Inner Sunset,5
+2020/03/21,2020/03/21,2020/03/21,914549,200201521,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Tenderloin,Tenderloin,6
+2020/03/21,2020/03/21,2020/03/21,914575,200201559,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Bayview,Bayview Hunters Point,10
+2020/03/21,2020/03/22,2020/03/21,914586,200201781,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Bayview,Potrero Hill,10
+2020/03/21,2020/03/26,2020/03/21,915712,200201559,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/22,2020/03/22,2020/03/22,914584,200201838,04011,Assault,Aggravated Assault,"Assault, Aggravated, W/ Gun",Open or Active,Tenderloin,Tenderloin,6
+2020/03/22,2020/03/22,2020/03/22,914664,200202074,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Ingleside,Outer Mission,11
+2020/03/22,2020/03/22,2020/03/22,914676,200202159,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Haight Ashbury,5
+2020/03/22,2020/03/22,2020/03/22,914680,200202121,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Mission,Castro/Upper Market,8
+2020/03/22,2020/03/22,2020/03/22,914694,200202284,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Mission,Mission,9
+2020/03/22,2020/03/22,2020/03/22,914701,200202325,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Financial District/South Beach,3
+2020/03/22,2020/03/22,2020/03/22,914713,200202488,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Tenderloin,South of Market,6
+2020/03/22,2020/03/22,2020/03/22,914723,200202585,04134,Assault,Simple Assault,Battery,Open or Active,Mission,Mission,10
+2020/03/22,2020/03/22,2020/03/22,914726,200202604,04134,Assault,Simple Assault,Battery,Open or Active,Mission,Mission,10
+2020/03/22,2020/03/22,2020/03/22,914734,200202632,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Cite or Arrest Adult,Tenderloin,South of Market,6
+2020/03/22,2020/03/22,2020/03/22,914755,200202808,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Richmond,Western Addition,2
+2020/03/22,2020/03/22,2020/03/22,914776,200202999,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Southern,Mission Bay,6
+2020/03/22,2020/03/22,2020/03/22,914782,200203135,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Southern,South of Market,6
+2020/03/22,2020/03/22,2020/03/22,914799,200203301,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Open or Active,Southern,South of Market,6
+2020/03/22,2020/03/22,2020/03/22,914800,200203094,04134,Assault,Simple Assault,Battery,Open or Active,Southern,South of Market,6
+2020/03/22,2020/03/23,2020/03/22,914981,200204525,04081,Assault,Aggravated Assault,Shooting into Inhabited Dwelling or Occupied Vehicle,Open or Active,Ingleside,Glen Park,8
+2020/03/22,2020/03/24,2020/03/22,915151,200205896,04134,Assault,Simple Assault,Battery,Open or Active,Taraval,Inner Sunset,5
+2020/03/23,2020/03/23,2020/03/23,914810,200203395,04134,Assault,Simple Assault,Battery,Open or Active,Mission,Mission,10
+2020/03/23,2020/03/23,2020/03/23,914813,200203436,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Tenderloin,South of Market,6
+2020/03/23,2020/03/23,2020/03/23,914823,200203511,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Tenderloin,South of Market,6
+2020/03/23,2020/03/23,2020/03/23,914825,200203527,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Southern,South of Market,6
+2020/03/23,2020/03/23,2020/03/23,914896,200203696,04138,Assault,Simple Assault,"Battery, former Spouse or Dating Relationship",Cite or Arrest Adult,Southern,Mission Bay,6
+2020/03/23,2020/03/23,2020/03/23,914936,200203953,04114,Assault,Simple Assault,"Assault, Non-Aggravated, Att.",Open or Active,Tenderloin,South of Market,6
+2020/03/23,2020/03/23,2020/03/23,914961,200204086,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Mission,Mission,9
+2020/03/23,2020/03/23,2020/03/23,914976,200204434,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/23,2020/03/23,2020/03/23,914986,200204779,04104,Assault,Simple Assault,"Assault, Non-Aggravated",Cite or Arrest Adult,Taraval,West of Twin Peaks,7
+2020/03/23,2020/03/23,2020/03/23,914997,200204860,04134,Assault,Simple Assault,Battery,Open or Active,Ingleside,Excelsior,11
+2020/03/23,2020/03/23,2020/03/23,915001,200204876,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Tenderloin,Tenderloin,6
+2020/03/23,2020/03/23,2020/03/23,915033,200205034,04170,Assault,Simple Assault,False Imprisonment,Cite or Arrest Adult,Southern,South of Market,6
+2020/03/23,2020/03/24,2020/03/23,915102,200205391,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Tenderloin,Tenderloin,6
+2020/03/23,2020/03/24,2020/03/23,915102,200205391,04033,Assault,Aggravated Assault,"Assault, W/ Caustic Chemical to Injure or Disfigure",Open or Active,Tenderloin,Tenderloin,6
+2020/03/23,2020/03/24,2020/03/23,915102,200205391,04064,Assault,Aggravated Assault,"Assault, Mayhem, W/ Force",Open or Active,Tenderloin,Tenderloin,6
+2020/03/23,2020/03/24,2020/03/23,915163,200205943,04134,Assault,Simple Assault,Battery,Open or Active,Bayview,Bernal Heights,9
+2020/03/23,2020/03/24,2020/03/23,915196,200206139,04134,Assault,Simple Assault,Battery,Open or Active,Bayview,Portola,9
+2020/03/24,2020/03/24,2020/03/24,915039,200205181,04134,Assault,Simple Assault,Battery,Open or Active,Central,Presidio,2
+2020/03/24,2020/03/24,2020/03/24,915049,200205288,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/24,2020/03/24,2020/03/24,915149,200205711,04134,Assault,Simple Assault,Battery,Open or Active,Southern,South of Market,6
+2020/03/24,2020/03/24,2020/03/24,915209,200206151,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Park,Castro/Upper Market,8
+2020/03/24,2020/03/24,2020/03/24,915245,200205959,04081,Assault,Aggravated Assault,Shooting into Inhabited Dwelling or Occupied Vehicle,Open or Active,Ingleside,Visitacion Valley,10
+2020/03/24,2020/03/24,2020/03/24,915248,200206327,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Tenderloin,6
+2020/03/24,2020/03/24,2020/03/24,915251,200206418,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Bayview,Bayview Hunters Point,10
+2020/03/24,2020/03/25,2020/03/24,915356,200206929,04134,Assault,Simple Assault,Battery,Open or Active,Richmond,Presidio Heights,2
+2020/03/25,2020/03/25,2020/03/25,915355,200206888,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Southern,South of Market,6
+2020/03/25,2020/03/25,2020/03/25,915374,200207068,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Central,North Beach,3
+2020/03/25,2020/03/25,2020/03/25,915378,200207193,04134,Assault,Simple Assault,Battery,Open or Active,Park,Twin Peaks,7
+2020/03/25,2020/03/25,2020/03/25,915422,200207563,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/25,2020/03/25,2020/03/25,915437,200207591,04134,Assault,Simple Assault,Battery,Open or Active,Ingleside,Excelsior,11
+2020/03/25,2020/03/25,2020/03/25,915453,200207494,04154,Assault,Simple Assault,"Battery, Of A Police Officer",Open or Active,Northern,Pacific Heights,2
+2020/03/25,2020/03/25,2020/03/25,915458,200207977,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/25,2020/03/25,2020/03/25,915462,200207870,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Central,Nob Hill,3
+2020/03/25,2020/03/25,2020/03/25,915471,200208016,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Bayview,Bayview Hunters Point,10
+2020/03/25,2020/03/25,2020/03/25,915472,200207494,04154,Assault,Simple Assault,"Battery, Of A Police Officer",Open or Active,Northern,Pacific Heights,2
+2020/03/25,2020/03/25,2020/03/25,915499,200208260,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Central,Tenderloin,6
+2020/03/25,2020/03/25,2020/03/25,915505,200208157,04134,Assault,Simple Assault,Battery,Open or Active,Mission,Mission,9
+2020/03/25,2020/03/25,2020/03/25,915507,200208301,04154,Assault,Simple Assault,"Battery, Of A Police Officer",Cite or Arrest Adult,Central,Chinatown,3
+2020/03/25,2020/03/25,2020/03/25,915624,200206888,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Southern,South of Market,6
+2020/03/25,2020/03/25,2020/03/25,915633,200207347,04134,Assault,Simple Assault,Battery,Open or Active,Southern,South of Market,6
+2020/03/25,2020/04/10,2020/03/25,918663,200232316,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Hayes Valley,5
+2020/03/26,2020/03/26,2020/03/26,915524,200208414,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Cite or Arrest Adult,Northern,Western Addition,5
+2020/03/26,2020/03/26,2020/03/26,915526,200208458,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Open or Active,Southern,Mission,9
+2020/03/26,2020/03/26,2020/03/26,915620,200208674,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Mission,Mission,9
+2020/03/26,2020/03/26,2020/03/26,915660,200209111,04138,Assault,Simple Assault,"Battery, former Spouse or Dating Relationship",Open or Active,Northern,Marina,2
+2020/03/26,2020/03/26,2020/03/26,915685,200209337,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Cite or Arrest Adult,Bayview,Bayview Hunters Point,10
+2020/03/26,2020/03/26,2020/03/26,915711,200209644,04134,Assault,Simple Assault,Battery,Open or Active,Southern,Treasure Island,6
+2020/03/26,2020/03/26,2020/03/26,915713,200209525,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Cite or Arrest Adult,Northern,Western Addition,5
+2020/03/26,2020/03/26,2020/03/26,915713,200209525,04022,Assault,Aggravated Assault,"Assault, Att. Homicide, W/ Knife",Cite or Arrest Adult,Northern,Western Addition,5
+2020/03/26,2020/03/26,2020/03/26,915728,200209707,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Russian Hill,3
+2020/03/26,2020/03/26,2020/03/26,915731,200209763,04134,Assault,Simple Assault,Battery,Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/26,2020/03/26,2020/03/26,915738,200209901,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Open or Active,Mission,Mission,8
+2020/03/26,2020/03/26,2020/03/26,915742,200209519,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Park,Western Addition,5
+2020/03/26,2020/03/26,2020/03/26,915927,200209901,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Cite or Arrest Adult,Mission,Mission,9
+2020/03/26,2020/03/26,2020/03/26,917732,200209650,04154,Assault,Simple Assault,"Battery, Of A Police Officer",Cite or Arrest Adult,Park,Inner Sunset,5
+2020/03/27,2020/03/27,2020/03/27,915760,200210027,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Open or Active,Tenderloin,Tenderloin,6
+2020/03/27,2020/03/27,2020/03/27,915784,200210099,04092,Assault,Aggravated Assault,"Assault, Aggravated, W/ Gun",Open or Active,Bayview,Visitacion Valley,10
+2020/03/27,2020/03/27,2020/03/27,915787,200210152,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Tenderloin,Tenderloin,6
+2020/03/27,2020/03/27,2020/03/27,915816,200209901,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Cite or Arrest Adult,Mission,Mission,8
+2020/03/27,2020/03/27,2020/03/27,915833,200210500,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Ingleside,Bernal Heights,9
+2020/03/27,2020/03/27,2020/03/27,915841,200210679,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Tenderloin,Tenderloin,6
+2020/03/27,2020/03/27,2020/03/27,915861,200210691,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Northern,Western Addition,5
+2020/03/27,2020/03/27,2020/03/27,915899,200211207,04134,Assault,Simple Assault,Battery,Open or Active,Central,Financial District/South Beach,3
+2020/03/27,2020/03/27,2020/03/27,915909,200211150,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Taraval,Sunset/Parkside,4
+2020/03/27,2020/03/27,2020/03/27,915914,200211122,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Mission,Mission,8
+2020/03/27,2020/03/28,2020/03/27,916020,200212249,04134,Assault,Simple Assault,Battery,Open or Active,Southern,Financial District/South Beach,6
+2020/03/28,2020/03/28,2020/03/28,915942,200211570,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Mission,Mission,9
+2020/03/28,2020/03/28,2020/03/28,915943,200211564,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Open or Active,Central,Financial District/South Beach,3
+2020/03/28,2020/03/28,2020/03/28,915988,200211871,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Tenderloin,Tenderloin,6
+2020/03/28,2020/03/28,2020/03/28,915989,200211940,04134,Assault,Simple Assault,Battery,Open or Active,Southern,Mission Bay,6
+2020/03/28,2020/03/28,2020/03/28,916000,200211990,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Bayview,Bayview Hunters Point,10
+2020/03/28,2020/03/28,2020/03/28,916013,200212136,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Open or Active,Southern,South of Market,6
+2020/03/28,2020/03/28,2020/03/28,916025,200212324,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Mission,Mission,9
+2020/03/28,2020/03/28,2020/03/28,916027,200212205,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Mission,Castro/Upper Market,8
+2020/03/28,2020/03/28,2020/03/28,916061,200212170,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Tenderloin,Tenderloin,3
+2020/03/28,2020/03/28,2020/03/28,916063,200212352,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Mission,Castro/Upper Market,8
+2020/03/28,2020/03/28,2020/03/28,916068,200212653,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Central,Nob Hill,3
+2020/03/28,2020/03/28,2020/03/28,916070,200212136,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Open or Active,Southern,South of Market,6
+2020/03/28,2020/03/28,2020/03/28,916074,200212675,04134,Assault,Simple Assault,Battery,Open or Active,Park,Castro/Upper Market,8
+2020/03/28,2020/03/28,2020/03/28,916079,200212794,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Marina,2
+2020/03/28,2020/03/28,2020/03/28,916081,200212807,04011,Assault,Aggravated Assault,"Assault, Aggravated, W/ Gun",Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/28,2020/03/29,2020/03/28,916208,200213736,04134,Assault,Simple Assault,Battery,Open or Active,Park,Lone Mountain/USF,5
+2020/03/28,2020/03/30,2020/03/28,916326,200214687,04134,Assault,Simple Assault,Battery,Open or Active,Park,Lone Mountain/USF,5
+2020/03/29,2020/03/29,2020/03/29,916092,200212891,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Ingleside,Visitacion Valley,10
+2020/03/29,2020/03/29,2020/03/29,916142,200212998,04134,Assault,Simple Assault,Battery,Open or Active,Southern,South of Market,6
+2020/03/29,2020/03/29,2020/03/29,916157,200213203,04134,Assault,Simple Assault,Battery,Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/29,2020/03/29,2020/03/29,916182,200213463,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Tenderloin,6
+2020/03/29,2020/03/29,2020/03/29,916183,200213429,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Nob Hill,3
+2020/03/29,2020/03/29,2020/03/29,916185,200213485,04134,Assault,Simple Assault,Battery,Open or Active,Tenderloin,Financial District/South Beach,3
+2020/03/29,2020/03/29,2020/03/29,916190,200213532,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Mission,Mission,9
+2020/03/29,2020/03/29,2020/03/29,916197,200213435,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Taraval,Inner Sunset,7
+2020/03/29,2020/03/29,2020/03/29,916226,200213764,04012,Assault,Aggravated Assault,"Assault, Aggravated, W/ Knife",Cite or Arrest Adult,Bayview,Bayview Hunters Point,10
+2020/03/29,2020/03/29,2020/03/29,916249,200214007,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Taraval,Sunset/Parkside,4
+2020/03/29,2020/03/29,2020/03/29,916259,200214154,04021,Assault,Aggravated Assault,"Assault, Att. Homicide, W/ Gun",Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/29,2020/03/29,2020/03/29,916259,200214154,04081,Assault,Aggravated Assault,Shooting into Inhabited Dwelling or Occupied Vehicle,Open or Active,Bayview,Bayview Hunters Point,10
+2020/03/29,2020/03/29,2020/03/29,916261,200214201,04138,Assault,Simple Assault,"Battery, former Spouse or Dating Relationship",Cite or Arrest Adult,Taraval,Sunset/Parkside,4
+2020/03/29,2020/03/30,2020/03/29,916262,200214245,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Mission,Castro/Upper Market,8
+2020/03/29,2020/03/30,2020/03/29,916263,200214267,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Cite or Arrest Adult,Richmond,Outer Richmond,1
+2020/03/30,2020/03/30,2020/03/30,916280,200214336,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Mission,Mission,9
+2020/03/30,2020/03/30,2020/03/30,916280,200214336,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Cite or Arrest Adult,Mission,Mission,9
+2020/03/30,2020/03/30,2020/03/30,916322,200214427,04134,Assault,Simple Assault,Battery,Open or Active,Richmond,Outer Richmond,1
+2020/03/30,2020/03/30,2020/03/30,916344,200207068,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Central,North Beach,3
+2020/03/30,2020/03/30,2020/03/30,916351,200214853,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Bayview,Bayview Hunters Point,10
+2020/03/30,2020/03/30,2020/03/30,916357,200214819,04134,Assault,Simple Assault,Battery,Cite or Arrest Adult,Northern,Pacific Heights,5
+2020/03/30,2020/03/30,2020/03/30,916365,200214734,04134,Assault,Simple Assault,Battery,Open or Active,Ingleside,Outer Mission,11
+2020/03/30,2020/03/30,2020/03/30,916374,200214988,04134,Assault,Simple Assault,Battery,Open or Active,Taraval,Oceanview/Merced/Ingleside,11
+2020/03/30,2020/03/30,2020/03/30,916390,200200987,12026,Assault,Aggravated Assault,"Firearm, Discharging At An Inhabited Dwelling",Open or Active,Southern,South of Market,6
+2020/03/30,2020/03/30,2020/03/30,916393,200215099,04092,Assault,Aggravated Assault,"Assault, Aggravated, W/ Gun",Open or Active,Ingleside,Visitacion Valley,10
+2020/03/30,2020/03/30,2020/03/30,916409,200215168,04134,Assault,Simple Assault,Battery,Open or Active,Central,Chinatown,3
+2020/03/30,2020/03/30,2020/03/30,916434,200215641,04011,Assault,Aggravated Assault,"Assault, Aggravated, W/ Gun",Cite or Arrest Adult,Tenderloin,Tenderloin,6
+2020/03/30,2020/03/30,2020/03/30,916434,200215641,04021,Assault,Aggravated Assault,"Assault, Att. Homicide, W/ Gun",Cite or Arrest Adult,Tenderloin,Tenderloin,6
+2020/03/30,2020/03/30,2020/03/30,916434,200215641,04082,Assault,Aggravated Assault,"Firearm, Discharging at Occupied Bldg, Vehicle, or Aircraft",Cite or Arrest Adult,Tenderloin,Tenderloin,6
+2020/03/30,2020/03/30,2020/03/30,916447,200212352,04014,Assault,Aggravated Assault,"Assault, Aggravated, W/ Force",Open or Active,Mission,Castro/Upper Market,8
+2020/03/30,2020/04/06,2020/03/30,917761,200225264,04134,Assault,Simple Assault,Battery,Open or Active,Northern,Marina,2
+2020/03/31,2020/03/31,2020/03/31,916515,200215895,04011,Assault,Aggravated Assault,"Assault, Aggravated, W/ Gun",Open or Active,Southern,Mission Bay,10
+2020/03/31,2020/03/31,2020/03/31,916528,200216025,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Southern,South of Market,6
+2020/03/31,2020/03/31,2020/03/31,916563,200216382,04138,Assault,Simple Assault,"Battery, former Spouse or Dating Relationship",Cite or Arrest Adult,Tenderloin,South of Market,6
+2020/03/31,2020/03/31,2020/03/31,916588,200216649,04144,Assault,Simple Assault,"Battery, Sexual",Open or Active,Tenderloin,Tenderloin,6
+2020/03/31,2020/03/31,2020/03/31,916607,200216699,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Cite or Arrest Adult,Mission,Mission,9
+2020/03/31,2020/03/31,2020/03/31,916607,200216699,04022,Assault,Aggravated Assault,"Assault, Att. Homicide, W/ Knife",Cite or Arrest Adult,Mission,Mission,9
+2020/03/31,2020/03/31,2020/03/31,916613,200216934,04154,Assault,Simple Assault,"Battery, Of A Police Officer",Cite or Arrest Adult,Richmond,Lone Mountain/USF,1
+2020/03/31,2020/03/31,2020/03/31,916630,200216912,04104,Assault,Simple Assault,"Assault, Non-Aggravated",Open or Active,Southern,Financial District/South Beach,6
+2020/03/31,2020/03/31,2020/03/31,916638,200217039,04013,Assault,Aggravated Assault,"Assault, Aggravated, W/ Other Weapon",Open or Active,Northern,Nob Hill,3

@@ -1,0 +1,13 @@
+.selected {
+    background-color: #3299dd;
+    background-image: linear-gradient(to right, #219cce , #3598de);
+    color: white;
+    opacity: 0.9;
+}
+
+.selected a {
+    color: white;
+    text-shadow: black;
+    font-style: italic;
+    text-decoration: underline;
+}

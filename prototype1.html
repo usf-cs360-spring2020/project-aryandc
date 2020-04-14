@@ -23,7 +23,7 @@
       <div class="container">
           <div class="navbar-brand">
             <span class="navbar-item">
-              <h1 style="font-size: 22px">Final Project</h1>
+              <h1 style="font-size: 20px">Final Project</h1>
             </span>
               <span class="navbar-burger burger" data-target="navbarMenu">
                   <span></span>
@@ -36,7 +36,7 @@
                   <div class="tabs is-right">
                       <ul>
 
-                          <li class="is-active">
+                          <li>
                             <a href="index.html">
                               <span class="icon"><i class="fas fa-home"></i></span>
                               Home
@@ -50,12 +50,13 @@
                             </a>
                           </li>
 
-                          <li>
+                          <li class="is-active">
                             <a href="prototype1.html">
                               <span class="icon"><i class="fas fa-chart-bar"></i></span>
                               Bar Chart
                             </a>
                           </li>
+
                           <li>
                             <a href="acknowledgement.html">
                               <span class="icon"><i class="fas fa-tasks"></i></span>
@@ -85,7 +86,7 @@
   <div class="hero-body">
     <div class="container has-text-centered">
       <p class="title" style="font-size: 60px">
-        Does coronavirus lockdown reduced the crime rates in SF?
+        SF Police Department Assault Report for March, 2020
       </p>
       <!-- <p class="subtitle">
         Project Title
@@ -100,55 +101,52 @@
 
   <section class="section">
     <div class="container">
+      <!-- Begin page content -->
       <div class="content">
 
-        <h3>Introduction</h3>
-        <p>This project visualizes the police incident reports filled by officers or individuals (online reporting for non-emergency case) for the city of San Francisco. The data is collected from [<a href="https://datasf.org/opendata/" target="_blank">Data SF</a>].</p>
+        <h3 id="wrangling">Wrangling</h3>
 
-        <h3 id="goal">Goal</h3>
-        <p>My goal for this project is to figure out weather the coronavirus lockdown (started on march 17, 2020) had any impact on the crime rates in San Francisco. I am also going to determine what type of </p>
-        <p>My goal behind visualizing this dataset is to determine:
+        <p>The dataset for the below prototype is wrangled in the following way:
+
+        <pre>
+Filtered By:    Incident Datetime between "March 1, 2020" and "March 31, 2020",
+                Incident Category as "Assault"
+
+Grouped By:     Incident Date (day), Incident Number, Incident Subcategory, 
+                Incident Description, Police District, Analysis neighborhood,
+                Supervisor District
+
+Aggregated By:  Incident Number (sum)
+        </pre>
+
+        <h3>Tableau Prototype (Alpha Release)</h3>
+
+        <img src="resources/images/Tableau_Prototype_alpha_release.png" alt="tableau-prototype-alpha" width="960px" height="600px">
+
+        <h3>Data Encoding and Interpretation</h3>
+        <p>Color show the incident subcategory - 
           <ul>
-            <li>how the lockdown period is affecting crime rates in the city of San Francisco</li>
-            <li>what type of crime is the most prevalent during this lockdown period?</li>
-            <li>Which neighborhood is the most affected during this time period?</li>
-          </ul>  
-        </p>
-
-        <h5>How to navigate the website?</h5>
-        <p>The website is divided into five pages. These are:
-          <ul>
-            <li>
-              <strong>Home: </strong>
-              The page you are currently viewing is the home page. It contains information about the goal I want to achieve from this project (See <a href="#goal">Goal</a>). 
-            </li>
-
-            <li><strong>Data: </strong>
-              This page contains information about the dataset.
-              <ul>
-                <li>dataset elements</li>
-                <li>data license</li>
-                <li>dataset size</li>
-              </ul>
-            </li>
-
-            <li><strong>Visualization/(Bar chart for alpha release):</strong> This page includes the visualizations I create from the dataset. It will also contain the feedbacks I recieve on the prototypes.</li>
-
-            <li><strong>Acknowledgement:</strong> This page contains information about the people/s who helped me in this project.</li>
-
-            <li><strong>About: </strong> This page contains information about:
-            <ul>
-              <li>Me</li>
-              <li>My motivation behind selecting this project</li>
-              <li>Link to my github repository</li>
-            </ul>
-            </li>
+            <li>Aggravated Assault</li>
+            <li>Simple Assault</li>
           </ul>
+          The length of the bar indicates the number of incidents. The x axis is represented by the Day, and the y axis is represented by Incident Numbers.
         </p>
 
+        <h3>Conclusion based on the prototype</h3>
+        <p><ul>
+          <li>March 2nd has the highest number of assault cases reported.</li>
+          <li>There is a little decrease in assault cases after the lockdown period was started (March 17, 2020).</li>
+        </ul></p>
 
+        <h3>Peer Review Feedback</h3>
+        <span class="icon is-large">
+          <span class="fa-stack fa-lg">
+          <i class="fas fa-spinner fa-pulse"></i>
+          </span>
+        </span>
 
       </div>
+      <!-- End page content -->
     </div>
   </section>
 
