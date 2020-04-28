@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- TODO: Change title -->
-    <title>Bar Chart</title>
+    <title>Beta Release</title>
 
     <!-- Load Bulma from CDN (consider saving it to repository instead) -->
     <!-- https://bulma.io/ -->
@@ -127,17 +127,19 @@
         <p>The dataset for the below prototype is wrangled in the following way:
 
         <pre>
-Filtered By:    Incident Datetime between "March 1, 2020" and "March 31, 2020",
+Filtered By:    Incident Datetime between "Feb 1, 2020" and "April 30, 2020",
                 Incident Category as "Assault"
+                Incident Subcategory as "Aggravated Assault"
 
-Grouped By:     Incident Date (day), Incident Number, Incident Subcategory, 
-                Incident Description, Police District, Analysis neighborhood,
-                Supervisor District
+Basemap:        <a href="https://data.sfgov.org/Geographic-Locations-and-Boundaries/SF-Find-Neighborhoods/pty2-tcw4" target="_blank" style="color: cornflowerblue;">SF Find Neighborhoods</a>
+Streets:        <a href="https://data.sfgov.org/browse?category=Geographic+Locations+and+Boundaries" target="_blank" style="color: cornflowerblue;">SF Street names</a>
 
-Aggregated By:  Incident Number (sum)
+Aggregated By:  Incident Number (count)
         </pre>
 
         <h3>D3 Prototype (Beta Release)</h3>
+
+        <h4>Aggravated Assault Cases in San Francisco form March 2020 - April 2020</h4>
 
         <script src="https://d3js.org/d3.v5.min.js"></script>
         <script src="https://unpkg.com/d3-simple-slider"></script>
@@ -155,11 +157,11 @@ Aggregated By:  Incident Number (sum)
                 <g id="tooltip" pointer-events="none"></g>
                 <g id="details" pointer-events="none"></g>
               </g>
-              <g id="legend" pointer-events="none"></g>
+              <g id="legend"></g>
             </svg>
-            <figcaption>
-              Source: <a href="https://www.kaggle.com/san-francisco/sf-film-locations-in-san-francisco">SF Film Locations in San Francisco</a> (<a
-              href="https://data.sfgov.org/Geographic-Locations-and-Boundaries/Analysis-Neighborhoods/p5b7-5n3h">Neighborhoods</a>, <a href="https://data.sfgov.org/Geographic-Locations-and-Boundaries/Streets-Active-and-Retired/3psu-pn9h">Streets</a>)
+            <figcaption style="text-align: left; font-size: 13px;">
+              Source: <a href="https://data.sfgov.org/Public-Safety/Police-Department-Incident-Reports-2018-to-Present/wg3w-h783" target="_blank" style="color: cornflowerblue;">SF Police Department Incident Reports: 2018 to Present</a> (<a
+              href="https://data.sfgov.org/Geographic-Locations-and-Boundaries/SF-Find-Neighborhoods/pty2-tcw4" target="_blank" style="color: cornflowerblue;">Neighborhoods</a>, <a href="https://data.sfgov.org/browse?category=Geographic+Locations+and+Boundaries" target="_blank" style="color: cornflowerblue;">Streets</a>)
             </figcaption>
 
             <div class="align-items-center">
@@ -178,13 +180,18 @@ Aggregated By:  Incident Number (sum)
             drawMap();
           </script>
 
+        <h3>Question</h3>
+        <p></p>
+
+        <h3>Answer</h3>
+        <p></p>
+
         <h3>Data Encoding and Interpretation</h3>
-        <p>Color show the incident subcategory - 
+        <p>Color show the Aggravated Assault Cases by month - 
           <ul>
-            <li>Aggravated Assault</li>
-            <li>Simple Assault</li>
+            <li>March</li>
+            <li>April</li>
           </ul>
-          The length of the bar indicates the number of incidents. The x axis is represented by the Day, and the y axis is represented by Incident Numbers.
         </p>
 
         <h3>Conclusion based on the prototype</h3>

@@ -50,6 +50,21 @@
      stroke-width: 0.5px;
    }
 
+circle.symbol.hidden {
+    opacity: 0;
+}
+
+#legend {
+    position: absolute;
+}
+
+circle.leg {
+    fill-opacity: 0.5;
+  
+    stroke: white;
+    stroke-width: 1px;
+  }
+
 .active {
     stroke: black !important;
     stroke-width: 0.5px !important;

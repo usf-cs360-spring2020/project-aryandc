@@ -1,10 +1,10 @@
 function drawMap() {
     const urls = {
         basemap: "https://data.sfgov.org/resource/6ia5-2f8k.geojson",
-        streets: "https://data.sfgov.org/resource/3psu-pn9h.geojson?$limit=4000",
+        streets: "https://data.sfgov.org/resource/3psu-pn9h.geojson?$limit=20000",
         cases: "https://data.sfgov.org/resource/wg3w-h783.json"
     };
-    console.log("data loaded");
+    // console.log("data loaded");
 
     let config = {
         'svg': {},
@@ -16,7 +16,7 @@ function drawMap() {
     let height = 500;
 
     //calculate date range
-    const end = d3.timeDay.floor(new Date());
+    const end = d3.timeDay(new Date(2020, 3, 1));
     const start = d3.timeDay(new Date(2020, 1, 1));
     const format = d3.timeFormat("%Y-%m-%dT%H:%M:%S");
     const dateFormat = d3.timeFormat("%B %d, %Y");
@@ -25,16 +25,16 @@ function drawMap() {
     console.log(format(start), format(end));
     // console.log("months", d3.timeMonths(start, end));
 
-    urls.cases += "?$where=starts_with(incident_category, 'Assault')";
-    urls.cases += "AND starts_with(incident_subcategory, 'Aggravated Assault')";
+    urls.cases += "?$limit=5000&$where=starts_with(incident_category, 'Assault')";
+    urls.cases += "AND starts_with(incident_subcategory, 'Aggravated Assault')";//922067
     urls.cases += " AND incident_datetime between '" + format(start) + "'";
     urls.cases += " and '" + format(end) + "'";
     
 
     //output url before encoding
-    console.log("cases:", urls.cases);
+    // console.log("cases:", urls.cases);
     urls.cases = encodeURI(urls.cases);
-    console.log(urls.cases);
+    // console.log(urls.cases);
 
     const svg = d3.select('body').select('svg#betamap1')
         .attr('style', "outline: thin solid lightgrey")
@@ -44,24 +44,6 @@ function drawMap() {
     const zoom = d3.zoom()
       .scaleExtent([1, 8])
       .on("zoom", zoomed);
-    // var zoom = d3.zoom()
-    // .scaleExtent([1, 8])
-    // .on('zoom', () => {
-    //     g.basemap.selectAll('path.land')
-    //         .attr('transform', d3.event.transform);
-    //     g.streets.selectAll('path.street')
-    //         .attr('transform', d3.event.transform);
-    //     g.outline.selectAll('path.neighborhood')
-    //         .attr('transform', d3.event.transform);
-    //     g.arrests.selectAll("circle")
-    //         .attr('transform', d3.event.transform)
-    //         .attr('stroke-width', 1 / d3.event.transform.k)
-    //         .attr('r', 5 / d3.event.transform.k)
-    //     g.arrests.selectAll("circle.active")
-    //         .attr('stroke-width', 1 / d3.event.transform.k);
-
-    // });
-    // svg.call(zoom);
 
     //plot area
     let plot = svg.select('g#plot')
@@ -78,7 +60,7 @@ function drawMap() {
         tooltip: plot.select('g#tooltip'),
         legend: plot.select('g#legend')
     };
-    console.log("groups created!");
+    // console.log("groups created!");
 
     const details = g.details.append('foreignObject')
         .attr('id', 'details')
@@ -121,8 +103,6 @@ function drawMap() {
         d3.json(urls.streets).then(drawStreets);
         d3.json(urls.cases).then(drawArrests);
         svg.call(zoom);
-
-        // d3.json(urls.cases).then(drawLegend);
     });
 
     function drawBasemap(json) {
@@ -167,13 +147,13 @@ function drawMap() {
     }
 
     function drawStreets(json) {
-        console.log("streets", json);
+        // console.log("streets", json);
 
         const streets = json.features.filter(function(d) {
             return d;
         });
 
-        console.log("removed", json.features.length - streets.length, "inactive streets");
+        // console.log("removed", json.features.length - streets.length, "inactive streets");
 
         g.streets.selectAll("path.street")
             .data(streets)
@@ -186,9 +166,8 @@ function drawMap() {
     function drawArrests(json) {
         let color = d3.scaleOrdinal(d3.schemeCategory10);
         
-
         json.forEach(function(d) {
-            if (d.latitude != null && d.longitude != null) {
+            if (d.latitude != null && d.longitude != null && d.analysis_neighborhood != null) {
                 const latitude = parseFloat(d.latitude);
                 const longitude = parseFloat(d.longitude);
                 const pixels = projection([longitude, latitude]);
@@ -198,20 +177,21 @@ function drawMap() {
                 d.day = parseInt(dayFormat(new Date(d.incident_datetime)));
                 d.month = monthFormatter(new Date(d.incident_datetime));
                 d.subcategory = d.incident_subcategory;
-            }}); 
+            }
+        }); 
 
         console.log("arrests", json);
 
-        createSlider(json);
+        // createSlider(json);
 
         const symbols = g.arrests.selectAll("circle")
             .data(json)
             .enter().append("circle")
                 .attr("cx", d => d.x)
                 .attr("cy", d => d.y)
-                .attr("r", 4)
+                .attr("r", 5)
                 .attr("fill", function(d) {
-                    console.log(monthFormatter(new Date(d.incident_datetime)));
+                    // console.log(monthFormatter(new Date(d.incident_datetime)));
                     return color(monthFormatter(new Date(d.incident_datetime)));
                 })
                 .attr("class", "symbol");
@@ -253,6 +233,8 @@ function drawMap() {
             d3.select(this).style("stroke", "");
             d3.selectAll("div#details").remove();
         });
+
+        drawLegend(json);
     }
 
     function createTooltip(row, index) {
@@ -260,6 +242,9 @@ function drawMap() {
 
         for (let col in row) {
             switch (col) {
+                case 'incident_id':
+                    out['ID:\xa0'] = row[col];
+                break;
                 case 'analysis_neighborhood':
                     out['Neighborhood:\xa0'] = row[col];
                 break;
@@ -307,7 +292,7 @@ function drawMap() {
             return monthInNum(d.month);
         }));
         
-        console.log("Years", years);
+        // console.log("Years", years);
         let minYear = 4;
         let maxYear = 0;
 
@@ -319,7 +304,7 @@ function drawMap() {
                 maxYear = d;
             }
         });
-        console.log("[minYear, maxYear", [minYear, maxYear]);
+        // console.log("[minYear, maxYear", [minYear, maxYear]);
 
         var sliderRange = d3.sliderBottom()
             .min(minYear)
@@ -330,7 +315,7 @@ function drawMap() {
             .default([0, 3])
             .fill('#2196f3')
             .on('onchange', value => {
-                d3.select('p#value-simple').text(value.join('-'));
+                d3.select('p#value-simple').text(intInMonths(value[0]) + " - " +  intInMonths(value[1]));
                 updateMap(value);
             });
 
@@ -345,10 +330,103 @@ function drawMap() {
         gTime.call(sliderRange);
 
         d3.select('p#value-simple').text(
-            sliderRange.value()
-            .join('-')
+            intInMonths(sliderRange.value()[0]) + " - " +  intInMonths(sliderRange.value()[1])
         );
+    }
 
+    function drawLegend(json) {
+        var legendsvg = d3.select("body").select("g#legend")
+            .attr("width", 400)
+            .attr("height", 500);
+
+        var colors = d3.scaleOrdinal(d3.schemeCategory10)
+            .domain(["January", "February", "March", "April", "May", "June", "July", "September", "October", "November", "December"]);
+
+        var legendText = ["January", "February", "March", "April", "May", "June", "July", "September", "October", "November", "December"];
+
+        var legend = legendsvg.selectAll("g.legend")
+            .data(["0"])
+            .enter().append("g")
+                .attr("class", "legend")
+                .attr("transform", translate(850,300));
+
+        //heading
+        legend.append("text")
+      .attr("x", 0)
+      .attr("y", 10)
+      .text("Month")
+      .style("font-size", "16px")
+      .attr("alignment-baseline","middle");
+
+        //colors with text
+        legend.append("circle")
+        .attr("class", "leg")
+        .attr("cx", 10)
+        .attr("cy", 40)
+        .attr("r", 5)
+        .style("fill", colors("January"))
+        .on("click", function(){ 
+            filterCircle("March");
+            const legendCell = d3.select(this);
+            legendCell.classed('hidden', !legendCell.classed('hidden')); // toggle opacity of legend item
+        });
+
+        legend.append("circle")
+        .attr("class", "leg")
+        .attr("cx", 10)
+        .attr("cy", 70)
+        .attr("r", 5)
+        .style("fill", colors("February"))
+        .on("click", function(){ 
+            filterCircle("April");
+            const legendCell = d3.select(this);
+            legendCell.classed('hidden', !legendCell.classed('hidden')); // toggle opacity of legend item
+        });
+
+        // legend.append("circle")
+        // .attr("class", "leg")
+        // .attr("cx", 10)
+        // .attr("cy", 100)
+        // .attr("r", 5)
+        // .style("fill", colors("March"))
+        // .on("click", function(){
+        //     filterCircle("April");
+        //     const legendCell = d3.select(this);
+        //     legendCell.classed('hidden', !legendCell.classed('hidden')); // toggle opacity of legend item
+        // });
+
+        legend.append("text")
+        .attr("x", 30)
+        .attr("y", 40)
+        .text(legendText[2])
+        .style("font-size", "11px")
+        .attr("alignment-baseline","middle");
+
+        legend.append("text")
+        .attr("x", 30)
+        .attr("y", 70)
+        .text(legendText[3])
+        .style("font-size", "11px")
+        .attr("alignment-baseline","middle");
+
+        // legend.append("text")
+        // .attr("x", 30)
+        // .attr("y", 100)
+        // .text(legendText[3])
+        // .style("font-size", "11px")
+        // .attr("alignment-baseline","middle");
+
+    }
+
+    function filterCircle(c) {
+        // console.log("C:", c);
+        d3.selectAll("#arrests circle")
+          .filter(function(d) {
+            return d.month != c;
+          })
+          .classed('hidden', function() { // toggle "hidden" class
+            return !d3.select(this).classed('hidden');
+          });
     }
 
     function intInMonths(d) {
@@ -448,7 +526,7 @@ function drawMap() {
     }
 
     function reset() {
-        svg.transition().duration(1000).call(
+        svg.transition().duration(750).call(
           zoom.transform,
           d3.zoomIdentity,
           d3.zoomTransform(svg.node()).invert([width / 2, height / 2])
@@ -458,7 +536,7 @@ function drawMap() {
     function clicked(d) {
         const [[x0, y0], [x1, y1]] = path.bounds(d);
         d3.event.stopPropagation();
-        svg.transition().duration(1000).call(
+        svg.transition().duration(750).call(
           zoom.transform,
           d3.zoomIdentity
             .translate(width / 2, height / 2)
@@ -482,7 +560,7 @@ function drawMap() {
         g.arrests.selectAll("circle")
             .attr('transform', d3.event.transform)
             .attr('stroke-width', 0.5 / d3.event.transform.k)
-            .attr('r', 4 / d3.event.transform.k)
+            .attr('r', 5/ d3.event.transform.k)
         g.arrests.selectAll("circle.active")
             .attr('stroke-width', 1 / d3.event.transform.k);
       }
