@@ -179,6 +179,7 @@
         <p>
           <ul>
             <li>The answer to the second question is difficult to answer from the prototype without some filtering. I have implemented filtering based on the legend which can be accessed by clicking on the legend color box of the particular month. After filtering the visualization, we can see that for the month of April, the number of cases are relatively low than the previous month. For the month of March, as the data is for the whole month and not from the date of the lockdown (there is a lie factor), we cannot say if the lockdown change the number of cases. Some data points overlaps each other which will be fixed before the final release. Also, as the data is dense, creating a scatter plot matrix or a bar chart (for the final release) to answer this question will be a better option.</li>
+            <li><strong>Note</strong>: There are two data point (outliers) of whose neighborhoods are blank and will be removed before the final release.</li>
           </ul>
         </p>
 
@@ -207,6 +208,8 @@
 Filtered By:    Incident Datetime between "Feb 1, 2020" and "April 28, 2020",
                 Incident Category as "Assault"
                 Incident Subcategory as "Aggravated Assault"
+                Latitude is "not blank"
+                Longitude is "not blank"
 
 Basemap:        <a href="https://data.sfgov.org/Geographic-Locations-and-Boundaries/SF-Find-Neighborhoods/pty2-tcw4" target="_blank" style="color: cornflowerblue;">SF Find Neighborhoods</a>
 Streets:        <a href="https://data.sfgov.org/browse?category=Geographic+Locations+and+Boundaries" target="_blank" style="color: cornflowerblue;">SF Street names</a>
