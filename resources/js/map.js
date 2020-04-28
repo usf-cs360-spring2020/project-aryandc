@@ -1,7 +1,7 @@
 function drawMap() {
     const urls = {
         basemap: "https://data.sfgov.org/resource/6ia5-2f8k.geojson",
-        streets: "https://data.sfgov.org/resource/3psu-pn9h.geojson?$limit=20000",
+        streets: "https://data.sfgov.org/resource/3psu-pn9h.geojson?$limit=15000",
         cases: "https://data.sfgov.org/resource/wg3w-h783.json"
     };
     // console.log("data loaded");
@@ -16,14 +16,14 @@ function drawMap() {
     let height = 500;
 
     //calculate date range
-    const end = d3.timeDay(new Date(2020, 3, 1));
+    const end = d3.timeDay(new Date(2020, 4, 1));
     const start = d3.timeDay(new Date(2020, 1, 1));
     const format = d3.timeFormat("%Y-%m-%dT%H:%M:%S");
     const dateFormat = d3.timeFormat("%B %d, %Y");
     const dayFormat = d3.timeFormat("%d");
     const monthFormatter = d3.timeFormat("%B");
     console.log(format(start), format(end));
-    // console.log("months", d3.timeMonths(start, end));
+    console.log("months", d3.timeMonths(start, end));
 
     urls.cases += "?$limit=5000&$where=starts_with(incident_category, 'Assault')";
     urls.cases += "AND starts_with(incident_subcategory, 'Aggravated Assault')";//922067
@@ -366,7 +366,7 @@ function drawMap() {
         .attr("r", 5)
         .style("fill", colors("January"))
         .on("click", function(){ 
-            filterCircle("March");
+            filterCircle("February");
             const legendCell = d3.select(this);
             legendCell.classed('hidden', !legendCell.classed('hidden')); // toggle opacity of legend item
         });
@@ -378,43 +378,43 @@ function drawMap() {
         .attr("r", 5)
         .style("fill", colors("February"))
         .on("click", function(){ 
+            filterCircle("March");
+            const legendCell = d3.select(this);
+            legendCell.classed('hidden', !legendCell.classed('hidden')); // toggle opacity of legend item
+        });
+
+        legend.append("circle")
+        .attr("class", "leg")
+        .attr("cx", 10)
+        .attr("cy", 100)
+        .attr("r", 5)
+        .style("fill", colors("March"))
+        .on("click", function(){
             filterCircle("April");
             const legendCell = d3.select(this);
             legendCell.classed('hidden', !legendCell.classed('hidden')); // toggle opacity of legend item
         });
 
-        // legend.append("circle")
-        // .attr("class", "leg")
-        // .attr("cx", 10)
-        // .attr("cy", 100)
-        // .attr("r", 5)
-        // .style("fill", colors("March"))
-        // .on("click", function(){
-        //     filterCircle("April");
-        //     const legendCell = d3.select(this);
-        //     legendCell.classed('hidden', !legendCell.classed('hidden')); // toggle opacity of legend item
-        // });
-
         legend.append("text")
         .attr("x", 30)
         .attr("y", 40)
-        .text(legendText[2])
+        .text(legendText[1])
         .style("font-size", "11px")
         .attr("alignment-baseline","middle");
 
         legend.append("text")
         .attr("x", 30)
         .attr("y", 70)
-        .text(legendText[3])
+        .text(legendText[2])
         .style("font-size", "11px")
         .attr("alignment-baseline","middle");
 
-        // legend.append("text")
-        // .attr("x", 30)
-        // .attr("y", 100)
-        // .text(legendText[3])
-        // .style("font-size", "11px")
-        // .attr("alignment-baseline","middle");
+        legend.append("text")
+        .attr("x", 30)
+        .attr("y", 100)
+        .text(legendText[3])
+        .style("font-size", "11px")
+        .attr("alignment-baseline","middle");
 
     }
 
@@ -422,6 +422,7 @@ function drawMap() {
         // console.log("C:", c);
         d3.selectAll("#arrests circle")
           .filter(function(d) {
+            //   console.log("SELECTED", d.month)
             return d.month != c;
           })
           .classed('hidden', function() { // toggle "hidden" class
