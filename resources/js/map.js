@@ -1,7 +1,7 @@
 function drawMap() {
     const urls = {
         basemap: "https://data.sfgov.org/resource/6ia5-2f8k.geojson",
-        streets: "https://data.sfgov.org/resource/3psu-pn9h.geojson?$limit=20000",
+        streets: "https://data.sfgov.org/resource/3psu-pn9h.geojson?$limit=1000",
         cases: "https://data.sfgov.org/resource/wg3w-h783.json"
     };
     console.log("data loaded");
@@ -118,7 +118,7 @@ function drawMap() {
         
         drawBasemap(json);
 
-        d3.json(urls.streets).then(drawStreets);
+        d3.json('resources/data/streets.geojson').then(drawStreets);
         d3.json(urls.cases).then(drawArrests);
         svg.call(zoom);
 
