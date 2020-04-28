@@ -122,7 +122,8 @@
 
         <p style="font-family: sans-serif; font-style: italic; text-align: right; font-size: smaller;">- (Image Source - <a href="https://www.einfochips.com/blog/best-business-intelligence-and-data-visualization-tools-for-2019/" target="_blank">Best Business Intelligence and Data Visualization Tools for 2029</a> - February 21, 2019)</p>
 
-        <h3>D3 Prototype (Beta Release)</h3>
+        <h3 id="map-d3">D3 Prototype (Beta Release)</h3>
+        <p>See <a href="#interactivity-guide" style="color: cornflowerblue;">Interactivity Guide</a> for the visualization.</p>
 
         <h4>Aggravated Assault Cases in San Francisco form February 2020 - April 2020</h4>
 
@@ -165,7 +166,59 @@
             drawMap();
           </script>
 
-<h3>Interactivity Guide</h3>
+        <h3>Question</h3>
+        <p>Which neighborhood has the most Aggravated Assault Cases in the month of February, March, and April? Has the number of cases changed due to lockdown?</p>
+
+        <h3>Answer</h3>
+        <p>
+          <ul>
+            <li>The answer for the first question is easy to find from the D3 Prototype. You can easily see from the prototype that the neighborhoods of "Mission", "Tenderloin", and "South of Market" have the maximum number of cases in the given time period. However, it is very hard to determine, which neighbour out of three has the most number of incidents, A better way to represent this will be to use a Cholreopleth map. A tableau prototype for the above dataset visualized in a chloreopleth map is given below.</li>
+          </ul>
+          <img src="resources/images/betamap1.png" alt="Tableab Beta Map 1" width="600">
+        </p>
+
+        <p>
+          <ul>
+            <li>The answer to the second question is difficult to answer from the prototype without some filtering. I have implemented filtering based on the legend which can be accessed by clicking on the legend color box of the particular month. After filtering the visualization, we can see that for the month of April, the number of cases are relatively low than the previous month. For the month of March, as the data is for the whole month and not from the date of the lockdown (there is a lie factor), we cannot say if the lockdown change the number of cases. Some data points overlaps each other which will be fixed before the final release. Also, as the data is dense, creating a scatter plot matrix or a bar chart (for the final release) to answer this question will be a better option.</li>
+            <li><strong>Note</strong>: There are two data point (outliers) of whose neighborhoods are blank and will be removed before the final release.</li>
+          </ul>
+        </p>
+
+        <h3>Data Encoding</h3>
+        <p>
+          <ul>
+            <li>
+              The circles represent the location (lattitude and longitude) of every request for Aggravated Assault cases for the month of February, March, and April. The circle is enclosed as per the request source.
+            </li>
+            <li>
+              Color show the Aggravated Assault Cases by month - 
+              <ul>
+                <li>February</li>
+                <li>March</li>
+                <li>April</li>
+              </ul>
+            </li>
+          </ul>
+        </p>
+
+        <h3 id="wrangling">Wrangling</h3>
+
+        <p>The dataset for the below prototype is wrangled in the following way:
+
+        <pre>
+Filtered By:    Incident Datetime between "Feb 1, 2020" and "April 28, 2020",
+                Incident Category as "Assault"
+                Incident Subcategory as "Aggravated Assault"
+                Latitude is "not blank"
+                Longitude is "not blank"
+
+Basemap:        <a href="https://data.sfgov.org/Geographic-Locations-and-Boundaries/SF-Find-Neighborhoods/pty2-tcw4" target="_blank" style="color: cornflowerblue;">SF Find Neighborhoods</a>
+Streets:        <a href="https://data.sfgov.org/browse?category=Geographic+Locations+and+Boundaries" target="_blank" style="color: cornflowerblue;">SF Street names</a>
+
+Aggregated By:  Incident Number (count)
+        </pre>
+
+        <h3 id="interactivity-guide">Interactivity Guide</h3>
 <p>This visualization will have the following interactivities:</p>
   
 <table class="table is-bordered">
@@ -271,59 +324,9 @@
   </tbody>
 </table>
 
+<p>Go back to <a href="#map-d3" style="color: cornflowerblue;">D3 Prototype</a></p>
+
 </p>
-
-        <h3>Question</h3>
-        <p>Which neighborhood has the most Aggravated Assault Cases in the month of February, March, and April? Has the number of cases changed due to lockdown?</p>
-
-        <h3>Answer</h3>
-        <p>
-          <ul>
-            <li>The answer for the first question is easy to find from the D3 Prototype. You can easily see from the prototype that the neighborhoods of "Mission", "Tenderloin", and "South of Market" have the maximum number of cases in the given time period. However, it is very hard to determine, which neighbour out of three has the most number of incidents, A better way to represent this will be to use a Cholreopleth map. A tableau prototype for the above dataset visualized in a chloreopleth map is given below.</li>
-          </ul>
-          <img src="resources/images/betamap1.png" alt="Tableab Beta Map 1" width="600">
-        </p>
-
-        <p>
-          <ul>
-            <li>The answer to the second question is difficult to answer from the prototype without some filtering. I have implemented filtering based on the legend which can be accessed by clicking on the legend color box of the particular month. After filtering the visualization, we can see that for the month of April, the number of cases are relatively low than the previous month. For the month of March, as the data is for the whole month and not from the date of the lockdown (there is a lie factor), we cannot say if the lockdown change the number of cases. Some data points overlaps each other which will be fixed before the final release. Also, as the data is dense, creating a scatter plot matrix or a bar chart (for the final release) to answer this question will be a better option.</li>
-            <li><strong>Note</strong>: There are two data point (outliers) of whose neighborhoods are blank and will be removed before the final release.</li>
-          </ul>
-        </p>
-
-        <h3>Data Encoding</h3>
-        <p>
-          <ul>
-            <li>
-              The circles represent the location (lattitude and longitude) of every request for Aggravated Assault cases for the month of February, March, and April. The circle is enclosed as per the request source.
-            </li>
-            <li>
-              Color show the Aggravated Assault Cases by month - 
-              <ul>
-                <li>February</li>
-                <li>March</li>
-                <li>April</li>
-              </ul>
-            </li>
-          </ul>
-        </p>
-
-        <h3 id="wrangling">Wrangling</h3>
-
-        <p>The dataset for the below prototype is wrangled in the following way:
-
-        <pre>
-Filtered By:    Incident Datetime between "Feb 1, 2020" and "April 28, 2020",
-                Incident Category as "Assault"
-                Incident Subcategory as "Aggravated Assault"
-                Latitude is "not blank"
-                Longitude is "not blank"
-
-Basemap:        <a href="https://data.sfgov.org/Geographic-Locations-and-Boundaries/SF-Find-Neighborhoods/pty2-tcw4" target="_blank" style="color: cornflowerblue;">SF Find Neighborhoods</a>
-Streets:        <a href="https://data.sfgov.org/browse?category=Geographic+Locations+and+Boundaries" target="_blank" style="color: cornflowerblue;">SF Street names</a>
-
-Aggregated By:  Incident Number (count)
-        </pre>
 
         <h3>Peer Review Feedback</h3>
         <span class="icon is-large">
