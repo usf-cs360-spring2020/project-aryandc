@@ -1,0 +1,65 @@
+body {
+    background-color: white;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 9pt;
+  }
+
+  svg#map {
+    background-color: #C9DEEA;
+    border: 1px solid lightgrey;
+  }
+  
+  #tooltip {
+    font-weight: 600;
+    text-shadow: 0px 2px 2px white;
+    font: 20px sans-serif;
+    fill: black;
+    stroke: none;
+  }
+  
+  div.tooltip {
+    position: absolute;
+    text-align: center;
+    padding: 5px;
+    font: 12px sans-serif;
+    background-color: white;
+    border: 1px #b7b7b7 solid;
+    pointer-events: none;
+    width: auto;
+  }
+  
+  path.land {
+    fill: #dddddd;
+    stroke: none;
+  }
+  
+  path.neighborhood {
+    fill: white;
+    stroke: white;
+    stroke-width: 3.5px;
+    pointer-events: none;
+  }
+  
+  .active {
+    stroke: red !important;
+    stroke-width: 1.5px !important;
+  }
+  
+  a:link,
+  a:visited {
+    color: #444444;
+  }
+  
+  a:hover,
+  a:active {
+    color: red;
+  }
+  
+  /* Legend Position Style */
+  .legend {
+    position: absolute;
+    left: 1500px;
+    top: 600px;
+  }
+  
