@@ -145,11 +145,6 @@
           drawMapChart()
         </script> -->
 
-        <p id="year-button">Year: <span>
-            <select id="selectButton"></select>
-          </span></p>
-        <br>
-        <br>
         <p id="category-button">Incident Category: <span><select id="categoryButton"></select></span></p>
         <br>
         <br>
@@ -164,6 +159,16 @@
           </svg>
 
           <svg id="legend-svg" style="position: absolute;"></svg>
+
+          <svg id="map2">
+            <g id="basemap"></g>
+            <g id="outline" pointer-events="none"></g>
+            <g id="cases"></g>
+            <g id="tooltip" pointer-events="none"></g>
+            <g id="details" pointer-events="none"></g>
+          </svg>
+
+          <svg id="legend-svg2" style="position: absolute;"></svg>
 
           <figcaption>
             <p>Aryan Choudhary</p>

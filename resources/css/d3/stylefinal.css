@@ -64,10 +64,15 @@ select#categoryButton {
     background-color: #C9DEEA;
     border: 1px solid lightgrey;
   }
+
+  svg#map2 {
+    background-color: #C9DEEA;
+    border: 1px solid lightgrey;
+  }
   
   #tooltip {
     font-weight: 600;
-    text-shadow: 0px 2px 2px white;
+    text-shadow: 0px 10px 10px white;
     font: 20px sans-serif;
     fill: black;
     stroke: none;
@@ -97,8 +102,8 @@ select#categoryButton {
   }
   
   .active {
-    stroke: red !important;
-    stroke-width: 1.5px !important;
+    stroke: lime !important;
+    stroke-width: 2px !important;
   }
   
   a:link,
