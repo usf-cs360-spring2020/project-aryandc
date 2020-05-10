@@ -5,6 +5,61 @@ body {
     font-size: 9pt;
   }
 
+  select {
+    /* position: absolute; */
+    align-items: center;
+    width: auto;
+    height: auto;
+    font-size: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #8c3a3d;
+    border: none;
+    border-radius: 10px;
+    border-bottom: 2px solid #962d22;
+    color: white;
+    margin-left: 30px;
+    padding: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* Adding transition effect */
+    transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+  }
+  /* For IE <= 11 */
+  select::-ms-expand {
+    display: none; 
+  }
+
+select:hover,
+select:focus {
+  color: #c0392b;
+  background-color: white;
+  border-bottom-color: #DCDCDC;
+}
+
+p#year-button{
+    position: absolute;
+    left: 200px;
+    font-size: large;
+}
+
+select#selectButton {
+    font-size: 14px;
+    text-align: center;
+}
+
+p#category-button{
+    position: absolute;
+    left: 200px;
+    font-size: large;
+}
+
+select#categoryButton {
+  font-size: 14px;
+  align-content: left;
+}
+
   svg#map {
     background-color: #C9DEEA;
     border: 1px solid lightgrey;
@@ -60,6 +115,5 @@ body {
   .legend {
     position: absolute;
     left: 1500px;
-    top: 600px;
+    top: 650px;
   }
-  

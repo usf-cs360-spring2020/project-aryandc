@@ -134,6 +134,25 @@
         <script src="https://d3js.org/d3-geo.v1.min.js"></script> -->
 
         <link rel="stylesheet" href="resources/css/d3/stylefinal.css" type="text/css">
+        <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+        <!-- <script type="text/javascript" src="resources/js/test.js"></script>
+
+        <svg id="colorLegend" height="100" width="960">
+        </svg>
+        <div id="vis" class="is-full">
+        </div>
+        <script type="text/javascript">
+          drawMapChart()
+        </script> -->
+
+        <p id="year-button">Year: <span>
+            <select id="selectButton"></select>
+          </span></p>
+        <br>
+        <br>
+        <p id="category-button">Incident Category: <span><select id="categoryButton"></select></span></p>
+        <br>
+        <br>
 
         <figure>
           <svg id="map">
@@ -143,7 +162,9 @@
             <g id="tooltip" pointer-events="none"></g>
             <g id="details" pointer-events="none"></g>
           </svg>
+
           <svg id="legend-svg" style="position: absolute;"></svg>
+
           <figcaption>
             <p>Aryan Choudhary</p>
             Source: <a
@@ -154,11 +175,9 @@
           </figcaption>
         </figure>
 
-        <svg id="heatmap"></svg>
 
-
-        <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
         <script type="text/javascript" src="resources/js/chloreopleth.js"></script>
+        <script type="text/javascript" src="resources/js/test.js"></script>
         <link rel="stylesheet" href="resources/css/d3/stylefinal.css" type="text/css">
         <!-- <link rel="stylesheet" href="resources/css/d3/style.css" type="text/css">
         <link rel="stylesheet" href="resources/css/d3/table.css" type="text/css"> -->

@@ -9,17 +9,49 @@ const end = d3.timeDay(new Date(2020, 04, 1));
 const start = d3.timeDay(new Date(2018, 12, 1))
 const format = d3.timeFormat("%Y-%m-%dT%H:%M:%S");
 console.log(format(start), format(end));
-// const end = d3.timeDay(new Date(2019, 11, 31));
-// const start = d3.timeDay(new Date(2018, 12, 1));
-// const format = d3.timeFormat("%Y-%m-%dT%H:%M:%S");
-// console.log(format(start), format(end));
 
 var formatTimeHour = d3.timeFormat("%H");
 var formatTimeDay = d3.timeFormat("%u");
 
+var Category = "Assault";
+var incidentType = [
+  "Assault",
+  "Arson",
+  "Burglary",
+  "Case Closure",
+  "Civil Sidewalks",
+  "Courtest Report",
+  "Disorderly Conduct",
+  "Drug Offense",
+  "Drug Violation",
+  "Embezzlement",
+  "Family Offense",
+  "Fire Report",
+  "Forgery and Counterfeiting",
+  "Fraud",
+  "Gambling",
+  "Homicide",
+  "Juvenile Offenses",
+  "Larceny Theft",
+  "Liquor Laws",
+  "Lost Property",
+  "Mallicious Mischief",
+  "Miscellaneous Investigation",
+  "Missing Person",
+  "Motor Vehicle Theft",
+  "Non-Criminal",
+  "Offences Against The Family And Children",
+  "Other",
+  "Other Offenses",
+  "Rape",
+  "Robbery"
+];
+
 // add parameters to url
-urls.cases += "?$limit=100000&$where=starts_with(incident_category, 'Assault')";
-urls.cases += " AND incident_datetime between '" + format(start) + "'";
+urls.cases += "?$limit=200000&$where=";
+urls.cases += " incident_datetime between '" + format(start) + "'";
+// urls.cases += "?$limit=100000&$where=";
+// urls.cases += "incident_datetime between '" + format(start) + "'";
 urls.cases += " and '" + format(end) + "'";
 urls.cases += " AND analysis_neighborhood not like ''";
 urls.cases += " AND analysis_neighborhood not like 'null'";
@@ -37,7 +69,9 @@ var width = 960;
 var height = 500;
 
 var lowColor = '#fee6db'
-var highColor = '#ac1217'
+var highColor = '#67000d'
+
+
 
 var margin = {
   top: 10,
@@ -87,7 +121,10 @@ details.style("visibility", "hidden");
 
 // setup projection
 // https://github.com/d3/d3-geo#geoConicEqualArea
-const projection = d3.geoConicEqualArea();
+const projection = d3.geoConicEqualArea()
+  .scale(220)
+  .translate([width / 2, height / 2]);
+
 projection.parallels([37.692514, 37.840699]);
 projection.rotate([122, 0]);
 
@@ -95,7 +132,6 @@ projection.rotate([122, 0]);
 const path = d3.geoPath().projection(projection);
 
 function formatDataForMap(data) {
-  console.log(data);
   dataset = data;
   //grouping and sorting of data
   let dataGroup = d3.nest()
@@ -123,21 +159,44 @@ d3.json(urls.cases).then(drawMap);
 
 // Load in my states data!
 function drawMap(data) {
+  // console.log("Initial data", data);
+
+
+  var main_data = data;
+
+  /* ------temp-------- */
+  var allGroup = d3.map(data, function (d) { return (d.incident_year) }).keys()
+  // console.log(allGroup);
+
+  data = data.filter(function (d) {
+    return d.incident_year == allGroup[0] && d.incident_category == Category;
+  });
+
+  // console.log("INITIAL DATA,", data)
+
+  // console.log("YearGroup", allGroup);
+
+  d3.select("#selectButton")
+    .selectAll('myOptions')
+    .data(allGroup)
+    .enter()
+    .append('option')
+    .text(function (d) { return d; }) // text showed in the menu
+    .attr("value", function (d) { return d; }) // corresponding value returned by the button
+
+  d3.select("#categoryButton")
+    .selectAll('myOptions')
+    .data(incidentType)
+    .enter()
+    .append('option')
+    .text(function (d) { return d; }) // text showed in the menu
+    .attr("value", function (d) { return d; }) // corresponding value returned by the button
+  /* ------temp-------- */
+
+
   dataset = data;
 
   data = formatDataForMap(data);
-
-  console.log("DATA: ", data);
-
-  color = d3.scaleSequential(
-    [
-      0,
-      d3.max(data, function (d) {
-        return d.value;
-      })
-    ],
-    d3.interpolateYlOrRd
-  );
 
   var dataArray = [];
   for (var d = 0; d < data.length; d++) {
@@ -151,7 +210,7 @@ function drawMap(data) {
 
   // Load GeoJSON data and merge with states data
   d3.json(urls.basemap).then(function (json) {
-    console.log(json);
+    // console.log(json);
 
     // makes sure to adjust projection to fit all of our regions
     projection.fitSize([width, height], json);
@@ -170,7 +229,7 @@ function drawMap(data) {
         var jsonState = json.features[j].properties.name;
 
         if (dataState == jsonState) {
-          console.log("DGHJSKDHGJDK", dataValue);
+          // console.log("DGHJSKDHGJDK", dataValue);
           // Copy the data value into the JSON
           json.features[j].properties.value = dataValue;
 
@@ -180,7 +239,7 @@ function drawMap(data) {
       }
     }
 
-    console.log(json.features);
+    // console.log("json.features", json.features);
 
     const basemap = g.basemap.selectAll("path.land")
       .data(json.features)
@@ -190,7 +249,7 @@ function drawMap(data) {
       .attr("class", "land")
       .style("fill", function (d) {
         return ramp(d.properties.value)
-      });
+      })
 
     const outline = g.outline.selectAll("path.neighborhood")
       .data(json.features)
@@ -235,6 +294,11 @@ function drawMap(data) {
     basemap.on("click", clicked);
 
     /* -----LEGEND----- */
+    drawLegend();
+    /* -----LEGEND----- */
+  });
+
+  function drawLegend() {
     var w = 140,
       h = 300;
 
@@ -285,8 +349,226 @@ function drawMap(data) {
       .attr("class", "y axis")
       .attr("transform", "translate(41,20)")
       .call(yAxis)
-  });
-  /* -----LEGEND----- */
+  }
+
+  function updateYear(selectedGroup, cat) {
+    // Create new data with the selection?
+    var dataFilter = main_data.filter(function (d) {
+      return d.incident_year == selectedGroup && d.incident_category == cat;
+    })
+
+    data = dataFilter;
+
+    data = formatDataForMap(data);
+
+    dataArray = [];
+    for (var d = 0; d < data.length; d++) {
+      dataArray.push(parseFloat(parseInt(data[d].value) / parseInt(dataset.length) * 100))
+    }
+    var minVal = d3.min(dataArray)
+    var maxVal = d3.max(dataArray)
+    var ramp = d3.scaleLinear()
+      .domain([minVal, maxVal])
+      .range([lowColor, highColor])
+
+
+    d3.json(urls.basemap).then(function (json) {
+      // console.log(json);
+
+      // makes sure to adjust projection to fit all of our regions
+      projection.fitSize([width, height], json);
+
+      // Loop through each state data value in the .csv file
+      for (var i = 0; i < data.length; i++) {
+
+        // Grab State Name
+        var dataState = data[i].state;
+
+        // Grab data value
+        var dataValue = parseFloat(parseInt(data[i].value) / parseInt(dataset.length) * 100);
+
+        // Find the corresponding state inside the GeoJSON
+        for (var j = 0; j < json.features.length; j++) {
+          var jsonState = json.features[j].properties.name;
+
+          if (dataState == jsonState) {
+            // Copy the data value into the JSON
+            json.features[j].properties.value = dataValue;
+
+            // Stop looking through the JSON
+            break;
+          }
+        }
+      }
+
+      const outline = g.outline.selectAll("path.neighborhood")
+        .data(json.features)
+        .transition().duration(700)
+        .style("fill", function (d) {
+          return ramp(d.properties.value)
+        })
+        .style("stroke", "black")
+        .style("stroke-width", 0.5)
+        .each(function (d) {
+          // save selection in data for interactivity
+          // saves search time finding the right outline later
+          d.properties.outline = this;
+        });
+
+      var w = 140,
+        h = 300;
+
+      var key = d3.select("body").select("svg.legend")
+
+
+      var legend = key.append("defs")
+        .append("svg:linearGradient")
+        .attr("id", "gradient")
+        .attr("x1", "100%")
+        .attr("y1", "0%")
+        .attr("x2", "100%")
+        .attr("y2", "100%")
+        .attr("spreadMethod", "pad");
+
+      key.append("text")
+        .attr("x", "0px")
+        .attr("y", "10px")
+        .style("font-size", "14px")
+        .text("percent");
+
+      legend.append("stop")
+        .attr("offset", "0%")
+        .attr("stop-color", highColor)
+        .attr("stop-opacity", 1);
+
+      legend.append("stop")
+        .attr("offset", "100%")
+        .attr("stop-color", lowColor)
+        .attr("stop-opacity", 1);
+
+      key.append("rect")
+        .attr("width", w - 100)
+        .attr("height", h - 10)
+        .style("fill", "url(#gradient)")
+        .attr("transform", "translate(0,20)");
+
+      var y = d3.scaleLinear()
+        .range([h - 21, 0])
+        .domain([minVal, maxVal]);
+
+      var yAxis = d3.axisRight(y);
+
+      key.append("g")
+        .attr("class", "y axis")
+        .attr("transform", "translate(41,20)")
+        .call(yAxis)
+    });
+  }
+
+  function updateCategory(selectedGroup, cat) {
+
+    formatTimeHour = d3.timeFormat("%H");
+    formatTimeDay = d3.timeFormat("%u");
+
+    // add parameters to url
+    urls.cases = "https://data.sfgov.org/resource/wg3w-h783.json"
+    urls.cases += "?$limit=100000&$where=starts_with(incident_category, '" + cat + "')";
+    urls.cases += " AND incident_datetime between '" + format(start) + "'";
+    urls.cases += " and '" + format(end) + "'";
+    urls.cases += " AND analysis_neighborhood not like ''";
+    urls.cases += " AND analysis_neighborhood not like 'null'";
+    urls.cases = encodeURI(urls.cases);
+
+
+    d3.json(urls.cases).then(function (data) {
+      var main_data = data;
+
+      var dataFilter = main_data.filter(function (d) {
+        return d.incident_year == selectedGroup && d.incident_category == cat;
+      })
+
+      data = dataFilter;
+      var dataset = data;
+      data = formatDataForMap(data);
+
+      console.log(data);
+
+      dataArray = [];
+      for (var d = 0; d < data.length; d++) {
+        dataArray.push(parseFloat(parseInt(data[d].value) / parseInt(dataset.length) * 100))
+      }
+
+      var minVal = d3.min(dataArray)
+      var maxVal = d3.max(dataArray)
+      var ramp = d3.scaleLinear()
+        .domain([minVal, maxVal])
+        .range([lowColor, highColor])
+
+
+      // BASEMAP
+      d3.json(urls.basemap).then(function (json) {
+        // makes sure to adjust projection to fit all of our regions
+        projection.fitSize([width, height], json);
+
+        // Loop through each state data value in the .csv file
+        for (var i = 0; i < data.length; i++) {
+
+          // Grab State Name
+          var dataState = data[i].state;
+
+          // Grab data value
+          var dataValue = parseFloat(parseInt(data[i].value) / parseInt(dataset.length) * 100);
+
+          // Find the corresponding state inside the GeoJSON
+          for (var j = 0; j < json.features.length; j++) {
+            var jsonState = json.features[j].properties.name;
+
+            if (dataState == jsonState) {
+              // console.log("DGHJSKDHGJDK", dataValue);
+              // Copy the data value into the JSON
+              json.features[j].properties.value = dataValue;
+
+              // Stop looking through the JSON
+              break;
+            }
+          }
+        }
+
+        const outline = g.outline.selectAll("path.neighborhood")
+          .data(json.features)
+          .transition().duration(700)
+          .style("fill", function (d) {
+            return ramp(d.properties.value)
+          })
+          .style("stroke", "black")
+          .style("stroke-width", 0.5)
+          .each(function (d) {
+            // save selection in data for interactivity
+            // saves search time finding the right outline later
+            d.properties.outline = this;
+          });
+      });
+
+    });
+
+  }
+
+  d3.select("#selectButton").on("change", function (d) {
+    // recover the option that has been chosen
+    var selectedOption = d3.select(this).property("value")
+    // run the updateChart function with this selected option
+    updateYear(selectedOption, Category)
+  })
+
+  d3.select("#categoryButton").on("change", function (d) {
+    // recover the option that has been chosen
+    var selected_category = d3.select(this).property("value")
+    var selected_year = d3.select("#selectButton").property("value");
+    // console.log("car, year", [selected_category, selected_year]);
+    // run the updateChart function with this selected option
+    Category = selected_category;
+    updateCategory(selected_year, selected_category);
+  })
 
 }
 
