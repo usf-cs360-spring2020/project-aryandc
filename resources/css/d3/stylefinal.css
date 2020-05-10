@@ -51,7 +51,7 @@ select#selectButton {
 
 p#category-button{
     position: absolute;
-    left: 200px;
+    left: 70px;
     font-size: large;
 }
 
@@ -95,6 +95,18 @@ select#categoryButton {
   }
   
   path.neighborhood {
+    fill: white;
+    stroke: white;
+    stroke-width: 3.5px;
+    pointer-events: none;
+  }
+
+  path.land2 {
+    fill: #dddddd;
+    stroke: none;
+  }
+  
+  path.neighborhood2 {
     fill: white;
     stroke: white;
     stroke-width: 3.5px;

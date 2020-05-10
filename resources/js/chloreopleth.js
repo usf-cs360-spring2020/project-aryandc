@@ -13,6 +13,8 @@ console.log(format(start), format(end));
 var formatTimeHour = d3.timeFormat("%H");
 var formatTimeDay = d3.timeFormat("%u");
 
+var ORIGINAL_DATASSET;
+
 var Category = "Assault";
 var incidentType = [
   "Assault",
@@ -99,13 +101,13 @@ var svg2 = d3.select("body")
   .attr("width", width)
   .attr("height", height);
 
-svg2.selectAll("text")
+svg.selectAll("text")
   .data([2019, 2020])
   .enter().append("text")
   .attr("x", "20px")
   .attr("y", "20px")
   .style("font-size", "16px")
-  .text("2020")
+  .text("2019")
 
 const g = {
   basemap: svg.select("g#basemap"),
@@ -220,6 +222,7 @@ function drawMap(data) {
   // console.log("Initial data", data);
 
   var main_data = data;
+  ORIGINAL_DATASSET = data;
 
   /* ------temp-------- */
   var allGroup = d3.map(data, function (d) { return (d.incident_year) }).keys()
@@ -284,6 +287,8 @@ function drawMap(data) {
         return ramp(d.properties.value)
       })
 
+    console.log("INTIAL json.features", json.features)
+
     const outline = g.outline.selectAll("path.neighborhood")
       .data(json.features)
       .enter()
@@ -328,7 +333,7 @@ function drawMap(data) {
 
     /* -----LEGEND----- */
     drawLegend();
-    drawMap2(main_data);
+    drawMap2(ORIGINAL_DATASSET);
     /* -----LEGEND----- */
   });
 
@@ -385,287 +390,289 @@ function drawMap(data) {
       .call(yAxis)
   }
 
-  function drawMap2(data) {
+}
 
-    console.log("ENTER MAP2");
-    var main_data = data;
+d3.select("#categoryButton").on("change", function (d) {
+  // recover the option that has been chosen
+  var selected_category = d3.select(this).property("value")
+  Category = selected_category;
+  updateCategory(ORIGINAL_DATASSET, selected_category);
+  updateCategory2(ORIGINAL_DATASSET, selected_category);
+})
 
-    /* ------temp-------- */
-    var allGroup = d3.map(data, function (d) { return (d.incident_year) }).keys()
-    // console.log(allGroup);
+function drawMap2(data) {
 
-    data = data.filter(function (d) {
-      return d.incident_year == allGroup[1] && d.incident_category == Category;
-    });
+  console.log("ENTER MAP2");
+  var main_data = data;
 
-    dataset = data;
+  /* ------temp-------- */
+  var allGroup = d3.map(data, function (d) { return (d.incident_year) }).keys()
+  // console.log(allGroup);
 
-    data = formatDataForMap(data);
+  data = data.filter(function (d) {
+    return d.incident_year == allGroup[1] && d.incident_category == Category;
+  });
 
-    var dataArray = [];
-    for (var d = 0; d < data.length; d++) {
-      dataArray.push(parseFloat(parseInt(data[d].value) / parseInt(dataset.length) * 100))
-    }
-    var minVal = d3.min(dataArray)
-    var maxVal = d3.max(dataArray)
-    var ramp = d3.scaleLinear()
-      .domain([minVal, maxVal])
-      .range([lowColor, highColor])
+  dataset = data;
 
-    // Load GeoJSON data and merge with states data
-    d3.json(urls.basemap).then(function (json) {
-      // console.log(json);
+  data = formatDataForMap(data);
 
-      // makes sure to adjust projection to fit all of our regions
-      projection2.fitSize([width, height], json);
-
-      // Loop through each state data value in the .csv file
-      for (var i = 0; i < data.length; i++) {
-
-        // Grab State Name
-        var dataState = data[i].state;
-
-        // Grab data value
-        var dataValue = parseFloat(parseInt(data[i].value) / parseInt(dataset.length) * 100);
-
-        // Find the corresponding state inside the GeoJSON
-        for (var j = 0; j < json.features.length; j++) {
-          var jsonState = json.features[j].properties.name;
-
-          if (dataState == jsonState) {
-            // console.log("DGHJSKDHGJDK", dataValue);
-            // Copy the data value into the JSON
-            json.features[j].properties.value = dataValue;
-
-            // Stop looking through the JSON
-            break;
-          }
-        }
-      }
-
-      // console.log("json.features", json.features);
-
-      const basemap = g2.basemap.selectAll("path.land")
-        .data(json.features)
-        .enter()
-        .append("path")
-        .attr("d", path)
-        .attr("class", "land")
-        .style("fill", function (d) {
-          return ramp(d.properties.value)
-        })
-
-      const outline = g2.outline.selectAll("path.neighborhood")
-        .data(json.features)
-        .enter()
-        .append("path")
-        .attr("d", path)
-        .attr("class", "neighborhood")
-        .style("fill", function (d) {
-          return ramp(d.properties.value)
-        })
-        .style("stroke", "black")
-        .style("stroke-width", 0.5)
-        .each(function (d) {
-          // save selection in data for interactivity
-          // saves search time finding the right outline later
-          d.properties.outline = this;
-        });
-
-      // add highlight
-      basemap.on("mouseover.highlight", function (d) {
-        d3.select(d.properties.outline).raise();
-        d3.select(d.properties.outline).classed("active", true);
-      })
-        .on("mouseout.highlight", function (d) {
-          d3.select(d.properties.outline).classed("active", false);
-        });
-
-      // add tooltip
-      basemap.on("mouseover.tooltip", function (d) {
-        tip2.text(d.properties.name);
-        tip2.style("visibility", "visible");
-      })
-        .on("mousemove.tooltip", function (d) {
-          const coords = d3.mouse(g2.basemap.node());
-          tip2.attr("x", coords[0]);
-          tip2.attr("y", coords[1]);
-        })
-        .on("mouseout.tooltip", function (d) {
-          tip2.style("visibility", "hidden");
-        });
-
-      basemap.on("click", clicked);
-
-      /* -----LEGEND----- */
-      drawLegend();
-      /* -----LEGEND----- */
-
-      console.log("EXIT MAP 2");
-    });
+  var dataArray = [];
+  for (var d = 0; d < data.length; d++) {
+    dataArray.push(parseFloat(parseInt(data[d].value) / parseInt(dataset.length) * 100))
   }
+  var minVal = d3.min(dataArray)
+  var maxVal = d3.max(dataArray)
+  var ramp = d3.scaleLinear()
+    .domain([minVal, maxVal])
+    .range([lowColor, highColor])
 
-  function updateCategory(selectedGroup, cat) {
+  // Load GeoJSON data and merge with states data
+  d3.json(urls.basemap).then(function (json) {
+    // console.log(json);
 
-    formatTimeHour = d3.timeFormat("%H");
-    formatTimeDay = d3.timeFormat("%u");
+    // makes sure to adjust projection to fit all of our regions
+    projection2.fitSize([width, height], json);
 
-    // add parameters to url
-    urls.cases = "https://data.sfgov.org/resource/wg3w-h783.json"
-    urls.cases += "?$limit=100000&$where=starts_with(incident_category, '" + cat + "')";
-    urls.cases += " AND incident_datetime between '" + format(start) + "'";
-    urls.cases += " and '" + format(end) + "'";
-    urls.cases += " AND analysis_neighborhood not like ''";
-    urls.cases += " AND analysis_neighborhood not like 'null'";
-    urls.cases = encodeURI(urls.cases);
+    // Loop through each state data value in the .csv file
+    for (var i = 0; i < data.length; i++) {
 
+      // Grab State Name
+      var dataState = data[i].state;
 
-    d3.json(urls.cases).then(function (data) {
-      var main_data = data;
-      updateCategory2(data, cat);
+      // Grab data value
+      var dataValue = parseFloat(parseInt(data[i].value) / parseInt(dataset.length) * 100);
 
-      var dataFilter = main_data.filter(function (d) {
-        return d.incident_year == selectedGroup && d.incident_category == cat;
+      // Find the corresponding state inside the GeoJSON
+      for (var j = 0; j < json.features.length; j++) {
+        var jsonState = json.features[j].properties.name;
+
+        if (dataState == jsonState) {
+          // console.log("DGHJSKDHGJDK", dataValue);
+          // Copy the data value into the JSON
+          json.features[j].properties.value = dataValue;
+
+          // Stop looking through the JSON
+          break;
+        }
+      }
+    }
+
+    // console.log("json.features", json.features);
+
+    const basemap2 = g2.basemap.selectAll("path.land2")
+      .data(json.features)
+      .enter()
+      .append("path")
+      .attr("d", path)
+      .attr("class", "land2")
+      .style("fill", function (d) {
+        return ramp(d.properties.value)
       })
 
-      data = dataFilter;
-      var dataset = data;
-      data = formatDataForMap(data);
-
-      // console.log(data);
-
-      dataArray = [];
-      for (var d = 0; d < data.length; d++) {
-        dataArray.push(parseFloat(parseInt(data[d].value) / parseInt(dataset.length) * 100))
-      }
-
-      var minVal = d3.min(dataArray)
-      var maxVal = d3.max(dataArray)
-      var ramp = d3.scaleLinear()
-        .domain([minVal, maxVal])
-        .range([lowColor, highColor])
-
-
-      // BASEMAP
-      d3.json(urls.basemap).then(function (json) {
-        // makes sure to adjust projection to fit all of our regions
-        projection.fitSize([width, height], json);
-
-        // Loop through each state data value in the .csv file
-        for (var i = 0; i < data.length; i++) {
-
-          // Grab State Name
-          var dataState = data[i].state;
-
-          // Grab data value
-          var dataValue = parseFloat(parseInt(data[i].value) / parseInt(dataset.length) * 100);
-
-          // Find the corresponding state inside the GeoJSON
-          for (var j = 0; j < json.features.length; j++) {
-            var jsonState = json.features[j].properties.name;
-
-            if (dataState == jsonState) {
-              // console.log("DGHJSKDHGJDK", dataValue);
-              // Copy the data value into the JSON
-              json.features[j].properties.value = dataValue;
-
-              // Stop looking through the JSON
-              break;
-            }
-          }
-        }
-
-        const outline = g.outline.selectAll("path.neighborhood")
-          .data(json.features)
-          .transition().duration(700)
-          .style("fill", function (d) {
-            return ramp(d.properties.value)
-          })
-          .style("stroke", "black")
-          .style("stroke-width", 0.5)
-          .each(function (d) {
-            // save selection in data for interactivity
-            // saves search time finding the right outline later
-            d.properties.outline = this;
-          });
+    const outline2 = g2.outline.selectAll("path.neighborhood2")
+      .data(json.features)
+      .enter()
+      .append("path")
+      .attr("d", path)
+      .attr("class", "neighborhood2")
+      .style("fill", function (d) {
+        return ramp(d.properties.value)
+      })
+      .style("stroke", "black")
+      .style("stroke-width", 0.5)
+      .each(function (d) {
+        // save selection in data for interactivity
+        // saves search time finding the right outline later
+        d.properties.outline = this;
       });
 
-    });
-
-  }
-
-  function updateCategory2(data, cat) {
-    var main_data = data;
-
-    var dataFilter = main_data.filter(function (d) {
-      return d.incident_year == "2020" && d.incident_category == cat;
+    // add highlight
+    basemap2.on("mouseover.highlight", function (d) {
+      d3.select(d.properties.outline).raise();
+      d3.select(d.properties.outline).classed("active", true);
     })
+      .on("mouseout.highlight", function (d) {
+        d3.select(d.properties.outline).classed("active", false);
+      });
 
-    data = dataFilter;
-    var dataset = data;
-    data = formatDataForMap(data);
+    // add tooltip
+    basemap2.on("mouseover.tooltip", function (d) {
+      tip2.text(d.properties.name);
+      tip2.style("visibility", "visible");
+    })
+      .on("mousemove.tooltip", function (d) {
+        const coords = d3.mouse(g2.basemap.node());
+        tip2.attr("x", coords[0]);
+        tip2.attr("y", coords[1]);
+      })
+      .on("mouseout.tooltip", function (d) {
+        tip2.style("visibility", "hidden");
+      });
 
-    console.log("second data", data);
+    basemap2.on("click", clicked);
 
-    dataArray = [];
-    for (var d = 0; d < data.length; d++) {
-      dataArray.push(parseFloat(parseInt(data[d].value) / parseInt(dataset.length) * 100))
-    }
+    console.log("EXIT MAP 2");
+  });
+}
 
-    var minVal = d3.min(dataArray)
-    var maxVal = d3.max(dataArray)
-    var ramp = d3.scaleLinear()
-      .domain([minVal, maxVal])
-      .range([lowColor, highColor])
+function updateCategory(data, cat) {
+  console.log("ENTER UPDATE MAP")
+  var main_data = data;
 
-    d3.json(urls.basemap).then(function (json) {
-      projection2.fitSize([width, height], json);
-
-      for (var i = 0; i < data.length; i++) {
-        // Grab State Name
-        var dataState = data[i].state;
-        // Grab data value
-        var dataValue = parseFloat(parseInt(data[i].value) / parseInt(dataset.length) * 100);
-        // Find the corresponding state inside the GeoJSON
-        for (var j = 0; j < json.features.length; j++) {
-          var jsonState = json.features[j].properties.name;
-
-          if (dataState == jsonState) {
-            // console.log("DGHJSKDHGJDK", dataValue);
-            // Copy the data value into the JSON
-            json.features[j].properties.value = dataValue;
-
-            // Stop looking through the JSON
-            break;
-          }
-        }
-      }
-
-      const outline = g2.outline.selectAll("path.neighborhood")
-        .data(json.features)
-        .transition().duration(700)
-        .style("fill", function (d) {
-          return ramp(d.properties.value)
-        })
-        .style("stroke", "black")
-        .style("stroke-width", 0.5)
-        .each(function (d) {
-          // save selection in data for interactivity
-          // saves search time finding the right outline later
-          d.properties.outline = this;
-        });
-    });
-  }
-
-  d3.select("#categoryButton").on("change", function (d) {
-    // recover the option that has been chosen
-    var selected_category = d3.select(this).property("value")
-    // console.log("car, year", [selected_category, selected_year]);
-    // run the updateChart function with this selected option
-    Category = selected_category;
-    updateCategory("2019", selected_category);
+  var dataFilter = main_data.filter(function (d) {
+    return d.incident_year == "2019" && d.incident_category == cat;
   })
 
+  data = dataFilter;
+  var dataset = data;
+  data = formatDataForMap(data);
+
+  // console.log(data);
+
+  dataArray = [];
+  for (var d = 0; d < data.length; d++) {
+    dataArray.push(parseFloat(parseInt(data[d].value) / parseInt(dataset.length) * 100))
+  }
+
+  var minVal = d3.min(dataArray)
+  var maxVal = d3.max(dataArray)
+  var ramp = d3.scaleLinear()
+    .domain([minVal, maxVal])
+    .range([lowColor, highColor])
+
+
+  // BASEMAP
+  d3.json(urls.basemap).then(function (json) {
+    // makes sure to adjust projection to fit all of our regions
+    projection.fitSize([width, height], json);
+
+    // Loop through each state data value in the .csv file
+    for (var i = 0; i < data.length; i++) {
+
+      // Grab State Name
+      var dataState = data[i].state;
+
+      // Grab data value
+      var dataValue = parseFloat(parseInt(data[i].value) / parseInt(dataset.length) * 100);
+
+      // Find the corresponding state inside the GeoJSON
+      for (var j = 0; j < json.features.length; j++) {
+        var jsonState = json.features[j].properties.name;
+
+        if (dataState == jsonState) {
+          // Copy the data value into the JSON
+          json.features[j].properties.value = dataValue;
+
+          // Stop looking through the JSON
+          break;
+        }
+      }
+    }
+    console.log("json.features", json.features)
+
+    g.outline.selectAll("path.neighborhood").remove();
+
+    const outline = g.outline.selectAll("path.neighborhood")
+      .data(json.features)
+      .enter()
+      .append("path")
+      .attr("d", path)
+      .attr("class", "neighborhood")
+      .style("fill", function (d) {
+        return ramp(d.properties.value)
+      })
+      .style("stroke", "black")
+      .style("stroke-width", 0.5)
+      .each(function (d) {
+        // save selection in data for interactivity
+        // saves search time finding the right outline later
+        d.properties.outline = this;
+      });
+
+    // const outline = g.outline.selectAll("path.neighborhood")
+    //   .data(json.features)
+    //   .transition().duration(700)
+    //   .style("fill", function (d) {
+    //     return ramp(d.properties.value)
+    //   })
+    //   .style("stroke", "black")
+    //   .style("stroke-width", 0.5)
+    //   .each(function (d) {
+    //     // save selection in data for interactivity
+    //     // saves search time finding the right outline later
+    //     d.properties.outline = this;
+    //   });
+  });
+  console.log("EXIT UPDATE MAP\n")
+}
+
+function updateCategory2(data, cat) {
+  var main_data = data;
+
+  var dataFilter = main_data.filter(function (d) {
+    return d.incident_year == "2020" && d.incident_category == cat;
+  })
+
+  data = dataFilter;
+  var dataset = data;
+  data = formatDataForMap(data);
+
+  // console.log("second data", data);
+
+  dataArray = [];
+  for (var d = 0; d < data.length; d++) {
+    dataArray.push(parseFloat(parseInt(data[d].value) / parseInt(dataset.length) * 100))
+  }
+
+  var minVal = d3.min(dataArray)
+  var maxVal = d3.max(dataArray)
+  var ramp = d3.scaleLinear()
+    .domain([minVal, maxVal])
+    .range([lowColor, highColor])
+
+  d3.json(urls.basemap).then(function (json) {
+    projection2.fitSize([width, height], json);
+
+    for (var i = 0; i < data.length; i++) {
+      // Grab State Name
+      var dataState = data[i].state;
+      // Grab data value
+      var dataValue = parseFloat(parseInt(data[i].value) / parseInt(dataset.length) * 100);
+      // Find the corresponding state inside the GeoJSON
+      for (var j = 0; j < json.features.length; j++) {
+        var jsonState = json.features[j].properties.name;
+
+        if (dataState == jsonState) {
+          // console.log("DGHJSKDHGJDK", dataValue);
+          // Copy the data value into the JSON
+          json.features[j].properties.value = dataValue;
+
+          // Stop looking through the JSON
+          break;
+        }
+      }
+    }
+
+    g2.outline.selectAll("path.neighborhood2").remove();
+
+    const outline = g2.outline.selectAll("path.neighborhood2")
+      .data(json.features)
+      .enter()
+      .append("path")
+      .attr("d", path)
+      .attr("class", "neighborhood2")
+      .style("fill", function (d) {
+        return ramp(d.properties.value)
+      })
+      .style("stroke", "black")
+      .style("stroke-width", 0.5)
+      .each(function (d) {
+        // save selection in data for interactivity
+        // saves search time finding the right outline later
+        d.properties.outline = this;
+      });
+  });
 }
 
 
