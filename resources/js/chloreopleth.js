@@ -18,33 +18,12 @@ var ORIGINAL_DATASSET;
 var Category = "Assault";
 var incidentType = [
   "Assault",
-  "Arson",
   "Burglary",
-  "Case Closure",
-  "Civil Sidewalks",
-  "Courtest Report",
   "Disorderly Conduct",
-  "Drug Offense",
-  "Drug Violation",
-  "Embezzlement",
-  "Family Offense",
-  "Fire Report",
-  "Forgery and Counterfeiting",
-  "Fraud",
-  "Gambling",
   "Homicide",
-  "Juvenile Offenses",
-  "Larceny Theft",
   "Liquor Laws",
-  "Lost Property",
-  "Mallicious Mischief",
-  "Miscellaneous Investigation",
   "Missing Person",
   "Motor Vehicle Theft",
-  "Non-Criminal",
-  "Offences Against The Family And Children",
-  "Other",
-  "Other Offenses",
   "Rape",
   "Robbery"
 ];
@@ -58,17 +37,14 @@ urls.cases += " and '" + format(end) + "'";
 urls.cases += " AND analysis_neighborhood not like ''";
 urls.cases += " AND analysis_neighborhood not like 'null'";
 
-// output url before encoding
-console.log(urls.cases);
 
 // encode special characters
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI
 urls.cases = encodeURI(urls.cases);
-console.log(urls.cases);
 
 //Width and height of map
-var width = 600;
-var height = 500;
+var width = 500;
+var height = 400;
 
 var lowColor = '#fee6db'
 var highColor = '#67000d'
@@ -101,13 +77,13 @@ var svg2 = d3.select("body")
   .attr("width", width)
   .attr("height", height);
 
-svg.selectAll("text")
+svg2.selectAll("text")
   .data([2019, 2020])
   .enter().append("text")
   .attr("x", "20px")
   .attr("y", "20px")
   .style("font-size", "16px")
-  .text("2019")
+  .text("2020")
 
 const g = {
   basemap: svg.select("g#basemap"),
@@ -156,6 +132,14 @@ const details2 = g2.details.append("foreignObject")
   .attr("height", height)
   .attr("x", 0)
   .attr("y", 0);
+
+var div = d3.select("#div_map").append("div")
+  .attr("class", "tooltip")
+  .style("opacity", 0);
+
+var div2 = d3.select("#div_map2").append("div")
+  .attr("class", "tooltip")
+  .style("opacity", 0);
 
 const body = details.append("xhtml:body")
   .style("text-align", "left")
@@ -219,14 +203,16 @@ d3.json(urls.cases).then(drawMap);
 
 // Load in my states data!
 function drawMap(data) {
-  // console.log("Initial data", data);
 
   var main_data = data;
   ORIGINAL_DATASSET = data;
 
   /* ------temp-------- */
   var allGroup = d3.map(data, function (d) { return (d.incident_year) }).keys()
-  // console.log(allGroup);
+
+  var filtered_data_with_category = data.filter(function (d) {
+    return d.incident_category == Category;
+  })
 
   data = data.filter(function (d) {
     return d.incident_year == allGroup[0] && d.incident_category == Category;
@@ -246,13 +232,11 @@ function drawMap(data) {
 
   var dataArray = [];
   for (var d = 0; d < data.length; d++) {
-    dataArray.push(parseFloat(parseInt(data[d].value) / parseInt(dataset.length) * 100))
+    dataArray.push(parseFloat((parseInt(data[d].value) / 12)))
   }
-  var minVal = d3.min(dataArray)
-  var maxVal = d3.max(dataArray)
-  var ramp = d3.scaleLinear()
-    .domain([minVal, maxVal])
-    .range([lowColor, highColor])
+
+  var minVal;
+  var maxVal;
 
   // Load GeoJSON data and merge with states data
   d3.json(urls.basemap).then(function (json) {
@@ -263,12 +247,11 @@ function drawMap(data) {
       // Grab State Name
       var dataState = data[i].state;
       // Grab data value
-      var dataValue = parseFloat(parseInt(data[i].value) / parseInt(dataset.length) * 100);
+      var dataValue = parseFloat((parseInt(data[i].value) / 12));
       // Find the corresponding state inside the GeoJSON
       for (var j = 0; j < json.features.length; j++) {
         var jsonState = json.features[j].properties.name;
         if (dataState == jsonState) {
-          // console.log("DGHJSKDHGJDK", dataValue);
           // Copy the data value into the JSON
           json.features[j].properties.value = dataValue;
           // Stop looking through the JSON
@@ -276,6 +259,13 @@ function drawMap(data) {
         }
       }
     }
+
+    minVal = 0;
+    maxVal = getMax(Category);
+
+    var ramp = d3.scaleLinear()
+      .domain([minVal, maxVal])
+      .range([lowColor, highColor])
 
     const basemap = g.basemap.selectAll("path.land")
       .data(json.features)
@@ -287,7 +277,6 @@ function drawMap(data) {
         return ramp(d.properties.value)
       })
 
-    console.log("INTIAL json.features", json.features)
 
     const outline = g.outline.selectAll("path.neighborhood")
       .data(json.features)
@@ -317,37 +306,35 @@ function drawMap(data) {
 
     // add tooltip
     basemap.on("mouseover.tooltip", function (d) {
-      tip.text(d.properties.name);
+      // tip.text(d.properties.name);
       tip.style("visibility", "visible");
+      showLabel(d, "2019", Category);
     })
       .on("mousemove.tooltip", function (d) {
         const coords = d3.mouse(g.basemap.node());
         tip.attr("x", coords[0]);
         tip.attr("y", coords[1]);
+        moveLabel();
       })
       .on("mouseout.tooltip", function (d) {
         tip.style("visibility", "hidden");
+        hideLabel();
       });
 
     basemap.on("click", clicked);
 
     /* -----LEGEND----- */
-    drawLegend();
-    drawMap2(ORIGINAL_DATASSET);
-    /* -----LEGEND----- */
-  });
+    var legendwidth = 20,
+      legendheight = 300;
 
-  function drawLegend() {
-    var w = 140,
-      h = 300;
-
-    var key = d3.select("body")
+    var legendsvg = d3.select("#div_map")
       .append("svg")
-      .attr("width", w)
-      .attr("height", h)
+      .attr("width", legendwidth + 100)
+      .attr("height", legendheight)
+      .attr("id", "maplegend")
       .attr("class", "legend");
 
-    var legend = key.append("defs")
+    var legend = legendsvg.append("defs")
       .append("svg:linearGradient")
       .attr("id", "gradient")
       .attr("x1", "100%")
@@ -355,12 +342,6 @@ function drawMap(data) {
       .attr("x2", "100%")
       .attr("y2", "100%")
       .attr("spreadMethod", "pad");
-
-    key.append("text")
-      .attr("x", "0px")
-      .attr("y", "10px")
-      .style("font-size", "14px")
-      .text("percent");
 
     legend.append("stop")
       .attr("offset", "0%")
@@ -372,23 +353,37 @@ function drawMap(data) {
       .attr("stop-color", lowColor)
       .attr("stop-opacity", 1);
 
-    key.append("rect")
-      .attr("width", w - 100)
-      .attr("height", h - 10)
+    legendsvg.append("rect")
+      .attr("width", legendwidth)
+      .attr("height", legendheight)
       .style("fill", "url(#gradient)")
-      .attr("transform", "translate(0,20)");
+      .attr("transform", "translate(0,10)");
 
     var y = d3.scaleLinear()
-      .range([h - 21, 0])
-      .domain([minVal, maxVal]);
+      .range([legendheight, 0])
+      .domain([0, maxVal]);
 
-    var yAxis = d3.axisRight(y);
+    var yAxis = d3.axisRight(y)
+      .tickFormat(function (d) {
+        return d;
+      }).tickSizeOuter(0);
 
-    key.append("g")
+    legendsvg.append("g")
       .attr("class", "y axis")
-      .attr("transform", "translate(41,20)")
+      .attr("transform", "translate(20,10)")
       .call(yAxis)
-  }
+      .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 40)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .style("font-size", "12px")
+      .text(Category + " Cases (Monthly Average)")
+      .style("fill", "black");
+    /* -----LEGEND----- */
+
+    drawMap2(ORIGINAL_DATASSET);
+  });
 
 }
 
@@ -402,12 +397,14 @@ d3.select("#categoryButton").on("change", function (d) {
 
 function drawMap2(data) {
 
-  console.log("ENTER MAP2");
   var main_data = data;
 
   /* ------temp-------- */
   var allGroup = d3.map(data, function (d) { return (d.incident_year) }).keys()
-  // console.log(allGroup);
+
+  var filtered_data_with_category = data.filter(function (d) {
+    return d.incident_category == Category;
+  })
 
   data = data.filter(function (d) {
     return d.incident_year == allGroup[1] && d.incident_category == Category;
@@ -419,17 +416,14 @@ function drawMap2(data) {
 
   var dataArray = [];
   for (var d = 0; d < data.length; d++) {
-    dataArray.push(parseFloat(parseInt(data[d].value) / parseInt(dataset.length) * 100))
+    dataArray.push(parseFloat((parseInt(data[d].value) / 4)))
   }
-  var minVal = d3.min(dataArray)
-  var maxVal = d3.max(dataArray)
-  var ramp = d3.scaleLinear()
-    .domain([minVal, maxVal])
-    .range([lowColor, highColor])
+
+  var minVal;
+  var maxVal;
 
   // Load GeoJSON data and merge with states data
   d3.json(urls.basemap).then(function (json) {
-    // console.log(json);
 
     // makes sure to adjust projection to fit all of our regions
     projection2.fitSize([width, height], json);
@@ -441,14 +435,13 @@ function drawMap2(data) {
       var dataState = data[i].state;
 
       // Grab data value
-      var dataValue = parseFloat(parseInt(data[i].value) / parseInt(dataset.length) * 100);
+      var dataValue = parseFloat((parseInt(data[i].value) / 4));
 
       // Find the corresponding state inside the GeoJSON
       for (var j = 0; j < json.features.length; j++) {
         var jsonState = json.features[j].properties.name;
 
         if (dataState == jsonState) {
-          // console.log("DGHJSKDHGJDK", dataValue);
           // Copy the data value into the JSON
           json.features[j].properties.value = dataValue;
 
@@ -458,7 +451,12 @@ function drawMap2(data) {
       }
     }
 
-    // console.log("json.features", json.features);
+    minVal = 0
+    maxVal = getMax(Category);
+
+    var ramp = d3.scaleLinear()
+      .domain([minVal, maxVal])
+      .range([lowColor, highColor])
 
     const basemap2 = g2.basemap.selectAll("path.land2")
       .data(json.features)
@@ -498,27 +496,32 @@ function drawMap2(data) {
 
     // add tooltip
     basemap2.on("mouseover.tooltip", function (d) {
-      tip2.text(d.properties.name);
+      // tip2.text(d.properties.name);
       tip2.style("visibility", "visible");
+      showLabel(d, "2020", Category);
     })
       .on("mousemove.tooltip", function (d) {
         const coords = d3.mouse(g2.basemap.node());
         tip2.attr("x", coords[0]);
         tip2.attr("y", coords[1]);
+        moveLabel();
       })
       .on("mouseout.tooltip", function (d) {
         tip2.style("visibility", "hidden");
+        hideLabel();
       });
 
     basemap2.on("click", clicked);
 
-    console.log("EXIT MAP 2");
   });
 }
 
 function updateCategory(data, cat) {
-  console.log("ENTER UPDATE MAP")
   var main_data = data;
+
+  var filtered_data_with_category = data.filter(function (d) {
+    return d.incident_category == cat;
+  })
 
   var dataFilter = main_data.filter(function (d) {
     return d.incident_year == "2019" && d.incident_category == cat;
@@ -528,18 +531,13 @@ function updateCategory(data, cat) {
   var dataset = data;
   data = formatDataForMap(data);
 
-  // console.log(data);
-
   dataArray = [];
   for (var d = 0; d < data.length; d++) {
-    dataArray.push(parseFloat(parseInt(data[d].value) / parseInt(dataset.length) * 100))
+    dataArray.push(parseFloat((parseInt(data[d].value) / 12)))
   }
 
-  var minVal = d3.min(dataArray)
-  var maxVal = d3.max(dataArray)
-  var ramp = d3.scaleLinear()
-    .domain([minVal, maxVal])
-    .range([lowColor, highColor])
+  var minVal;
+  var maxVal;
 
 
   // BASEMAP
@@ -554,7 +552,7 @@ function updateCategory(data, cat) {
       var dataState = data[i].state;
 
       // Grab data value
-      var dataValue = parseFloat(parseInt(data[i].value) / parseInt(dataset.length) * 100);
+      var dataValue = parseFloat((parseInt(data[i].value) / 12));
 
       // Find the corresponding state inside the GeoJSON
       for (var j = 0; j < json.features.length; j++) {
@@ -569,7 +567,12 @@ function updateCategory(data, cat) {
         }
       }
     }
-    console.log("json.features", json.features)
+
+    minVal = 0;
+    maxVal = getMax(cat);
+    var ramp = d3.scaleLinear()
+      .domain([minVal, maxVal])
+      .range([lowColor, highColor])
 
     g.outline.selectAll("path.neighborhood").remove();
 
@@ -603,12 +606,77 @@ function updateCategory(data, cat) {
     //     // saves search time finding the right outline later
     //     d.properties.outline = this;
     //   });
+
+    d3.select("#div_map").select("svg#maplegend").remove()
+
+    /* -----LEGEND----- */
+    var legendwidth = 20,
+      legendheight = 300;
+
+    var legendsvg = d3.select("#div_map")
+      .append("svg")
+      .attr("width", legendwidth + 100)
+      .attr("height", legendheight)
+      .attr("id", "maplegend")
+      .attr("class", "legend");
+
+    var legend = legendsvg.append("defs")
+      .append("svg:linearGradient")
+      .attr("id", "gradient")
+      .attr("x1", "100%")
+      .attr("y1", "0%")
+      .attr("x2", "100%")
+      .attr("y2", "100%")
+      .attr("spreadMethod", "pad");
+
+    legend.append("stop")
+      .attr("offset", "0%")
+      .attr("stop-color", highColor)
+      .attr("stop-opacity", 1);
+
+    legend.append("stop")
+      .attr("offset", "100%")
+      .attr("stop-color", lowColor)
+      .attr("stop-opacity", 1);
+
+    legendsvg.append("rect")
+      .attr("width", legendwidth)
+      .attr("height", legendheight)
+      .style("fill", "url(#gradient)")
+      .attr("transform", "translate(0,10)");
+
+    var y = d3.scaleLinear()
+      .range([legendheight, 0])
+      .domain([0, maxVal]);
+
+    var yAxis = d3.axisRight(y)
+      .tickFormat(function (d) {
+        return d;
+      }).tickSizeOuter(0);
+
+    legendsvg.append("g")
+      .attr("class", "y axis")
+      .attr("transform", "translate(20,10)")
+      .call(yAxis)
+      .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 40)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .style("font-size", "12px")
+      .text(cat + " Cases (Monthly Average)")
+      .style("fill", "black");
+    /* -----LEGEND----- */
+
   });
-  console.log("EXIT UPDATE MAP\n")
 }
 
 function updateCategory2(data, cat) {
   var main_data = data;
+
+  var filtered_data_with_category = data.filter(function (d) {
+    return d.incident_category == cat;
+  })
 
   var dataFilter = main_data.filter(function (d) {
     return d.incident_year == "2020" && d.incident_category == cat;
@@ -618,18 +686,13 @@ function updateCategory2(data, cat) {
   var dataset = data;
   data = formatDataForMap(data);
 
-  // console.log("second data", data);
-
   dataArray = [];
   for (var d = 0; d < data.length; d++) {
-    dataArray.push(parseFloat(parseInt(data[d].value) / parseInt(dataset.length) * 100))
+    dataArray.push(parseFloat((parseInt(data[d].value) / 4)))
   }
 
-  var minVal = d3.min(dataArray)
-  var maxVal = d3.max(dataArray)
-  var ramp = d3.scaleLinear()
-    .domain([minVal, maxVal])
-    .range([lowColor, highColor])
+  var minVal;
+  var maxVal;
 
   d3.json(urls.basemap).then(function (json) {
     projection2.fitSize([width, height], json);
@@ -638,13 +701,12 @@ function updateCategory2(data, cat) {
       // Grab State Name
       var dataState = data[i].state;
       // Grab data value
-      var dataValue = parseFloat(parseInt(data[i].value) / parseInt(dataset.length) * 100);
+      var dataValue = parseFloat((parseInt(data[i].value) / 4));
       // Find the corresponding state inside the GeoJSON
       for (var j = 0; j < json.features.length; j++) {
         var jsonState = json.features[j].properties.name;
 
         if (dataState == jsonState) {
-          // console.log("DGHJSKDHGJDK", dataValue);
           // Copy the data value into the JSON
           json.features[j].properties.value = dataValue;
 
@@ -653,6 +715,12 @@ function updateCategory2(data, cat) {
         }
       }
     }
+
+    minVal = 0;
+    maxVal = getMax(cat);
+    var ramp = d3.scaleLinear()
+      .domain([minVal, maxVal])
+      .range([lowColor, highColor])
 
     g2.outline.selectAll("path.neighborhood2").remove();
 
@@ -675,6 +743,48 @@ function updateCategory2(data, cat) {
   });
 }
 
+function getMax(category) {
+  let result = [];
+
+  let data_map = ORIGINAL_DATASSET;
+
+  var filtered_data_with_category = data_map.filter(function (d) {
+    return d.incident_category == category;
+  })
+
+  data_map = data_map.filter(function (d) {
+    return d.incident_year == "2019" && d.incident_category == category;
+  });
+  let dataset_map = data_map;
+  data_map = formatDataForMap(data_map);
+
+  let dataArr_map = [];
+  for (var d = 0; d < data_map.length; d++) {
+    dataArr_map.push(parseFloat((parseInt(data_map[d].value) / 12)))
+  }
+  var maxVal_map = d3.max(dataArr_map);
+
+  let data2_map = ORIGINAL_DATASSET;
+
+  data2_map = data2_map.filter(function (d) {
+    return d.incident_year == "2020" && d.incident_category == category;
+  });
+  let dataset2_map = data2_map;
+  data2_map = formatDataForMap(data2_map);
+
+  let dataArr2_map = [];
+  for (var d = 0; d < data2_map.length; d++) {
+    dataArr2_map.push(parseFloat((parseInt(data2_map[d].value) / 4)))
+  }
+  var maxVal2_map = d3.max(dataArr2_map);
+
+  if (maxVal_map < maxVal2_map) {
+    return maxVal2_map;
+  } else {
+    return maxVal_map;
+  }
+
+}
 
 function clicked(d) {
   if (d3.select('.background').node() === this) return reset();
@@ -718,4 +828,64 @@ function reset() {
     .duration(750)
     .style("stroke-width", "1.5px")
     .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+}
+
+function showLabel(d, year, category) {
+  var coords = [d3.event.clientX, d3.event.clientY];
+  var top = coords[1] - d3.select("#div_map").node().getBoundingClientRect().y,
+    left = coords[0] - d3.select("#div_map").node().getBoundingClientRect().x;
+  var formatDecimal = d3.format(",.2f");
+  if (d.properties.value == null) {
+    var html = `
+  <table border="0" cellspacing="0" cellpadding="2">
+  <tbody>
+    <tr>
+      <th>Neighborhood:</th>
+      <td class="text">${d.properties.name}</td>
+    </tr>
+    <tr>
+      <th>No ${category} Cases in ${d.properties.name}</th>
+    </tr>
+  </tbody>
+  </table>
+`;
+  } else {
+    var html = `
+  <table border="0" cellspacing="0" cellpadding="2">
+  <tbody>
+    <tr>
+      <th>Neighborhood:</th>
+      <td class="text">${d.properties.name}</td>
+    </tr>
+    <tr>
+      <th>Average ${category} Cases in ${year}:</th>
+      <td class="text">${formatDecimal(d.properties.value)}</td>
+    </tr>
+  </tbody>
+  </table>
+`;
+  }
+  div.transition()
+    .duration(200)
+    .style("opacity", 0.9);
+  div.html(html)
+    .style("top", top + "px")
+    .style("left", left + "px")
+    .style("z-index", 10);
+}
+
+function moveLabel() {
+  var coords = [d3.event.clientX, d3.event.clientY];
+
+  var top = coords[1] - d3.select("#d3implementation").node().getBoundingClientRect().y + 20,
+    left = coords[0] - d3.select("#d3implementation").node().getBoundingClientRect().x + 10;
+
+  div.style("top", top + "px")
+    .style("left", left + "px");
+}
+
+function hideLabel() {
+  div.transition()
+    .duration(200)
+    .style("opacity", 0);
 }

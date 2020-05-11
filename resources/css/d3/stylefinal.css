@@ -13,11 +13,11 @@ body {
     font-size: 100%;
     font-weight: bold;
     cursor: pointer;
-    background-color: #8c3a3d;
+    background-color: white;
     border: none;
     border-radius: 10px;
-    border-bottom: 2px solid #962d22;
-    color: white;
+    border-bottom: 2px solid #DCDCDC;
+    color: #c0392b;
     margin-left: 30px;
     padding: 5px;
     appearance: none;
@@ -33,9 +33,9 @@ body {
 
 select:hover,
 select:focus {
-  color: #c0392b;
-  background-color: white;
-  border-bottom-color: #DCDCDC;
+  color: white;
+  background-color: #8c3a3d;
+  border-bottom-color: #962d22;
 }
 
 p#year-button{
@@ -131,6 +131,6 @@ select#categoryButton {
   /* Legend Position Style */
   .legend {
     position: absolute;
-    left: 1500px;
-    top: 650px;
+    left: 1200px;
+    top: 130px;
   }
