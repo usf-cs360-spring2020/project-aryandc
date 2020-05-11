@@ -877,8 +877,8 @@ function showLabel(d, year, category) {
 function moveLabel() {
   var coords = [d3.event.clientX, d3.event.clientY];
 
-  var top = coords[1] - d3.select("#d3implementation").node().getBoundingClientRect().y + 20,
-    left = coords[0] - d3.select("#d3implementation").node().getBoundingClientRect().x + 10;
+  var top = coords[1] - d3.select("#d3implementation").node().getBoundingClientRect().y - 30,
+    left = coords[0] - d3.select("#d3implementation").node().getBoundingClientRect().x + 0;
 
   div.style("top", top + "px")
     .style("left", left + "px");
