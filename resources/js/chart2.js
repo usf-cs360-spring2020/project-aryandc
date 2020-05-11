@@ -60,6 +60,17 @@ var barchart2 =
 
 function updateBarChart2(location, data, year, category) {
 
+    barchart2.selectAll("text#chart_label2").remove();
+
+    barchart2.selectAll("text#chart_label2")
+        .data(category)
+        .enter().append("text")
+        .attr("id", "chart_label2")
+        .attr("x", "-20px")
+        .attr("y", "-10px")
+        .style("font-size", "12px")
+        .text(category)
+
     var main_data = data;
 
     data = data.filter(function (d) {
@@ -245,7 +256,7 @@ function updateBarChart2(location, data, year, category) {
 
     // Update old ones, already have x / width from before
     bars
-        .transition().duration(250)
+        .transition().duration(700)
         .attr("y", function (d, i) {
             return yScale(d);
         })
