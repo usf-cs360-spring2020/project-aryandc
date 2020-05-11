@@ -43,7 +43,7 @@ urls.cases += " AND analysis_neighborhood not like 'null'";
 urls.cases = encodeURI(urls.cases);
 
 //Width and height of map
-var width = 500;
+var width = 600;
 var height = 400;
 
 var lowColor = '#fee6db'
@@ -321,7 +321,9 @@ function drawMap(data) {
         hideLabel();
       });
 
-    basemap.on("click", clicked);
+    basemap.on("click", function (d) {
+      clicked(d, Category);
+    });
 
     /* -----LEGEND----- */
     var legendwidth = 20,
@@ -383,6 +385,8 @@ function drawMap(data) {
     /* -----LEGEND----- */
 
     drawMap2(ORIGINAL_DATASSET);
+    updateBarChart("Mission", ORIGINAL_DATASSET, "2019", Category);
+    updateBarChart2("Mission", ORIGINAL_DATASSET, "2020", Category);
   });
 
 }
@@ -393,6 +397,8 @@ d3.select("#categoryButton").on("change", function (d) {
   Category = selected_category;
   updateCategory(ORIGINAL_DATASSET, selected_category);
   updateCategory2(ORIGINAL_DATASSET, selected_category);
+  // updateBarChart(d.properties.name, ORIGINAL_DATASSET, "2019", category);
+
 })
 
 function drawMap2(data) {
@@ -511,7 +517,9 @@ function drawMap2(data) {
         hideLabel();
       });
 
-    basemap2.on("click", clicked);
+    basemap2.on("click", function (d) {
+      clicked(d, Category);
+    });
 
   });
 }
@@ -786,31 +794,34 @@ function getMax(category) {
 
 }
 
-function clicked(d) {
-  if (d3.select('.background').node() === this) return reset();
+function clicked(d, category) {
+  console.log(d.properties.name);
+  updateBarChart(d.properties.name, ORIGINAL_DATASSET, "2019", category);
+  updateBarChart2(d.properties.name, ORIGINAL_DATASSET, "2020", category);
+  // if (d3.select('.background').node() === this) return reset();
 
-  if (active.node() === this) return reset();
+  // if (active.node() === this) return reset();
 
-  active.classed("active", false);
-  active = d3.select(this).classed("active", true);
+  // active.classed("active", false);
+  // active = d3.select(this).classed("active", true);
 
-  var bounds = path.bounds(d),
-    dx = bounds[1][0] - bounds[0][0],
-    dy = bounds[1][1] - bounds[0][1],
-    x = (bounds[0][0] + bounds[1][0]) / 2,
-    y = (bounds[0][1] + bounds[1][1]) / 2,
-    scale = .9 / Math.max(dx / width, dy / height),
-    translate = [width / 2 - scale * x, height / 2 - scale * y];
+  // var bounds = path.bounds(d),
+  //   dx = bounds[1][0] - bounds[0][0],
+  //   dy = bounds[1][1] - bounds[0][1],
+  //   x = (bounds[0][0] + bounds[1][0]) / 2,
+  //   y = (bounds[0][1] + bounds[1][1]) / 2,
+  //   scale = .9 / Math.max(dx / width, dy / height),
+  //   translate = [width / 2 - scale * x, height / 2 - scale * y];
 
-  svg.selectAll("g").transition()
-    .duration(750)
-    .style("stroke-width", 1.5 / scale + "px")
-    .attr("transform", "translate(" + translate + ")scale(" + scale + ")");
+  // svg.selectAll("g").transition()
+  //   .duration(750)
+  //   .style("stroke-width", 1.5 / scale + "px")
+  //   .attr("transform", "translate(" + translate + ")scale(" + scale + ")");
 
-  svg2.selectAll("g").transition()
-    .duration(750)
-    .style("stroke-width", 1.5 / scale + "px")
-    .attr("transform", "translate(" + translate + ")scale(" + scale + ")");
+  // svg2.selectAll("g").transition()
+  //   .duration(750)
+  //   .style("stroke-width", 1.5 / scale + "px")
+  //   .attr("transform", "translate(" + translate + ")scale(" + scale + ")");
 }
 
 function reset() {
@@ -888,4 +899,10 @@ function hideLabel() {
   div.transition()
     .duration(200)
     .style("opacity", 0);
+}
+
+function toTitleCase(str) {
+  return str.replace(/\w\S*/g, function (txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
 }
