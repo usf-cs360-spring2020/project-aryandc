@@ -201,20 +201,30 @@ function updateBarChart(location, data, year, category) {
     var mouseover = function (d) {
         tooltip.style("opacity", 1);
 
-        d3.selectAll("path.land2").filter(function (e) {
-            return toTitleCase(location) === toTitleCase(e.properties.district);
-        })
-            .select(e => e.properties.outline)
-            .raise()
-            .classed("active", true);
+        let basemap_year = d.key.substring(d.key.length - 4);
+        console.log(basemap_year)
 
-        d3.selectAll("path.land").filter(function (e) {
-            // console.log([location, toTitleCase(e.properties.district)])
-            return toTitleCase(location) === toTitleCase(e.properties.district);
-        })
-            .select(e => e.properties.outline)
-            .raise()
-            .classed("active", true);
+        if (basemap_year === "2019") {
+
+            d3.selectAll("path.land").filter(function (e) {
+                // console.log([location, toTitleCase(e.properties.district)])
+                return toTitleCase(location) === toTitleCase(e.properties.district);
+            })
+                .select(e => e.properties.outline)
+                .raise()
+                .classed("active", true);
+
+        } else if (basemap_year === "2020") {
+
+            d3.selectAll("path.land2").filter(function (e) {
+                return toTitleCase(location) === toTitleCase(e.properties.district);
+            })
+                .select(e => e.properties.outline)
+                .raise()
+                .classed("active", true);
+
+        }
+
     }
     var mousemove = function (d) {
 
