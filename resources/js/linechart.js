@@ -68,40 +68,42 @@ var barchart =
 
 function updateBarChart(location, data, year, category) {
 
-    barchart.selectAll("text#chart_label").remove();
-
-    barchart.selectAll("text#chart_label")
-        .data(category)
-        .enter().append("text")
-        .attr("id", "chart_label")
-        .attr("x", "-20px")
-        .attr("y", "-20px")
-        .style("font-size", "14px")
-        .text("Incident Category: " + category)
+    d3.selectAll('.line').remove()
+    d3.selectAll('.dot').remove()
 
 
-    barchart.selectAll("text#chart_neighborhood").remove();
+    // barchart.selectAll("text#chart_label").remove();
 
-    barchart.selectAll("text#chart_neighborhood")
-        .data(category)
-        .enter().append("text")
-        .attr("id", "chart_neighborhood")
-        .attr("x", "-20px")
-        .attr("y", "-35px")
-        .style("font-size", "14px")
-        .attr("text-anchor", "start")
-        .text("Neighborhood: " + location)
+    // barchart.selectAll("text#chart_label")
+    //     .data(category)
+    //     .enter().append("text")
+    //     .attr("id", "chart_label")
+    //     .attr("x", "-20px")
+    //     .attr("y", "-20px")
+    //     .style("font-size", "14px")
+    //     .text("Incident Category: " + category)
 
-    barchart.selectAll("text#chart_year")
-        .data(category)
-        .enter().append("text")
-        .attr("id", "chart_year")
-        .attr("x", barchartwidth / 2)
-        .attr("y", barchartheight + margin.top / 2 + 10)
-        .style("font-size", "10px")
-        .text("2019")
 
-    var main_data = data;
+    // barchart.selectAll("text#chart_neighborhood").remove();
+
+    // barchart.selectAll("text#chart_neighborhood")
+    //     .data(category)
+    //     .enter().append("text")
+    //     .attr("id", "chart_neighborhood")
+    //     .attr("x", "-20px")
+    //     .attr("y", "-35px")
+    //     .style("font-size", "14px")
+    //     .attr("text-anchor", "start")
+    //     .text("Neighborhood: " + location)
+
+    // barchart.selectAll("text#chart_year")
+    //     .data(category)
+    //     .enter().append("text")
+    //     .attr("id", "chart_year")
+    //     .attr("x", barchartwidth / 2)
+    //     .attr("y", barchartheight + margin.top / 2 + 10)
+    //     .style("font-size", "10px")
+    //     .text("2019")
 
     if (category === "All") {
         data = data.filter(function (d) {
@@ -114,9 +116,9 @@ function updateBarChart(location, data, year, category) {
     }
 
     data = formatChartData(data);
+    console.log("LINE", data);
 
     let countMin = 0;
-    let arr = [];
     let countMax = d3.max(data, function (d) {
         return d.value;
     });
@@ -140,6 +142,7 @@ function updateBarChart(location, data, year, category) {
         .domain([countMin, countMax])
         .range([barchartheight, 0])
         .nice();
+
 
     // Make x-axis and add to canvas
     var xAxis = d3.axisBottom(xScale).tickSizeOuter(0).tickFormat(monthFormatter);
@@ -172,7 +175,34 @@ function updateBarChart(location, data, year, category) {
         .text("Incident Count");
 
     //make bars
-    var bars = barchart.selectAll(".bar").data(data);
+    // var bars = barchart.selectAll(".bar").data(data);
+
+    const line = d3.line()
+        .defined(function (d) {
+            console.log(d);
+            return d.value;
+        })
+        .x((d, i) => xScale.bandwidth() / 2 + xScale(months[monthIndex(d.key)]))
+        .y(d => yScale(d.value))
+        .curve(d3.curveMonotoneX)
+
+    var linepath = barchart.append('path')
+        .datum(data)
+        .attr("class", "line")
+        // .style('stroke', '#1d7eb6')
+        .style("stroke", "white")
+        .style('stroke-width', 2)
+        .style('fill', 'none')
+        .attr('d', line)
+
+    var linedot = barchart.selectAll(".dot")
+        .data(data)
+        .enter().append("circle") // Uses the enter().append() method
+        .attr("class", "dot") // Assign a class for styling
+        .attr("cx", function (d, i) { return xScale.bandwidth() / 2 + xScale(months[monthIndex(d.key)]) })
+        .attr("cy", function (d) { return yScale(d.value) })
+        .attr("r", 5)
+        .style('fill', 'white')
 
     // create a tooltip
     var tooltip = d3.select("#div_barchart")
@@ -193,6 +223,8 @@ function updateBarChart(location, data, year, category) {
         var coords = [d3.event.clientX, d3.event.clientY];
         var top = coords[1] - d3.select("#d3implementation").node().getBoundingClientRect().y + 20,
             left = coords[0] - d3.select("#d3implementation").node().getBoundingClientRect().x + 10;
+
+        console.log("D", d);
         var html = `
         <table border="0" cellspacing="0" cellpadding="2">
         <tbody>
@@ -220,46 +252,28 @@ function updateBarChart(location, data, year, category) {
         tooltip.style("opacity", 0)
     }
 
-    // console.log("bars", bars)
-    bars.enter()
-        .append("rect")
-        .attr("class", "bar")
-        .attr("x", function (d, i) {
-            console.log("DATA", d)
-            console.log("INDEX", monthIndex(d.key))
-            return xScale(months[monthIndex(d.key)]);
-        })
-        .attr("width", xScale.bandwidth())
-        .attr("y", function (d, i) {
-            return yScale(d.value);
-        })
-        .attr("height", function (d, i) {
-            // console.log("HKJDGSHKDS", d)
-            return barchartheight - yScale(d.value);
-        })
-
-    d3.select("#barchart").selectAll("rect")
+    d3.select("#barchart").selectAll(".dot")
         .on("mouseover", mouseover)
         .on("mousemove", mousemove)
         .on("mouseout", mouseleave);
 
-    // Update old ones, already have x / width from before
-    bars
-        .transition().duration(700)
-        .attr("x", function (d, i) {
-            console.log("DATA", d)
-            console.log("INDEX", monthIndex(d.key))
-            return xScale(months[monthIndex(d.key)]);
-        })
-        .attr("y", function (d, i) {
-            return yScale(d.value);
-        })
-        .attr("height", function (d, i) {
-            return barchartheight - yScale(d.value);
-        });
+    barchart.selectAll('.line')
+        .datum(data)
+        .transition().duration(500)
+        .style("stroke", "#1d7eb6")
+        .attr('d', line)
 
-    // Remove old ones
-    bars.exit().remove();
+    barchart.selectAll(".dot")
+        .data(data)
+        .transition().duration(500)
+        .attr("cx", function (d, i) { return xScale.bandwidth() / 2 + xScale(months[monthIndex(d.key)]) })
+        .attr("cy", function (d) { return yScale(d.value) })
+        .style('fill', '#1d7eb6')
+
+    // // Remove old ones
+    // linepath.exit().remove();
+    // linedot.exit().remove()
+    // bars.exit().remove();
 };
 
 function monthFormatter(month) {
