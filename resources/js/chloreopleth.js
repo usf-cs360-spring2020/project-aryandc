@@ -1,7 +1,9 @@
 var dataset;
 
 const urls = {
-  basemap: "https://data.sfgov.org/resource/6ia5-2f8k.geojson",
+  // basemap: "https://data.sfgov.org/resource/6ia5-2f8k.geojson",
+  // basemap: "https://data.sfgov.org/resource/keex-zmn4.geojson",
+  basemap: "https://data.sfgov.org/resource/q52f-skbd.geojson",
   cases: "https://data.sfgov.org/resource/wg3w-h783.json"
 };
 
@@ -179,7 +181,7 @@ function formatDataForMap(data) {
   //grouping and sorting of data
   let dataGroup = d3.nest()
     .key(function (d) {
-      return d.analysis_neighborhood;
+      return d.police_district;
     })
     .rollup(function (v) {
       return v.length;
@@ -249,7 +251,7 @@ function drawMap(data) {
       var dataValue = parseFloat((parseInt(data[i].value) / 12));
       // Find the corresponding state inside the GeoJSON
       for (var j = 0; j < json.features.length; j++) {
-        var jsonState = json.features[j].properties.name;
+        var jsonState = toTitleCase(json.features[j].properties.district);
         if (dataState == jsonState) {
           // Copy the data value into the JSON
           json.features[j].properties.value = dataValue;
@@ -298,9 +300,22 @@ function drawMap(data) {
     basemap.on("mouseover.highlight", function (d) {
       d3.select(d.properties.outline).raise();
       d3.select(d.properties.outline).classed("active", true);
+
+      d3.selectAll("path.land2").filter(function (e) {
+        return d.properties.district === e.properties.district;
+      })
+        .select(e => e.properties.outline)
+        .raise()
+        .classed("active", true);
     })
       .on("mouseout.highlight", function (d) {
         d3.select(d.properties.outline).classed("active", false);
+
+        d3.selectAll("path.land2").filter(function (e) {
+          return d.properties.district === e.properties.district;
+        })
+          .select(e => e.properties.outline)
+          .classed("active", false);
       });
 
     // add tooltip
@@ -321,8 +336,7 @@ function drawMap(data) {
       });
 
     basemap.on("click", function (d) {
-      console.log(d.properties.name);
-      Neighborhood_Selected = d.properties.name;
+      Neighborhood_Selected = d.properties.district;
       clicked(d, Category);
     });
 
@@ -387,7 +401,6 @@ function drawMap(data) {
 
     drawMap2(ORIGINAL_DATASSET);
     updateBarChart("Mission", ORIGINAL_DATASSET, "2019", Category);
-    // updateBarChart2("Mission", ORIGINAL_DATASSET, "2020", Category);
   });
 
 }
@@ -396,11 +409,9 @@ d3.select("#categoryButton").on("change", function (d) {
   // recover the option that has been chosen
   var selected_category = d3.select(this).property("value")
   Category = selected_category;
-  console.log(Neighborhood_Selected)
   updateCategory(ORIGINAL_DATASSET, selected_category);
   updateCategory2(ORIGINAL_DATASSET, selected_category);
   updateBarChart(Neighborhood_Selected, ORIGINAL_DATASSET, "2019", selected_category);
-  // updateBarChart2(Neighborhood_Selected, ORIGINAL_DATASSET, "2020", selected_category);
 
 })
 
@@ -448,7 +459,7 @@ function drawMap2(data) {
 
       // Find the corresponding state inside the GeoJSON
       for (var j = 0; j < json.features.length; j++) {
-        var jsonState = json.features[j].properties.name;
+        var jsonState = toTitleCase(json.features[j].properties.district);
 
         if (dataState == jsonState) {
           // Copy the data value into the JSON
@@ -498,9 +509,21 @@ function drawMap2(data) {
     basemap2.on("mouseover.highlight", function (d) {
       d3.select(d.properties.outline).raise();
       d3.select(d.properties.outline).classed("active", true);
+
+      d3.selectAll("path.land").filter(function (e) {
+        return d.properties.district === e.properties.district;
+      })
+        .select(e => e.properties.outline)
+        .raise()
+        .classed("active", true);
     })
       .on("mouseout.highlight", function (d) {
         d3.select(d.properties.outline).classed("active", false);
+        d3.selectAll("path.land").filter(function (e) {
+          return d.properties.district === e.properties.district;
+        })
+          .select(e => e.properties.outline)
+          .classed("active", false);
       });
 
     // add tooltip
@@ -521,7 +544,7 @@ function drawMap2(data) {
       });
 
     basemap2.on("click", function (d) {
-      Neighborhood_Selected = d.properties.name;
+      Neighborhood_Selected = d.properties.district;
       clicked(d, Category);
     });
 
@@ -574,8 +597,7 @@ function updateCategory(data, cat) {
 
       // Find the corresponding state inside the GeoJSON
       for (var j = 0; j < json.features.length; j++) {
-        var jsonState = json.features[j].properties.name;
-
+        var jsonState = toTitleCase(json.features[j].properties.district);
         if (dataState == jsonState) {
           // Copy the data value into the JSON
           json.features[j].properties.value = dataValue;
@@ -625,9 +647,22 @@ function updateCategory(data, cat) {
     basemap.on("mouseover.highlight", function (d) {
       d3.select(d.properties.outline).raise();
       d3.select(d.properties.outline).classed("active", true);
+
+      d3.selectAll("path.land2").filter(function (e) {
+        return d.properties.district === e.properties.district;
+      })
+        .select(e => e.properties.outline)
+        .raise()
+        .classed("active", true);
     })
       .on("mouseout.highlight", function (d) {
         d3.select(d.properties.outline).classed("active", false);
+
+        d3.selectAll("path.land2").filter(function (e) {
+          return d.properties.district === e.properties.district;
+        })
+          .select(e => e.properties.outline)
+          .classed("active", false);
       });
 
     // add tooltip
@@ -764,8 +799,7 @@ function updateCategory2(data, cat) {
       var dataValue = parseFloat((parseInt(data[i].value) / 4));
       // Find the corresponding state inside the GeoJSON
       for (var j = 0; j < json.features.length; j++) {
-        var jsonState = json.features[j].properties.name;
-
+        var jsonState = toTitleCase(json.features[j].properties.district);
         if (dataState == jsonState) {
           // Copy the data value into the JSON
           json.features[j].properties.value = dataValue;
@@ -815,9 +849,22 @@ function updateCategory2(data, cat) {
     basemap2.on("mouseover.highlight", function (d) {
       d3.select(d.properties.outline).raise();
       d3.select(d.properties.outline).classed("active", true);
+
+      d3.selectAll("path.land").filter(function (e) {
+        return d.properties.district === e.properties.district;
+      })
+        .select(e => e.properties.outline)
+        .raise()
+        .classed("active", true);
     })
       .on("mouseout.highlight", function (d) {
         d3.select(d.properties.outline).classed("active", false);
+
+        d3.selectAll("path.land").filter(function (e) {
+          return d.properties.district === e.properties.district;
+        })
+          .select(e => e.properties.outline)
+          .classed("active", false);
       });
 
     // add tooltip
@@ -896,9 +943,7 @@ function getMax(category) {
 }
 
 function clicked(d, category) {
-  // console.log(d.properties.name);
-  updateBarChart(d.properties.name, ORIGINAL_DATASSET, "2019", category);
-  // updateBarChart2(d.properties.name, ORIGINAL_DATASSET, "2020", category);
+  updateBarChart(d.properties.district, ORIGINAL_DATASSET, "2019", category);
   // if (d3.select('.background').node() === this) return reset();
 
   // if (active.node() === this) return reset();
@@ -952,7 +997,7 @@ function showLabel(d, year, category) {
   <table border="0" cellspacing="0" cellpadding="2">
   <tbody>
     <tr>
-      <th>Neighborhood:</th>
+      <th>Police District:</th>
       <td class="text">${d.properties.name}</td>
     </tr>
     <tr>
@@ -966,8 +1011,8 @@ function showLabel(d, year, category) {
   <table border="0" cellspacing="0" cellpadding="2">
   <tbody>
     <tr>
-      <th>Neighborhood:</th>
-      <td class="text">${d.properties.name}</td>
+      <th>Police District:</th>
+      <td class="text">${d.properties.district}</td>
     </tr>
     <tr>
       <th>Monthly Average ${category} Cases in ${year}:</th>

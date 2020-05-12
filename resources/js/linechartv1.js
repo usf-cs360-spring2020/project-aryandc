@@ -67,41 +67,56 @@ var barchart =
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 function updateBarChart(location, data, year, category) {
-    barchart.selectAll("text#chart_label").remove();
 
-    barchart.selectAll("text#chart_label")
-        .data(category)
-        .enter().append("text")
-        .attr("id", "chart_label")
-        .attr("x", "-20px")
-        .attr("y", "-20px")
-        .style("font-size", "14px")
-        .text("Incident Category: " + category)
+    d3.selectAll('.line').remove()
+    d3.selectAll('.dot').remove()
 
 
-    barchart.selectAll("text#chart_neighborhood").remove();
+    // barchart.selectAll("text#chart_label").remove();
 
-    barchart.selectAll("text#chart_neighborhood")
-        .data(category)
-        .enter().append("text")
-        .attr("id", "chart_neighborhood")
-        .attr("x", "-20px")
-        .attr("y", "-35px")
-        .style("font-size", "14px")
-        .attr("text-anchor", "start")
-        .text("Police District: " + location)
+    // barchart.selectAll("text#chart_label")
+    //     .data(category)
+    //     .enter().append("text")
+    //     .attr("id", "chart_label")
+    //     .attr("x", "-20px")
+    //     .attr("y", "-20px")
+    //     .style("font-size", "14px")
+    //     .text("Incident Category: " + category)
+
+
+    // barchart.selectAll("text#chart_neighborhood").remove();
+
+    // barchart.selectAll("text#chart_neighborhood")
+    //     .data(category)
+    //     .enter().append("text")
+    //     .attr("id", "chart_neighborhood")
+    //     .attr("x", "-20px")
+    //     .attr("y", "-35px")
+    //     .style("font-size", "14px")
+    //     .attr("text-anchor", "start")
+    //     .text("Neighborhood: " + location)
+
+    // barchart.selectAll("text#chart_year")
+    //     .data(category)
+    //     .enter().append("text")
+    //     .attr("id", "chart_year")
+    //     .attr("x", barchartwidth / 2)
+    //     .attr("y", barchartheight + margin.top / 2 + 10)
+    //     .style("font-size", "10px")
+    //     .text("2019")
 
     if (category === "All") {
         data = data.filter(function (d) {
-            return d.police_district == toTitleCase(location);
+            return d.analysis_neighborhood == location;
         });
     } else {
         data = data.filter(function (d) {
-            return d.incident_category == category && d.police_district == toTitleCase(location);
+            return d.incident_category == category && d.analysis_neighborhood == location;
         });
     }
 
     data = formatChartData(data);
+    console.log("LINE", data);
 
     let countMin = 0;
     let countMax = d3.max(data, function (d) {
@@ -138,7 +153,7 @@ function updateBarChart(location, data, year, category) {
         .call(xAxis);
 
     xAxis.append("text")
-        .attr("transform", "translate(" + (barchartwidth / 2) + " ," + margin.top + ")")
+        .attr("transform", "translate(" + (barchartwidth - 20) + " ," + margin.top + ")")
         .style("text-anchor", "middle")
         .style("fill", "black")
         .text("Month");
@@ -159,8 +174,12 @@ function updateBarChart(location, data, year, category) {
         .style("fill", "black")
         .text("Incident Count");
 
+    //make bars
+    // var bars = barchart.selectAll(".bar").data(data);
+
     const line = d3.line()
         .defined(function (d) {
+            console.log(d);
             return d.value;
         })
         .x((d, i) => xScale.bandwidth() / 2 + xScale(months[monthIndex(d.key)]))
@@ -204,12 +223,14 @@ function updateBarChart(location, data, year, category) {
         var coords = [d3.event.clientX, d3.event.clientY];
         var top = coords[1] - d3.select("#d3implementation").node().getBoundingClientRect().y + 20,
             left = coords[0] - d3.select("#d3implementation").node().getBoundingClientRect().x + 10;
+
+        console.log("D", d);
         var html = `
         <table border="0" cellspacing="0" cellpadding="2">
         <tbody>
         <tr>
-            <th>Police District:</th>
-            <td class="text">${toTitleCase(location)}</td>
+            <th>Neighborhood:</th>
+            <td class="text">${location}</td>
         </tr>
         <tr>
             <th>Date:</th>
@@ -248,6 +269,11 @@ function updateBarChart(location, data, year, category) {
         .attr("cx", function (d, i) { return xScale.bandwidth() / 2 + xScale(months[monthIndex(d.key)]) })
         .attr("cy", function (d) { return yScale(d.value) })
         .style('fill', '#1d7eb6')
+
+    // // Remove old ones
+    // linepath.exit().remove();
+    // linedot.exit().remove()
+    // bars.exit().remove();
 };
 
 function monthFormatter(month) {
@@ -322,10 +348,4 @@ function monthIndex(month) {
         return 15
     }
     return month;
-}
-
-function toTitleCase(str) {
-    return str.replace(/\w\S*/g, function (txt) {
-        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-    });
 }

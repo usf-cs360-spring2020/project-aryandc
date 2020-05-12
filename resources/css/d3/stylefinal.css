@@ -61,12 +61,12 @@ select#categoryButton {
 }
 
   svg#map {
-    background-color: #C9DEEA;
+    background-color: rgb(172, 216, 241);
     border: 1px solid lightgrey;
   }
 
   svg#map2 {
-    background-color: #C9DEEA;
+    background-color: rgb(172, 216, 241);
     border: 1px solid lightgrey;
   }
   
@@ -116,8 +116,8 @@ select#categoryButton {
   
   
   .active {
-    stroke: lime !important;
-    stroke-width: 2px !important;
+    stroke: black !important;
+    stroke-width: 1.5px !important;
   }
   
   a:link,

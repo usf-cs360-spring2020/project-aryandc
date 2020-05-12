@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- TODO: Change title -->
+    <title>Final Release</title>
+
+    <!-- Load Bulma from CDN (consider saving it to repository instead) -->
+    <!-- https://bulma.io/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+
+    <!-- Load Font Awesome 5 (free) icons -->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body>
+
+    <section class="hero is-info is-medium is-bold" style="background-image: url('resources/images/prototype1-image.jpg'); background-repeat: no-repeat; object-fit: cover; width: 100%;
+    background-size: cover;">
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <span class="navbar-item">
+                            <h1 style="font-size: 22px">Final Project</h1>
+                        </span>
+                        <span class="navbar-burger burger" data-target="navbarMenu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+                    <div id="navbarMenu" class="navbar-menu">
+                        <div class="navbar-end">
+                            <div class="tabs is-right">
+                                <ul>
+
+                                    <li>
+                                        <a class="is-info is-bold" href="index.html">
+                                            <span class="icon">
+                                                <i class="fas fa-home"></i>
+                                            </span>
+                                            <span>Home</span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class=" is-info is-bold" href="data.html">
+                                            <span class="icon">
+                                                <i class="fas fa-table"></i>
+                                            </span>
+                                            <span>Data</span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class=" is-info is-bold" href="prototype1.html">
+                                            <span class="icon">
+                                                <i class="fas fa-chart-bar"></i>
+                                            </span>
+                                            <span>Alpha Release</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class=" is-info is-bold" href="prototype2.html">
+                                            <span class="icon">
+                                                <i class="fas fa-chart-bar"></i>
+                                            </span>
+                                            <span>Beta Release</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class=" is-info is-bold" href="prototype3.html">
+                                            <span class="icon">
+                                                <i class="fas fa-chart-bar"></i>
+                                            </span>
+                                            <span>Final Release</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="is-active">
+                                        <a class=" is-info is-bold" href="prototype4.html">
+                                            <span class="icon">
+                                                <i class="fas fa-chart-bar"></i>
+                                            </span>
+                                            <span>Final Release ver. 0.1.0</span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class=" is-info is-bold" href="acknowledgement.html">
+                                            <span class="icon">
+                                                <i class="fas fa-tasks"></i>
+                                            </span>
+                                            <span>Acknowledgement</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="navbar-end">
+                                    <div class="tabs is-right">
+                                        <span class="navbar-item">
+                                            <a class=" is-info is-bold" href="about.html">
+                                                <span class="icon">
+                                                    <i class="far fa-address-card"></i>
+                                                </span>
+                                                <span>About me</span>
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <p class="title" style="font-size: 60px">
+                    Analysis of Police Department Incident Reports (2019 - 2020)
+                </p>
+                <!-- <p class="subtitle">
+        Project Title
+      </p> -->
+            </div>
+        </div>
+
+        <div class="hero-foot">
+
+        </div>
+    </section>
+
+    <section id="d3ImplementationSection" class="section">
+        <div class="container">
+            <!-- Begin page content -->
+            <div class="content">
+
+                <p style="font-family: sans-serif; font-style: italic; text-align: right; font-size: smaller">- (Image
+                    Source -
+                    <a href="https://www.einfochips.com/blog/best-business-intelligence-and-data-visualization-tools-for-2019/"
+                        target="_blank" style="color: cornflowerblue;">Best Business Intelligence and Data Visualization
+                        Tools for
+                        2029</a> - February 21, 2019)</p>
+
+                <!-- <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="resources/js/chloreopleth.js"></script> -->
+                <!-- <script src="https://unpkg.com/d3-simple-slider"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="https://d3js.org/topojson.v2.min.js"></script>
+        <script src="https://d3js.org/d3-geo.v1.min.js"></script> -->
+
+                <link rel="stylesheet" href="resources/css/d3/stylefinal.css" type="text/css">
+                <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+                <!-- <script type="text/javascript" src="resources/js/test.js"></script>
+
+        <svg id="colorLegend" height="100" width="960">
+        </svg>
+        <div id="vis" class="is-full">
+        </div>
+        <script type="text/javascript">
+          drawMapChart()
+        </script> -->
+
+                <h3 id="d3implementation">Analysis of Police Department Incident Reports (2019 - 2020)</h3>
+                <h4 style="text-align: center; margin-bottom: 0; margin-top: 30px;">Neighborhood wise distribution of
+                    Incident
+                    Reports (2019 - 2020)</h4>
+                <p id="category-button">Incident Category: <span><select id="categoryButton"></select></span></p>
+                <br>
+
+                <figure>
+
+                    <!-- <p>Neighborhood wise distribution of Incident Reports</p> -->
+                    <div id="div_map">
+                        <svg id="map">
+                            <g id="basemap"></g>
+                            <g id="outline" pointer-events="none"></g>
+                            <g id="cases"></g>
+                            <g id="tooltip" pointer-events="none"></g>
+                            <g id="details" pointer-events="none"></g>
+                        </svg>
+
+                        <svg id="map2">
+                            <g id="basemap"></g>
+                            <g id="outline" pointer-events="none"></g>
+                            <g id="cases"></g>
+                            <g id="tooltip" pointer-events="none"></g>
+                            <g id="details" pointer-events="none"></g>
+                        </svg>
+                        <br>
+                        <div id="div_barchart">
+                            <!-- <h3 style="font-weight: normal">Monthly Missing Person Incident Report</h3> -->
+                            <h4 style="text-align: center; margin-bottom: 0; margin-top: 30px;">Monthly Incident Report
+                                per
+                                Neighborhood (2019 - 2020)
+                            </h4>
+                            <svg id="barchart"></svg>
+                            <svg id="barchart2"></svg>
+                        </div>
+                    </div>
+                    <br>
+
+                    <figcaption style="text-align: right; font-size: small; font-style: italic;">
+                        <p>-Created by Aryan Choudhary</p>
+                        Source: <a
+                            href="https://data.sfgov.org/Public-Safety/Police-Department-Incident-Reports-2018-to-Present/wg3w-h783/data"
+                            target="_blank" style="color: cornflowerblue;">Police Department Incident Reports</a> (<a
+                            href="https://data.sfgov.org/Geographic-Locations-and-Boundaries/SF-Find-Neighborhoods/pty2-tcw4"
+                            target="_blank" style="color: cornflowerblue;">Neighborhoods</a>)
+                    </figcaption>
+                </figure>
+
+                <script type="text/javascript" src="resources/js/choroplethv1.js"></script>
+                <script type="text/javascript" src="resources/js/linechartv1.js"></script>
+                <!-- <script type="text/javascript" src="resources/js/chart.js"></script> -->
+                <!-- <script type="text/javascript" src="resources/js/chart2.js"></script> -->
+                <link rel="stylesheet" href="resources/css/d3/stylefinal.css" type="text/css">
+
+                <h3>Interactivity Guide</h3>
+                <p>This visualization will have the following interactivities:</p>
+
+                <table class="table is-bordered">
+                    <thead>
+                        <tr>
+                            <th>Interactivity</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>
+                                On demand data display: When a user hovers over barchart or choropleth map, a tool-tip
+                                appears up with
+                                specific details about the data.
+                            </td>
+                            <td>
+                                <p style="text-align: center;"><i class="has-text-success fas fa-check-circle"></i></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Ability to filter the map based on Incident Category by using the drop-down button above
+                                the map.
+                            </td>
+                            <td>
+                                <p style="text-align: center;"><i class="has-text-success fas fa-check-circle"></i></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                When a Neighborhood on either of the chloreopleth maps is clicked, the bar chart for
+                                that Incident
+                                category and Neighborhood is shown.
+                            </td>
+                            <td>
+                                <p style="text-align: center;"><i class="has-text-success fas fa-check-circle"></i></p>
+                            </td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+                </p>
+
+                <h3>Peer Review Feedback</h3>
+                <p>TODO</p>
+
+                <h3>Modifications from beta release</h3>
+                <p>
+                <ul>
+                    <li>Instead of using data for only Assault Cases, I am now using data for all incident category.
+                    </li>
+                    <li>Encoded the choropleth map as monthly average of incidents accross neighborhood instead of
+                        represting it
+                        as raw count.</li>
+                    <li>linking interactivities across prototypes</li>
+                </ul>
+                </p>
+
+                <h3>Data Encoding and Interpretations</h3>
+                <p>
+                <ul>
+                    <li>Choropleth Map
+                        <ul>
+                            <li>Choropleth Maps displays san francisco neighborhoods that are coloured, shaded or
+                                patterned in
+                                relation to monthly average of incident count across neighborhoods. This provides a way
+                                to visualise
+                                values over a geographical area, which can show variation or patterns across the
+                                displayed location.
+                                Choropleth maps are great to show clear regional pattern in the data, or for local
+                                data.The general
+                                hierarchy of color shades varies from the darkest (highest values) through the mid range
+                                shades and to
+                                the light shades (lowest values).</li>
+                        </ul>
+                    </li>
+
+                    <li>Bar Chart
+                        <ul>
+                            <li>The Y axis corresponds to missing person incident count(numbers) whereas X axis
+                                corresponds to months
+                                in a year i.e January till December. The Incident number is encoded by the length of the
+                                bar, so longer
+                                bars represent higher missing person incident count.</li>
+                        </ul>
+                    </li>
+                </ul>
+                </p>
+
+                <h3>Conculsion</h3>
+                <p></p>
+
+                <h3>How visualization suppports the theme?</h3>
+                <p></p>
+
+                <h3>Inspirations</h3>
+                <p>
+                <ul>
+                    <li><a href="http://bl.ocks.org/ganezasan/dfe585847d65d0742ca7d0d1913d50e1" target="_blank"
+                            style="color: cornflowerblue;">Day / Hour Heatmap
+                            in v4</a></li>
+                    <li><a href="https://bl.ocks.org/adamjanes/6cf85a4fd79e122695ebde7d41fe327f" target="_blank"
+                            style="color: cornflowerblue;">Chloreopleth
+                            V5</a></li>
+                </ul>
+                </p>
+
+
+    </section>
+
+    <!-- Page footer -->
+    <!-- https://bulma.io/documentation/layout/footer/ -->
+    <footer class="footer">
+        <div class="content has-text-centered is-size-7">
+            <p>
+                <a href="#top">
+                    <span class="fas fa-arrow-up"></span>
+                    <span class="has-text-weight-medium">Back to Top</span>
+                </a>
+            </p>
+
+            <p>
+                <!-- TODO: Change to link to your Github repository -->
+                <a href="https://github.com/usf-cs360-spring2020/project-aryandc" class="button is-small"
+                    style="padding-left: 1em; padding-right: 1em;">
+                    <i class="fab fa-github-alt"></i>&nbsp;<strong>Github</strong>
+                </a>
+
+                <a href="https://fontawesome.com/" class="button is-small"
+                    style="padding-left: 1em; padding-right: 1em;">
+                    <i class="fab fa-font-awesome"></i>&nbsp;<strong>FontAwesome</strong>
+                </a>
+
+                <a href="https://bulma.io" class="button is-small">
+                    <img src="https://bulma.io/images/made-with-bulma--semiblack.png" alt="Made with Bulma" width="128"
+                        height="24">
+                </a>
+            </p>
+        </div>
+    </footer>
+    <!-- End page footer -->
+
+    <!-- Mobile menu responsiveness -->
+    <!-- https://bulma.io/documentation/components/navbar/ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach(el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+    </script>
+    <!-- End mobile menu responsiveness -->
+</body>
+
+</html>
