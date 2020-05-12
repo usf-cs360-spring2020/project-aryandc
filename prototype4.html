@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- TODO: Change title -->
-    <title>Final Release 0.1.0</title>
+    <title>Final Release 1.0.0</title>
 
     <!-- Load Bulma from CDN (consider saving it to repository instead) -->
     <!-- https://bulma.io/ -->
@@ -40,7 +40,7 @@
                                     <li>
                                         <a class=" is-info is-bold" href="prototype3.html">
                                             <span class="icon">
-                                                <i class="fas fa-chart-bar"></i>
+                                                <i class="fas fa-globe-americas"></i>
                                             </span>
                                             <span>Go to Final Release</span>
                                         </a>
@@ -86,8 +86,8 @@
                 <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
 
                 <h2 style="font-style: italic;">NOTE: Final
-                    Release 0.1.0 have been furthur changed. You can access it from <a href="prototype3.html"
-                        style="color: cornflowerblue;">Final Release</a></h2>
+                    Release 1.0.0 have been furthur changed. You can access it from <a href="prototype3.html"
+                        style="color: cornflowerblue;">Final Release 1.0.1</a></h2>
 
                 <h3 id="d3implementation">Analysis of Police Department Incident Reports (2019 - 2020)</h3>
                 <h4 style="text-align: center; margin-bottom: 0; margin-top: 30px;">Neighborhood wise distribution of
@@ -204,6 +204,47 @@
                     </tbody>
                 </table>
                 </p>
+
+
+                <h3>Changes for Final Releases 1.0.1</h3>
+                <p>
+                <table class="table is-bordered">
+                    <thead>
+                        <tr>
+                            <th>Modifications</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Changed the basemap of the choropleth map from "SF Neighborhoods" to "Police District"
+                                because of
+                                missing data for many neighborhoods within the report (You can see in Final Release
+                                0.1.0 that many
+                                neighborhoods are empty for all
+                                cases for 2019 data). Initially I was planning to use the "Supervisor District" basemap
+                                but, due to
+                                missing value in some incident reports for supervisor district, I decided to go with
+                                Police District.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Changed the bar chart to a line chart to easily show trends in how crime rates are
+                                affected due to
+                                lockdown
+                            </td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+                </p>
+                <p>Go to <a href="prototype3.html" style="color: cornflowerblue;">Final Release 1.0.1</a></p>
+
 
 
                 <h3>Inspirations</h3>

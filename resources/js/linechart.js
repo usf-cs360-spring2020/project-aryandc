@@ -67,6 +67,7 @@ var barchart =
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 function updateBarChart(location, data, year, category) {
+    console.log(location);
     barchart.selectAll("text#chart_label").remove();
 
     barchart.selectAll("text#chart_label")
@@ -198,9 +199,25 @@ function updateBarChart(location, data, year, category) {
 
     // Three function that change the tooltip when user hover / move / leave a cell
     var mouseover = function (d) {
-        tooltip.style("opacity", 1)
+        tooltip.style("opacity", 1);
+
+        d3.selectAll("path.land2").filter(function (e) {
+            return toTitleCase(location) === toTitleCase(e.properties.district);
+        })
+            .select(e => e.properties.outline)
+            .raise()
+            .classed("active", true);
+
+        d3.selectAll("path.land").filter(function (e) {
+            // console.log([location, toTitleCase(e.properties.district)])
+            return toTitleCase(location) === toTitleCase(e.properties.district);
+        })
+            .select(e => e.properties.outline)
+            .raise()
+            .classed("active", true);
     }
     var mousemove = function (d) {
+
         var coords = [d3.event.clientX, d3.event.clientY];
         var top = coords[1] - d3.select("#d3implementation").node().getBoundingClientRect().y + 20,
             left = coords[0] - d3.select("#d3implementation").node().getBoundingClientRect().x + 10;
@@ -228,6 +245,20 @@ function updateBarChart(location, data, year, category) {
             .style("top", top + "px")
     }
     var mouseleave = function (d) {
+
+
+        d3.selectAll("path.land2").filter(function (e) {
+            return toTitleCase(location) === toTitleCase(e.properties.district);
+        })
+            .select(e => e.properties.outline)
+            .classed("active", false);
+
+        d3.selectAll("path.land").filter(function (e) {
+            return toTitleCase(location) === toTitleCase(e.properties.district);
+        })
+            .select(e => e.properties.outline)
+            .classed("active", false);
+
         tooltip.style("opacity", 0)
     }
 

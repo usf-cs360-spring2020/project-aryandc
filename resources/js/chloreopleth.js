@@ -1,13 +1,11 @@
 var dataset;
 
 const urls = {
-  // basemap: "https://data.sfgov.org/resource/6ia5-2f8k.geojson",
-  // basemap: "https://data.sfgov.org/resource/keex-zmn4.geojson",
   basemap: "https://data.sfgov.org/resource/q52f-skbd.geojson",
   cases: "https://data.sfgov.org/resource/wg3w-h783.json"
 };
 
-const end = d3.timeDay(new Date(2020, 04, 1));
+const end = d3.timeDay(new Date(2020, 03, 30));
 const start = d3.timeDay(new Date(2018, 12, 1))
 const format = d3.timeFormat("%Y-%m-%dT%H:%M:%S");
 console.log(format(start), format(end));
@@ -16,7 +14,7 @@ var formatTimeHour = d3.timeFormat("%H");
 var formatTimeDay = d3.timeFormat("%u");
 
 var ORIGINAL_DATASSET;
-var Neighborhood_Selected = "Mission";
+var Neighborhood_Selected = "MISSION";
 
 var Category = "Assault";
 var incidentType = [
@@ -944,30 +942,30 @@ function getMax(category) {
 
 function clicked(d, category) {
   updateBarChart(d.properties.district, ORIGINAL_DATASSET, "2019", category);
-  // if (d3.select('.background').node() === this) return reset();
 
-  // if (active.node() === this) return reset();
+  d3.select("svg#map").call(d3.zoom().extent([
+    [0, 0],
+    [width, height]
+  ])
+    .scaleExtent([1, 8]).on("zoom", function () {
+      var e = d3.event.transform,
+        tx = Math.min(0, Math.max(e.x, width - width * e.k)),
+        ty = Math.min(0, Math.max(e.y, height - height * e.k));
+      d3.select("svg#map").selectAll("g").attr("transform", d3.event.transform)
+      d3.select("svg#map2").selectAll("g").attr("transform", d3.event.transform)
+    }));
 
-  // active.classed("active", false);
-  // active = d3.select(this).classed("active", true);
-
-  // var bounds = path.bounds(d),
-  //   dx = bounds[1][0] - bounds[0][0],
-  //   dy = bounds[1][1] - bounds[0][1],
-  //   x = (bounds[0][0] + bounds[1][0]) / 2,
-  //   y = (bounds[0][1] + bounds[1][1]) / 2,
-  //   scale = .9 / Math.max(dx / width, dy / height),
-  //   translate = [width / 2 - scale * x, height / 2 - scale * y];
-
-  // svg.selectAll("g").transition()
-  //   .duration(750)
-  //   .style("stroke-width", 1.5 / scale + "px")
-  //   .attr("transform", "translate(" + translate + ")scale(" + scale + ")");
-
-  // svg2.selectAll("g").transition()
-  //   .duration(750)
-  //   .style("stroke-width", 1.5 / scale + "px")
-  //   .attr("transform", "translate(" + translate + ")scale(" + scale + ")");
+  d3.select("svg#map2").call(d3.zoom().extent([
+    [0, 0],
+    [width, height]
+  ])
+    .scaleExtent([1, 8]).on("zoom", function () {
+      var e = d3.event.transform,
+        tx = Math.min(0, Math.max(e.x, width - width * e.k)),
+        ty = Math.min(0, Math.max(e.y, height - height * e.k));
+      d3.select("svg#map").selectAll("g").attr("transform", d3.event.transform)
+      d3.select("svg#map2").selectAll("g").attr("transform", d3.event.transform)
+    }));
 }
 
 function reset() {

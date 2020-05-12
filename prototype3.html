@@ -59,7 +59,7 @@
                   <li class="is-active">
                     <a class=" is-info is-bold" href="prototype3.html">
                       <span class="icon">
-                        <i class="fas fa-chart-bar"></i>
+                        <i class="fas fa-globe-americas"></i>
                       </span>
                       <span>Final Release</span>
                     </a>
@@ -75,7 +75,7 @@
                   <li>
                     <a class=" is-info is-bold" href="prototype2.html">
                       <span class="icon">
-                        <i class="fas fa-chart-bar"></i>
+                        <i class="far fa-map"></i>
                       </span>
                       <span>Beta Release</span>
                     </a>
@@ -223,6 +223,30 @@
 
             <tr>
               <td>
+                Hovering over a dot in line chart hightlights the selected police district in both choropleth map
+              </td>
+              <td>
+                <p style="text-align: center;"><i class="has-text-success fas fa-check-circle"></i></p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                The choropleth maps has the ability of zooming and panning. <strong>Note:</strong> you have to select
+                the svg first for
+                zooming and panning to work
+                <ul>
+                  <li>Zooming through scroll button</li>
+                  <li>Panning can be achieved by dragging the map anywhere within the map svg.</li>
+                </ul>
+              </td>
+              <td>
+                <p style="text-align: center;"><i class="has-text-success fas fa-check-circle"></i></p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
                 Ability to filter the map and line chart based on Incident Category by using the drop-down button above
                 the map.
               </td>
@@ -251,37 +275,175 @@
         <ul>
           <li>Choropleth Map
             <ul>
-              <li>Choropleth Maps displays san francisco neighborhoods that are coloured, shaded or patterned in
-                relation to monthly average of incident count across neighborhoods. This provides a way to visualise
-                values over a geographical area, which can show variation or patterns across the displayed location.
-                Choropleth maps are great to show clear regional pattern in the data, or for local data.The general
-                hierarchy of color shades varies from the darkest (highest values) through the mid range shades and to
-                the light shades (lowest values).</li>
+              <li>The Choropleth Maps displays San Francisco Police Districts that are colored in relation to monthly
+                average of incident count across each Police District.</li>
+              <li>This provides a way to visualize crime distribution over each districts, which shows variations or
+                patterns across SF</li>
+              <li>Hierarchy of color:
+                <ul>
+                  <li>Darkest Color - Highest Values</li>
+                  <li>Mid Range colors shades</li>
+                  <li>Lightest Color - Lowest Values</li>
+                </ul>
+              </li>
             </ul>
           </li>
 
-          <li>Bar Chart
+          <li>Line Chart
             <ul>
-              <li>The Y axis corresponds to missing person incident count(numbers) whereas X axis corresponds to months
-                in a year i.e January till December. The Incident number is encoded by the length of the bar, so longer
-                bars represent higher missing person incident count.</li>
+              <li>The y-axis corresponds to the number of cases for the selected incident category and police district
+              </li>
+              <li>The x-axis correspons to the dataset (Jan 2019 - April 2020) in months</li>
+              <li>The line connects each data points</li>
+              <li>The height of each dot represent the number of incident cases for the selected incident category and
+                police district per month, so higher the dot from x-axis represent higher incident cases.</li>
             </ul>
           </li>
         </ul>
         </p>
 
         <h3>Conculsion</h3>
-        <p></p>
+        <p>
+        <ul>
+          <li>
+            If we compare dataset with all Incident Categories, we can see that
+            <ul>
+              <li>There is a noticable decrease in crimes rate in San Francisco in all police districts due to lockdown
+                (March and April, 2020)
+              </li>
+              <li>The major police Districts where crime took place for both 2019 and 2020 are:
+                <ul>
+                  <li>NORTHERN</li>
+                  <li>MISSION</li>
+                  <li>CENTRAL</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            For Incident Category - Assault, Missing Person, and Robbery we can see that
+            <ul>
+              <li>There is an overall decreasing trend in crimes rate in San Francisco due to lockdown
+                (March and April, 2020)
+              </li>
+              <li>The police Districts where most of the crime took place for both 2019 and 2020 are:
+                <ul>
+                  <li>MISSION (Assault, Robbery)</li>
+                  <li>TENDERLOIN (Assault)</li>
+                  <li>CENTRAL (Robbery)</li>
+                  <li>SOUTHERN (Missing Person)</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            For Incident Category - Burglary, and Motor Vehicle Theft, we can see that
+            <ul>
+              <li>There is an overall increasing trend in crimes rate in San Francisco due to lockdown
+                (March and April, 2020).
+              </li>
+              <li>The police Districts where most of the crime took place for both 2019 and 2020 are:
+                <ul>
+                  <li>NORTHERN (Burglary, )</li>
+                  <li>CENTRAL (Burglary)</li>
+                  <li>BAYVIEW (Motor Vehicle Theft)</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li>From the above findings, I can say that overall the lockdown reduced the crime rates in San Francisco.
+            However, The case for Burglary and Motor Vehicle Theft raises the question as of why people are willing to
+            take the risk
+            of contracting the coronavirus for stealing?</li>
+        </ul>
+        </p>
 
         <h3>How visualization suppports the theme?</h3>
-        <p></p>
+        <p>
+        <table class="table is-bordered">
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Question</th>
+              <th>Answer</th>
+            </tr>
+          </thead>
+          <tfoot>
+          </tfoot>
+          <tbody>
+
+            <tr>
+              <td>
+                1
+              </td>
+              <td>
+                How the lockdown period is affecting crime rates in the city of San Francisco?
+              </td>
+              <td>
+                Overall, the lockdown has reduced the crime rates in SF. However, Burglary and Motor Vehicle Theft cases
+                have increased during the lockdown period.
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                2
+              </td>
+              <td>
+                What type of crime is the most prevalent during this lockdown period?
+              </td>
+              <td>
+                <ul>
+                  <li>Burglary</li>
+                  <li>Motor Vehicle Theft</li>
+                </ul>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                3
+              </td>
+              <td>
+                Which Police Districts are the most affected during this time period?
+              </td>
+              <td>
+                <ul>
+                  <li>NORTHERN</li>
+                  <li>MISSION</li>
+                  <li>CENTRAL</li>
+                </ul>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                4
+              </td>
+              <td>
+                Is there a visible pattern between incidents accross Police District?
+              </td>
+              <td>
+                <ul>
+                  Generally, the district where crime rates are high are close to each other. The number of cases are
+                  more near near Downtown San Francisco.
+                </ul>
+              </td>
+            </tr>
+
+
+          </tbody>
+        </table>
+        </p>
 
         <h3>Inspirations</h3>
         <p>
         <ul>
-          <li><a href="http://bl.ocks.org/ganezasan/dfe585847d65d0742ca7d0d1913d50e1" target="_blank"
-              style="color: cornflowerblue;">Day / Hour Heatmap
-              in v4</a></li>
+          <li><a href="https://bl.ocks.org/gordlea/27370d1eea8464b04538e6d8ced39e89" target="_blank"
+              style="color: cornflowerblue;">D3 V5 Line Chart</a></li>
           <li><a href="https://bl.ocks.org/adamjanes/6cf85a4fd79e122695ebde7d41fe327f" target="_blank"
               style="color: cornflowerblue;">Chloreopleth
               V5</a></li>
