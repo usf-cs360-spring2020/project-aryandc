@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- TODO: Change title -->
-    <title>Final Release</title>
+    <title>Final Release 0.1.0</title>
 
     <!-- Load Bulma from CDN (consider saving it to repository instead) -->
     <!-- https://bulma.io/ -->
@@ -37,80 +37,16 @@
                         <div class="navbar-end">
                             <div class="tabs is-right">
                                 <ul>
-
-                                    <li>
-                                        <a class="is-info is-bold" href="index.html">
-                                            <span class="icon">
-                                                <i class="fas fa-home"></i>
-                                            </span>
-                                            <span>Home</span>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a class=" is-info is-bold" href="data.html">
-                                            <span class="icon">
-                                                <i class="fas fa-table"></i>
-                                            </span>
-                                            <span>Data</span>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a class=" is-info is-bold" href="prototype1.html">
-                                            <span class="icon">
-                                                <i class="fas fa-chart-bar"></i>
-                                            </span>
-                                            <span>Alpha Release</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class=" is-info is-bold" href="prototype2.html">
-                                            <span class="icon">
-                                                <i class="fas fa-chart-bar"></i>
-                                            </span>
-                                            <span>Beta Release</span>
-                                        </a>
-                                    </li>
                                     <li>
                                         <a class=" is-info is-bold" href="prototype3.html">
                                             <span class="icon">
                                                 <i class="fas fa-chart-bar"></i>
                                             </span>
-                                            <span>Final Release</span>
-                                        </a>
-                                    </li>
-
-                                    <li class="is-active">
-                                        <a class=" is-info is-bold" href="prototype4.html">
-                                            <span class="icon">
-                                                <i class="fas fa-chart-bar"></i>
-                                            </span>
-                                            <span>Final Release ver. 0.1.0</span>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a class=" is-info is-bold" href="acknowledgement.html">
-                                            <span class="icon">
-                                                <i class="fas fa-tasks"></i>
-                                            </span>
-                                            <span>Acknowledgement</span>
+                                            <span>Go to Final Release</span>
                                         </a>
                                     </li>
                                 </ul>
-                                <div class="navbar-end">
-                                    <div class="tabs is-right">
-                                        <span class="navbar-item">
-                                            <a class=" is-info is-bold" href="about.html">
-                                                <span class="icon">
-                                                    <i class="far fa-address-card"></i>
-                                                </span>
-                                                <span>About me</span>
-                                            </a>
-                                        </span>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -146,24 +82,12 @@
                         Tools for
                         2029</a> - February 21, 2019)</p>
 
-                <!-- <script src="https://d3js.org/d3.v5.min.js"></script>
-        <script src="resources/js/chloreopleth.js"></script> -->
-                <!-- <script src="https://unpkg.com/d3-simple-slider"></script>
-        <script src="https://d3js.org/d3.v5.min.js"></script>
-        <script src="https://d3js.org/topojson.v2.min.js"></script>
-        <script src="https://d3js.org/d3-geo.v1.min.js"></script> -->
-
                 <link rel="stylesheet" href="resources/css/d3/stylefinal.css" type="text/css">
                 <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
-                <!-- <script type="text/javascript" src="resources/js/test.js"></script>
 
-        <svg id="colorLegend" height="100" width="960">
-        </svg>
-        <div id="vis" class="is-full">
-        </div>
-        <script type="text/javascript">
-          drawMapChart()
-        </script> -->
+                <h2 style="font-style: italic;">NOTE: Final
+                    Release 0.1.0 have been furthur changed. You can access it from <a href="prototype3.html"
+                        style="color: cornflowerblue;">Final Release</a></h2>
 
                 <h3 id="d3implementation">Analysis of Police Department Incident Reports (2019 - 2020)</h3>
                 <h4 style="text-align: center; margin-bottom: 0; margin-top: 30px;">Neighborhood wise distribution of
@@ -199,10 +123,8 @@
                                 Neighborhood (2019 - 2020)
                             </h4>
                             <svg id="barchart"></svg>
-                            <svg id="barchart2"></svg>
                         </div>
                     </div>
-                    <br>
 
                     <figcaption style="text-align: right; font-size: small; font-style: italic;">
                         <p>-Created by Aryan Choudhary</p>
@@ -215,8 +137,8 @@
                 </figure>
 
                 <script type="text/javascript" src="resources/js/choroplethv1.js"></script>
-                <script type="text/javascript" src="resources/js/linechartv1.js"></script>
-                <!-- <script type="text/javascript" src="resources/js/chart.js"></script> -->
+                <!-- <script type="text/javascript" src="resources/js/linechartv1.js"></script> -->
+                <script type="text/javascript" src="resources/js/chart.js"></script>
                 <!-- <script type="text/javascript" src="resources/js/chart2.js"></script> -->
                 <link rel="stylesheet" href="resources/css/d3/stylefinal.css" type="text/css">
 
@@ -235,8 +157,9 @@
                     <tbody>
                         <tr>
                             <td>
-                                On demand data display: When a user hovers over barchart or choropleth map, a tool-tip
-                                appears up with
+                                On demand data display: When a user hovers over the bar chart or choropleth map, a
+                                tool-tip appears up
+                                with
                                 specific details about the data.
                             </td>
                             <td>
@@ -246,7 +169,19 @@
 
                         <tr>
                             <td>
-                                Ability to filter the map based on Incident Category by using the drop-down button above
+                                Hovering over a neighborhood in one choropleth map hightlights the same police
+                                district in other
+                                choropleth map
+                            </td>
+                            <td>
+                                <p style="text-align: center;"><i class="has-text-success fas fa-check-circle"></i></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Ability to filter the map and bar chart based on Incident Category by using the
+                                drop-down button above
                                 the map.
                             </td>
                             <td>
@@ -256,9 +191,9 @@
 
                         <tr>
                             <td>
-                                When a Neighborhood on either of the chloreopleth maps is clicked, the bar chart for
+                                When a neighborhood on either of the choropleth maps is clicked, the bar chart for
                                 that Incident
-                                category and Neighborhood is shown.
+                                category and Police District is shown.
                             </td>
                             <td>
                                 <p style="text-align: center;"><i class="has-text-success fas fa-check-circle"></i></p>
@@ -270,64 +205,10 @@
                 </table>
                 </p>
 
-                <h3>Peer Review Feedback</h3>
-                <p>TODO</p>
-
-                <h3>Modifications from beta release</h3>
-                <p>
-                <ul>
-                    <li>Instead of using data for only Assault Cases, I am now using data for all incident category.
-                    </li>
-                    <li>Encoded the choropleth map as monthly average of incidents accross neighborhood instead of
-                        represting it
-                        as raw count.</li>
-                    <li>linking interactivities across prototypes</li>
-                </ul>
-                </p>
-
-                <h3>Data Encoding and Interpretations</h3>
-                <p>
-                <ul>
-                    <li>Choropleth Map
-                        <ul>
-                            <li>Choropleth Maps displays san francisco neighborhoods that are coloured, shaded or
-                                patterned in
-                                relation to monthly average of incident count across neighborhoods. This provides a way
-                                to visualise
-                                values over a geographical area, which can show variation or patterns across the
-                                displayed location.
-                                Choropleth maps are great to show clear regional pattern in the data, or for local
-                                data.The general
-                                hierarchy of color shades varies from the darkest (highest values) through the mid range
-                                shades and to
-                                the light shades (lowest values).</li>
-                        </ul>
-                    </li>
-
-                    <li>Bar Chart
-                        <ul>
-                            <li>The Y axis corresponds to missing person incident count(numbers) whereas X axis
-                                corresponds to months
-                                in a year i.e January till December. The Incident number is encoded by the length of the
-                                bar, so longer
-                                bars represent higher missing person incident count.</li>
-                        </ul>
-                    </li>
-                </ul>
-                </p>
-
-                <h3>Conculsion</h3>
-                <p></p>
-
-                <h3>How visualization suppports the theme?</h3>
-                <p></p>
 
                 <h3>Inspirations</h3>
                 <p>
                 <ul>
-                    <li><a href="http://bl.ocks.org/ganezasan/dfe585847d65d0742ca7d0d1913d50e1" target="_blank"
-                            style="color: cornflowerblue;">Day / Hour Heatmap
-                            in v4</a></li>
                     <li><a href="https://bl.ocks.org/adamjanes/6cf85a4fd79e122695ebde7d41fe327f" target="_blank"
                             style="color: cornflowerblue;">Chloreopleth
                             V5</a></li>

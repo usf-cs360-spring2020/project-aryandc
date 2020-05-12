@@ -57,6 +57,15 @@
                   </li>
 
                   <li>
+                    <a class=" is-info is-bold" href="prototype3.html">
+                      <span class="icon">
+                        <i class="fas fa-chart-bar"></i>
+                      </span>
+                      <span>Final Release</span>
+                    </a>
+                  </li>
+
+                  <li>
                     <a class=" is-info is-bold" href="prototype1.html">
                       <span class="icon">
                         <i class="fas fa-chart-bar"></i>
@@ -70,23 +79,6 @@
                         <i class="fas fa-chart-bar"></i>
                       </span>
                       <span>Beta Release</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a class=" is-info is-bold" href="prototype3.html">
-                      <span class="icon">
-                        <i class="fas fa-chart-bar"></i>
-                      </span>
-                      <span>Final Release</span>
-                    </a>
-                  </li>
-
-                  <li>
-                    <a class=" is-info is-bold" href="prototype4.html">
-                      <span class="icon">
-                        <i class="fas fa-chart-bar"></i>
-                      </span>
-                      <span>Final Release ver. 0.1.0</span>
                     </a>
                   </li>
 
@@ -363,7 +355,8 @@ Aggregated By:  Incident Number (count)
               <td>
                 <!-- In Progress! -->
               </td>
-              </tr? </tbody>
+            </tr>
+          </tbody>
         </table>
 
         <p>Go back to <a href="#map-d3" style="color: cornflowerblue;">D3 Prototype</a></p>
@@ -371,11 +364,177 @@ Aggregated By:  Incident Number (count)
         </p>
 
         <h3>Peer Review Feedback</h3>
-        <span class="icon is-large">
-          <span class="fa-stack fa-lg">
-            <i class="fas fa-spinner fa-pulse"></i>
-          </span>
-        </span>
+        <table class="table is-bordered">
+          <thead>
+            <tr>
+              <th>Feedbacks</th>
+            </tr>
+          </thead>
+          <tfoot>
+          </tfoot>
+          <tbody>
+            <tr>
+              <td>
+                Overall, it's a nice website with a decent number of topic-related images and also a great clear map.
+                The size, color and legend of the map are perfect without any confusion and distraction. But it looks
+                like some colors on the map are not listed on the legend. The map loads very slow, it would be great if
+                you could reduce the street numbers for faster rendering, considering they are not essential to your
+                visualization. A dot on the ocean needs some help to find its home.
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                it seems like the filter has a bug that will reset the dots unexpectedly, hope to see you fix it for
+                your final.
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                the data should be calculated value with respect to population density data rather presenting it as a
+                raw count of incidents
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                there is a certain amount of lie factor because of circle overlapping and because the population density
+                of neighborhood is not taken into consideration
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                the map is not too dense and it seems to include nearly 1000 rows approx
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                The base map of SF is centered well and is a reasonable size. The width of the seems is pretty wide. I
+                think this is because of the outlier at the top left. The thickness of the district boundaries is a good
+                size to differentiate them from the streets. The size of the symbols is good. They almost overlap too
+                much but the brushing helps.
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                There doesn't seem to be a lot of misleading information, however, the toggle filtering feature filters
+                the wrong dates.
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                The amount of data seems good. I would maybe add more months to see how these few months compared to the
+                time before the lockdown. Maybe remove the subcategory from the tooltip since all the cases are
+                aggravated assault cases.
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                There's a good amount of data on the map but compared to the size of the svg, I wouldn't say that the
+                data density is very high. The water of the map takes up half of the space.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                The design is clean and organized. It seems a little boring because there is a lot of negative space.
+              </td>
+            </tr>
+
+
+          </tbody>
+        </table>
+
+        <h3>Changes for Final release 0.1.0</h3>
+        <table class="table is-bordered">
+          <thead>
+            <tr>
+              <th>Feedbacks</th>
+            </tr>
+          </thead>
+          <tfoot>
+          </tfoot>
+          <tbody>
+            <tr>
+              <td>
+                Changed the non-proportional map to a choropleth map for better understanding of data distribution over
+                neighborhoods
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                Instead of comparing data only for Aggravated Assault cases, the choropleth map uses a filter drop down
+                which allows filtering based on all incident categories which are relevant for the theme (Assault,
+                Burglary, Robbery, etc.)
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                Created a bar chart to show trend in cases per incident category per neighborhood in months.
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                linked interactivities across bar chart and choropleth map.
+              </td>
+            </tr>
+
+
+          </tbody>
+        </table>
+        <p>Go to <a href="prototype4.html" style="color: cornflowerblue;">Final Release 0.1.0 prototype</a></p>
+        <h3>NOTE: Final
+          Release 0.1.0 have been furthur changed. You can access it from <a href="prototype3.html"
+            style="color: cornflowerblue;">Final Release 0.1.1</a></h3>
+
+
+        <h3>Changes for Final Releases 0.1.1</h3>
+        <p>
+        <table class="table is-bordered">
+          <thead>
+            <tr>
+              <th>Modifications</th>
+            </tr>
+          </thead>
+          <tfoot>
+          </tfoot>
+          <tbody>
+            <tr>
+              <td>
+                Changed the basemap of the choropleth map from "SF Neighborhoods" to "Police District" because of
+                missing data for many neighborhoods within the report (You can see in Final Release 0.1.0 that many
+                neighborhoods are empty for all
+                cases for 2019 data). Initially I was planning to use the "Supervisor District" basemap but, due to
+                missing value in some incident reports for supervisor district, I decided to go with Police District.
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                Changed the bar chart to a line chart to easily show trends in how crime rates are affected due to
+                lockdown
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                Since there
+              </td>
+            </tr>
+
+
+          </tbody>
+        </table>
+        </p>
+        <p>Go to <a href="prototype3.html" style="color: cornflowerblue;">Final Release 0.1.1</a></p>
 
       </div>
       <!-- End page content -->
