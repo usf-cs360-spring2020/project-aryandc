@@ -4,8 +4,8 @@ var margin = {
     bottom: 50,
     left: 40
 },
-    svgwidth = 1000,
-    svgheight = 400,
+    svgwidth = 1200,
+    svgheight = 300,
     barchartwidth = svgwidth - margin.left - margin.right,
     barchartheight = svgheight - margin.top - margin.bottom;
 

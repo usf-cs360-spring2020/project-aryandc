@@ -42,7 +42,7 @@ urls.cases += " AND analysis_neighborhood not like 'null'";
 urls.cases = encodeURI(urls.cases);
 
 //Width and height of map
-var width = 500;
+var width = 600;
 var height = 400;
 
 var lowColor = '#fee6db'
