@@ -1,118 +1,127 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- TODO: Change title -->
-    <title>Beta Release</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Load Bulma from CDN (consider saving it to repository instead) -->
-    <!-- https://bulma.io/ -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <!-- TODO: Change title -->
+  <title>Beta Release</title>
 
-    <!-- Load Font Awesome 5 (free) icons -->
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  </head>
+  <!-- Load Bulma from CDN (consider saving it to repository instead) -->
+  <!-- https://bulma.io/ -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
 
-  <body>
+  <!-- Load Font Awesome 5 (free) icons -->
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
 
-    <section class="hero is-info is-medium is-bold" style="background-image: url('resources/images/prototype1-image.jpg'); background-repeat: no-repeat; object-fit: cover; width: 100%;
+<body>
+
+  <section class="hero is-info is-medium is-bold" style="background-image: url('resources/images/prototype1-image.jpg'); background-repeat: no-repeat; object-fit: cover; width: 100%;
     background-size: cover;">
-  <div class="hero-head">
-    <nav class="navbar">
-      <div class="container">
+    <div class="hero-head">
+      <nav class="navbar">
+        <div class="container">
           <div class="navbar-brand">
             <span class="navbar-item">
               <h1 style="font-size: 22px">Final Project</h1>
             </span>
-              <span class="navbar-burger burger" data-target="navbarMenu">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-              </span>
+            <span class="navbar-burger burger" data-target="navbarMenu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
           </div>
           <div id="navbarMenu" class="navbar-menu">
-              <div class="navbar-end">
+            <div class="navbar-end">
+              <div class="tabs is-right">
+                <ul>
+
+                  <li>
+                    <a class="is-info is-bold" href="index.html">
+                      <span class="icon">
+                        <i class="fas fa-home"></i>
+                      </span>
+                      <span>Home</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a class=" is-info is-bold" href="data.html">
+                      <span class="icon">
+                        <i class="fas fa-table"></i>
+                      </span>
+                      <span>Data</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a class=" is-info is-bold" href="prototype1.html">
+                      <span class="icon">
+                        <i class="fas fa-chart-bar"></i>
+                      </span>
+                      <span>Alpha Release</span>
+                    </a>
+                  </li>
+                  <li class="is-active">
+                    <a class=" is-info is-bold" href="prototype2.html">
+                      <span class="icon">
+                        <i class="fas fa-chart-bar"></i>
+                      </span>
+                      <span>Beta Release</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class=" is-info is-bold" href="prototype3.html">
+                      <span class="icon">
+                        <i class="fas fa-chart-bar"></i>
+                      </span>
+                      <span>Final Release</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class=" is-info is-bold" href="acknowledgement.html">
+                      <span class="icon">
+                        <i class="fas fa-tasks"></i>
+                      </span>
+                      <span>Acknowledgement</span>
+                    </a>
+                  </li>
+                </ul>
+                <div class="navbar-end">
                   <div class="tabs is-right">
-                      <ul>
-
-                          <li>
-                            <a class="is-info is-bold" href="index.html">
-                              <span class="icon">
-                                  <i class="fas fa-home"></i>
-                              </span>
-                              <span >Home</span>
-                          </a>
-                          </li>
-
-                          <li>
-                          <a class=" is-info is-bold" href="data.html">
-                            <span class="icon">
-                                <i class="fas fa-table"></i>
-                            </span>
-                            <span >Data</span>
-                        </a>
-                          </li>
-
-                          <li>
-                            <a class=" is-info is-bold" href="prototype1.html">
-                              <span class="icon">
-                                  <i class="fas fa-chart-bar"></i>
-                              </span>
-                              <span >Alpha Release</span>
-                          </a>
-                          </li>
-                          <li class="is-active">
-                            <a class=" is-info is-bold" href="prototype2.html">
-                              <span class="icon">
-                                  <i class="fas fa-chart-bar"></i>
-                              </span>
-                              <span >Beta Release</span>
-                          </a>
-                          </li>
-                          <li>
-                            <a class=" is-info is-bold" href="acknowledgement.html" >
-                              <span class="icon">
-                                  <i class="fas fa-tasks"></i>
-                              </span>
-                              <span >Acknowledgement</span>
-                          </a>
-                          </li>
-                      </ul>
-                      <div class="navbar-end">
-                          <div class="tabs is-right">
-                              <span class="navbar-item">
-                                  <a class=" is-info is-bold" href="about.html">
-                                      <span class="icon">
-                                          <i class="far fa-address-card"></i>
-                                      </span>
-                                      <span >About me</span>
-                                  </a>
-                              </span>
-                          </div>
-                      </div>
+                    <span class="navbar-item">
+                      <a class=" is-info is-bold" href="about.html">
+                        <span class="icon">
+                          <i class="far fa-address-card"></i>
+                        </span>
+                        <span>About me</span>
+                      </a>
+                    </span>
                   </div>
+                </div>
               </div>
+            </div>
           </div>
-      </div>
-    </nav>
-  </div>
+        </div>
+      </nav>
+    </div>
 
-  <div class="hero-body">
-    <div class="container has-text-centered">
-      <p class="title" style="font-size: 60px">
-        SF Police Department Aggravated Assault Cases for February - April 2020
-      </p>
-      <!-- <p class="subtitle">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <p class="title" style="font-size: 60px">
+          SF Police Department Aggravated Assault Cases for February - April 2020
+        </p>
+        <!-- <p class="subtitle">
         Project Title
       </p> -->
+      </div>
     </div>
-  </div>
 
-  <div class="hero-foot">
+    <div class="hero-foot">
 
-  </div>
+    </div>
   </section>
 
   <section class="section">
@@ -120,10 +129,14 @@
       <!-- Begin page content -->
       <div class="content">
 
-        <p style="font-family: sans-serif; font-style: italic; text-align: right; font-size: smaller">- (Image Source - <a href="https://www.einfochips.com/blog/best-business-intelligence-and-data-visualization-tools-for-2019/" target="_blank" style="color: cornflowerblue;">Best Business Intelligence and Data Visualization Tools for 2029</a> - February 21, 2019)</p>
+        <p style="font-family: sans-serif; font-style: italic; text-align: right; font-size: smaller">- (Image Source -
+          <a href="https://www.einfochips.com/blog/best-business-intelligence-and-data-visualization-tools-for-2019/"
+            target="_blank" style="color: cornflowerblue;">Best Business Intelligence and Data Visualization Tools for
+            2029</a> - February 21, 2019)</p>
 
         <h3 id="map-d3">D3 Prototype (Beta Release)</h3>
-        <p>See <a href="#interactivity-guide" style="color: cornflowerblue;">Interactivity Guide</a> for the visualization.</p>
+        <p>See <a href="#interactivity-guide" style="color: cornflowerblue;">Interactivity Guide</a> for the
+          visualization.</p>
 
         <h4>Aggravated Assault Cases in San Francisco form February 2020 - April 2020</h4>
 
@@ -133,72 +146,91 @@
         <link rel="stylesheet" href="resources/css/d3/style.css" type="text/css">
         <link rel="stylesheet" href="resources/css/d3/table.css" type="text/css">
 
-          <figure>
-            <svg width="960" height="500" id="betamap1">
-              <g id="plot">
-                <g id="basemap"></g>
-                <g id="streets" pointer-events="none"></g>
-                <g id="outline" pointer-events="none"></g>
-                <g id="arrests"></g>
-                <g id="tooltip" pointer-events="none"></g>
-                <g id="details" pointer-events="none"></g>
-              </g>
-              <g id="legend"></g>
-            </svg>
-            <figcaption style="text-align: left; font-size: 13px;">
-              Source: <a href="https://data.sfgov.org/Public-Safety/Police-Department-Incident-Reports-2018-to-Present/wg3w-h783" target="_blank" style="color: cornflowerblue;">SF Police Department Incident Reports: 2018 to Present</a> (<a
-              href="https://data.sfgov.org/Geographic-Locations-and-Boundaries/SF-Find-Neighborhoods/pty2-tcw4" target="_blank" style="color: cornflowerblue;">Neighborhoods</a>, <a href="https://data.sfgov.org/browse?category=Geographic+Locations+and+Boundaries" target="_blank" style="color: cornflowerblue;">Streets</a>)
-            </figcaption>
+        <figure>
+          <svg width="960" height="500" id="betamap1">
+            <g id="plot">
+              <g id="basemap"></g>
+              <g id="streets" pointer-events="none"></g>
+              <g id="outline" pointer-events="none"></g>
+              <g id="arrests"></g>
+              <g id="tooltip" pointer-events="none"></g>
+              <g id="details" pointer-events="none"></g>
+            </g>
+            <g id="legend"></g>
+          </svg>
+          <figcaption style="text-align: left; font-size: 13px;">
+            Source: <a
+              href="https://data.sfgov.org/Public-Safety/Police-Department-Incident-Reports-2018-to-Present/wg3w-h783"
+              target="_blank" style="color: cornflowerblue;">SF Police Department Incident Reports: 2018 to Present</a>
+            (<a href="https://data.sfgov.org/Geographic-Locations-and-Boundaries/SF-Find-Neighborhoods/pty2-tcw4"
+              target="_blank" style="color: cornflowerblue;">Neighborhoods</a>, <a
+              href="https://data.sfgov.org/browse?category=Geographic+Locations+and+Boundaries" target="_blank"
+              style="color: cornflowerblue;">Streets</a>)
+          </figcaption>
 
-            <div class="align-items-center">
-              </br>
-              <div width="960" class="col-sm-2">
-                <p id="value-simple"></p>
-              </div>
-              <div class="col-sm">
-                <div id="slider-simple"></div>
-              </div>
+          <div class="align-items-center">
+            </br>
+            <div width="960" class="col-sm-2">
+              <p id="value-simple"></p>
             </div>
+            <div class="col-sm">
+              <div id="slider-simple"></div>
+            </div>
+          </div>
 
 
-          </figure>
-          <script>
-            drawMap();
-          </script>
+        </figure>
+        <script>
+          drawMap();
+        </script>
 
         <h3>Question</h3>
-        <p>Which neighborhood has the most Aggravated Assault Cases in the month of February, March, and April? Have the number of cases decreased due to lockdown?</p>
+        <p>Which neighborhood has the most Aggravated Assault Cases in the month of February, March, and April? Have the
+          number of cases decreased due to lockdown?</p>
 
         <h3>Answer</h3>
         <p>
-          <ul>
-            <li>The answer for the first question is easy to find from the D3 Prototype. You can easily see from the prototype that the neighborhoods of "Mission", "Tenderloin", and "South of Market" have the maximum number of cases in the given time period. However, it is very hard to determine, which neighbour out of three has the most number of incidents, A better way to represent this will be to use a Cholreopleth map. A tableau prototype for the above dataset visualized in a chloreopleth map is given below.</li>
-          </ul>
-          <img src="resources/images/betamap1.png" alt="Tableab Beta Map 1" width="600">
+        <ul>
+          <li>The answer for the first question is easy to find from the D3 Prototype. You can easily see from the
+            prototype that the neighborhoods of "Mission", "Tenderloin", and "South of Market" have the maximum number
+            of cases in the given time period. However, it is very hard to determine, which neighbour out of three has
+            the most number of incidents, A better way to represent this will be to use a Cholreopleth map. A tableau
+            prototype for the above dataset visualized in a chloreopleth map is given below.</li>
+        </ul>
+        <img src="resources/images/betamap1.png" alt="Tableab Beta Map 1" width="600">
         </p>
 
         <p>
-          <ul>
-            <li>The answer to the second question is difficult to answer from the prototype without some filtering. I have implemented filtering on the legend which can be accessed by clicking on the legend color box of the particular month. After filtering the visualization, we can see that for the month of April, the number of cases are relatively low than the previous month. For the month of March, as the data is for the whole month and not from the date of the lockdown (there is a lie factor), we cannot say if the lockdown change the number of cases. Some data points overlaps each other which will be fixed before the final release. Also, as the data is dense, creating a scatter plot matrix or a bar chart (for the final release) to answer this question will be a better option.</li>
-            <li><strong>Note</strong>: There are two data point (outliers) of whose neighborhoods are blank and will be removed before the final release.</li>
-          </ul>
+        <ul>
+          <li>The answer to the second question is difficult to answer from the prototype without some filtering. I have
+            implemented filtering on the legend which can be accessed by clicking on the legend color box of the
+            particular month. After filtering the visualization, we can see that for the month of April, the number of
+            cases are relatively low than the previous month. For the month of March, as the data is for the whole month
+            and not from the date of the lockdown (there is a lie factor), we cannot say if the lockdown change the
+            number of cases. Some data points overlaps each other which will be fixed before the final release. Also, as
+            the data is dense, creating a scatter plot matrix or a bar chart (for the final release) to answer this
+            question will be a better option.</li>
+          <li><strong>Note</strong>: There are two data point (outliers) of whose neighborhoods are blank and will be
+            removed before the final release.</li>
+        </ul>
         </p>
 
         <h3>Data Encoding</h3>
         <p>
-          <ul>
-            <li>
-              The circles represent the location (lattitude and longitude) of every request for Aggravated Assault cases for the month of February, March, and April. The circle is enclosed as per the request source.
-            </li>
-            <li>
-              Color show the Aggravated Assault Cases by month - 
-              <ul>
-                <li>February</li>
-                <li>March</li>
-                <li>April</li>
-              </ul>
-            </li>
-          </ul>
+        <ul>
+          <li>
+            The circles represent the location (lattitude and longitude) of every request for Aggravated Assault cases
+            for the month of February, March, and April. The circle is enclosed as per the request source.
+          </li>
+          <li>
+            Color show the Aggravated Assault Cases by month -
+            <ul>
+              <li>February</li>
+              <li>March</li>
+              <li>April</li>
+            </ul>
+          </li>
+        </ul>
         </p>
 
         <h3 id="wrangling">Wrangling</h3>
@@ -219,119 +251,119 @@ Aggregated By:  Incident Number (count)
         </pre>
 
         <h3 id="interactivity-guide">Interactivity Guide</h3>
-<p>This visualization will have the following interactivities:</p>
-  
-<table class="table is-bordered">
-  <thead>
-    <tr>
-      <th>Interactivity</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tfoot>
-  </tfoot>
-  <tbody>
-    <tr>
-      <td>
-        Ability to zoom the map by scrolling up or down.
-      </td>
-      <td>
-        <p style="text-align: center;"><i class="has-text-success fas fa-check-circle"></i></p>
-      </td>
-    </tr>
+        <p>This visualization will have the following interactivities:</p>
 
-    <tr>
-      <td>
-        Ability to filter the map based on month by toggling the circle box in legend.
-      </td>
-      <td>
-        <p style="text-align: center;"><i class="has-text-success fas fa-check-circle"></i></p>
-      </td>
-    </tr>
+        <table class="table is-bordered">
+          <thead>
+            <tr>
+              <th>Interactivity</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tfoot>
+          </tfoot>
+          <tbody>
+            <tr>
+              <td>
+                Ability to zoom the map by scrolling up or down.
+              </td>
+              <td>
+                <p style="text-align: center;"><i class="has-text-success fas fa-check-circle"></i></p>
+              </td>
+            </tr>
 
-    <tr>
-      <td>
-        Clicking a particular neighborhood will zoom that neighborhood
-      </td>
-      <td>
-        <p style="text-align: center;"><i class="has-text-success fas fa-check-circle"></i></p>
-      </td>
-    </tr>
+            <tr>
+              <td>
+                Ability to filter the map based on month by toggling the circle box in legend.
+              </td>
+              <td>
+                <p style="text-align: center;"><i class="has-text-success fas fa-check-circle"></i></p>
+              </td>
+            </tr>
 
-    <tr>
-      <td>
-        Clicking svg or data elements to zoom out of the map
-      </td>
-      <td>
-        <p style="text-align: center;"><i class="has-text-success fas fa-check-circle"></i></p>
-      </td>
-    </tr>
+            <tr>
+              <td>
+                Clicking a particular neighborhood will zoom that neighborhood
+              </td>
+              <td>
+                <p style="text-align: center;"><i class="has-text-success fas fa-check-circle"></i></p>
+              </td>
+            </tr>
 
-    <tr>
-      <td>
-        Ability to move the map by dragging
-      </td>
-      <td>
-        <p style="text-align: center;"><i class="has-text-success fas fa-check-circle"></i></p>
-      </td>
-    </tr>
+            <tr>
+              <td>
+                Clicking svg or data elements to zoom out of the map
+              </td>
+              <td>
+                <p style="text-align: center;"><i class="has-text-success fas fa-check-circle"></i></p>
+              </td>
+            </tr>
 
-    <tr>
-      <td>
-        hovering on the data elements in non-proportional map gives specific information about that data point.
-      </td>
-      <td>
-        <p style="text-align: center;"><i class="has-text-success fas fa-check-circle"></i></p>
-      </td>
-    </tr>
+            <tr>
+              <td>
+                Ability to move the map by dragging
+              </td>
+              <td>
+                <p style="text-align: center;"><i class="has-text-success fas fa-check-circle"></i></p>
+              </td>
+            </tr>
 
-    <tr>
-      <td>
-        Hovering over a data point in non-porportional map will show an image of the street the incident took place.
-      </td>
-      <td>
-        <!-- In Progress! -->
-      </td>
-    </tr>
+            <tr>
+              <td>
+                hovering on the data elements in non-proportional map gives specific information about that data point.
+              </td>
+              <td>
+                <p style="text-align: center;"><i class="has-text-success fas fa-check-circle"></i></p>
+              </td>
+            </tr>
 
-    <tr>
-      <td>
-        Ability to distinguish between data points which overlaps.
-      </td>
-      <td>
-        <!-- In Progress! -->
-      </td>
-    </tr>
+            <tr>
+              <td>
+                Hovering over a data point in non-porportional map will show an image of the street the incident took
+                place.
+              </td>
+              <td>
+                <!-- In Progress! -->
+              </td>
+            </tr>
 
-    <tr>
-      <td>
-        A toggle to convert the non-proportional map to a Cholreopleth map.
-      </td>
-      <td>
-        <!-- In Progress! -->
-      </td>
-    </tr>
+            <tr>
+              <td>
+                Ability to distinguish between data points which overlaps.
+              </td>
+              <td>
+                <!-- In Progress! -->
+              </td>
+            </tr>
 
-    <tr>
-      <td>
-        Hovering over a neighborhood in chloreopleth map, will provide a scatter plot matrix/bar chart chart showing the assault cases based on months.
-      </td>
-      <td>
-        <!-- In Progress! -->
-      </td>
-    </tr?
-    
-  </tbody>
-</table>
+            <tr>
+              <td>
+                A toggle to convert the non-proportional map to a Cholreopleth map.
+              </td>
+              <td>
+                <!-- In Progress! -->
+              </td>
+            </tr>
 
-<p>Go back to <a href="#map-d3" style="color: cornflowerblue;">D3 Prototype</a></p>
+            <tr>
+              <td>
+                Hovering over a neighborhood in chloreopleth map, will provide a scatter plot matrix/bar chart chart
+                showing the assault cases based on months.
+              </td>
+              <td>
+                <!-- In Progress! -->
+              </td>
+              </tr? </tbody>
+        </table>
 
-</p>
+        <p>Go back to <a href="#map-d3" style="color: cornflowerblue;">D3 Prototype</a></p>
+
+        </p>
 
         <h3>Peer Review Feedback</h3>
         <span class="icon is-large">
           <span class="fa-stack fa-lg">
-          <i class="fas fa-spinner fa-pulse"></i>
+            <i class="fas fa-spinner fa-pulse"></i>
           </span>
         </span>
 
@@ -353,7 +385,8 @@ Aggregated By:  Incident Number (count)
 
       <p>
         <!-- TODO: Change to link to your Github repository -->
-        <a href="https://github.com/usf-cs360-spring2020/project-aryandc" class="button is-small" style="padding-left: 1em; padding-right: 1em;">
+        <a href="https://github.com/usf-cs360-spring2020/project-aryandc" class="button is-small"
+          style="padding-left: 1em; padding-right: 1em;">
           <i class="fab fa-github-alt"></i>&nbsp;<strong>Github</strong>
         </a>
 
@@ -362,7 +395,8 @@ Aggregated By:  Incident Number (count)
         </a>
 
         <a href="https://bulma.io" class="button is-small">
-          <img src="https://bulma.io/images/made-with-bulma--semiblack.png" alt="Made with Bulma" width="128" height="24">
+          <img src="https://bulma.io/images/made-with-bulma--semiblack.png" alt="Made with Bulma" width="128"
+            height="24">
         </a>
       </p>
     </div>
@@ -372,22 +406,22 @@ Aggregated By:  Incident Number (count)
   <!-- Mobile menu responsiveness -->
   <!-- https://bulma.io/documentation/components/navbar/ -->
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    document.addEventListener('DOMContentLoaded', () => {
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
-    if ($navbarBurgers.length > 0) {
-      $navbarBurgers.forEach( el => {
-        el.addEventListener('click', () => {
-          const target = el.dataset.target;
-          const $target = document.getElementById(target);
-          el.classList.toggle('is-active');
-          $target.classList.toggle('is-active');
+      if ($navbarBurgers.length > 0) {
+        $navbarBurgers.forEach(el => {
+          el.addEventListener('click', () => {
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+          });
         });
-      });
-    }
-  });
+      }
+    });
   </script>
   <!-- End mobile menu responsiveness -->
-  </body>
+</body>
 
 </html>

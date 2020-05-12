@@ -14,18 +14,17 @@ var formatTimeHour = d3.timeFormat("%H");
 var formatTimeDay = d3.timeFormat("%u");
 
 var ORIGINAL_DATASSET;
+var Neighborhood_Selected = "Mission";
 
 var Category = "Assault";
 var incidentType = [
   "Assault",
   "Burglary",
-  "Disorderly Conduct",
-  "Homicide",
-  "Liquor Laws",
+  // "Disorderly Conduct",
   "Missing Person",
   "Motor Vehicle Theft",
-  "Rape",
-  "Robbery"
+  "Robbery",
+  "All"
 ];
 
 // add parameters to url
@@ -43,7 +42,7 @@ urls.cases += " AND analysis_neighborhood not like 'null'";
 urls.cases = encodeURI(urls.cases);
 
 //Width and height of map
-var width = 600;
+var width = 500;
 var height = 400;
 
 var lowColor = '#fee6db'
@@ -322,6 +321,8 @@ function drawMap(data) {
       });
 
     basemap.on("click", function (d) {
+      console.log(d.properties.name);
+      Neighborhood_Selected = d.properties.name;
       clicked(d, Category);
     });
 
@@ -386,7 +387,7 @@ function drawMap(data) {
 
     drawMap2(ORIGINAL_DATASSET);
     updateBarChart("Mission", ORIGINAL_DATASSET, "2019", Category);
-    updateBarChart2("Mission", ORIGINAL_DATASSET, "2020", Category);
+    // updateBarChart2("Mission", ORIGINAL_DATASSET, "2020", Category);
   });
 
 }
@@ -395,9 +396,11 @@ d3.select("#categoryButton").on("change", function (d) {
   // recover the option that has been chosen
   var selected_category = d3.select(this).property("value")
   Category = selected_category;
+  console.log(Neighborhood_Selected)
   updateCategory(ORIGINAL_DATASSET, selected_category);
   updateCategory2(ORIGINAL_DATASSET, selected_category);
-  // updateBarChart(d.properties.name, ORIGINAL_DATASSET, "2019", category);
+  updateBarChart(Neighborhood_Selected, ORIGINAL_DATASSET, "2019", selected_category);
+  // updateBarChart2(Neighborhood_Selected, ORIGINAL_DATASSET, "2020", selected_category);
 
 })
 
@@ -518,6 +521,7 @@ function drawMap2(data) {
       });
 
     basemap2.on("click", function (d) {
+      Neighborhood_Selected = d.properties.name;
       clicked(d, Category);
     });
 
@@ -531,9 +535,15 @@ function updateCategory(data, cat) {
     return d.incident_category == cat;
   })
 
-  var dataFilter = main_data.filter(function (d) {
-    return d.incident_year == "2019" && d.incident_category == cat;
-  })
+  if (cat === "All") {
+    var dataFilter = main_data.filter(function (d) {
+      return d.incident_year == "2019";
+    })
+  } else {
+    var dataFilter = main_data.filter(function (d) {
+      return d.incident_year == "2019" && d.incident_category == cat;
+    })
+  }
 
   data = dataFilter;
   var dataset = data;
@@ -583,6 +593,17 @@ function updateCategory(data, cat) {
       .range([lowColor, highColor])
 
     g.outline.selectAll("path.neighborhood").remove();
+    g.outline.selectAll("path.land").remove();
+
+    const basemap = g.basemap.selectAll("path.land")
+      .data(json.features)
+      .enter()
+      .append("path")
+      .attr("d", path)
+      .attr("class", "land")
+      .style("fill", function (d) {
+        return ramp(d.properties.value)
+      })
 
     const outline = g.outline.selectAll("path.neighborhood")
       .data(json.features)
@@ -599,6 +620,31 @@ function updateCategory(data, cat) {
         // save selection in data for interactivity
         // saves search time finding the right outline later
         d.properties.outline = this;
+      });
+
+    basemap.on("mouseover.highlight", function (d) {
+      d3.select(d.properties.outline).raise();
+      d3.select(d.properties.outline).classed("active", true);
+    })
+      .on("mouseout.highlight", function (d) {
+        d3.select(d.properties.outline).classed("active", false);
+      });
+
+    // add tooltip
+    basemap.on("mouseover.tooltip", function (d) {
+      // tip.text(d.properties.name);
+      tip.style("visibility", "visible");
+      showLabel(d, "2019", Category);
+    })
+      .on("mousemove.tooltip", function (d) {
+        const coords = d3.mouse(g.basemap.node());
+        tip.attr("x", coords[0]);
+        tip.attr("y", coords[1]);
+        moveLabel();
+      })
+      .on("mouseout.tooltip", function (d) {
+        tip.style("visibility", "hidden");
+        hideLabel();
       });
 
     // const outline = g.outline.selectAll("path.neighborhood")
@@ -686,9 +732,15 @@ function updateCategory2(data, cat) {
     return d.incident_category == cat;
   })
 
-  var dataFilter = main_data.filter(function (d) {
-    return d.incident_year == "2020" && d.incident_category == cat;
-  })
+  if (cat === "All") {
+    var dataFilter = main_data.filter(function (d) {
+      return d.incident_year == "2020";
+    })
+  } else {
+    var dataFilter = main_data.filter(function (d) {
+      return d.incident_year == "2020" && d.incident_category == cat;
+    })
+  }
 
   data = dataFilter;
   var dataset = data;
@@ -731,6 +783,17 @@ function updateCategory2(data, cat) {
       .range([lowColor, highColor])
 
     g2.outline.selectAll("path.neighborhood2").remove();
+    g2.outline.selectAll("path.land2").remove();
+
+    const basemap2 = g2.basemap.selectAll("path.land2")
+      .data(json.features)
+      .enter()
+      .append("path")
+      .attr("d", path)
+      .attr("class", "land2")
+      .style("fill", function (d) {
+        return ramp(d.properties.value)
+      })
 
     const outline = g2.outline.selectAll("path.neighborhood2")
       .data(json.features)
@@ -748,6 +811,31 @@ function updateCategory2(data, cat) {
         // saves search time finding the right outline later
         d.properties.outline = this;
       });
+
+    basemap2.on("mouseover.highlight", function (d) {
+      d3.select(d.properties.outline).raise();
+      d3.select(d.properties.outline).classed("active", true);
+    })
+      .on("mouseout.highlight", function (d) {
+        d3.select(d.properties.outline).classed("active", false);
+      });
+
+    // add tooltip
+    basemap2.on("mouseover.tooltip", function (d) {
+      // tip2.text(d.properties.name);
+      tip2.style("visibility", "visible");
+      showLabel(d, "2020", Category);
+    })
+      .on("mousemove.tooltip", function (d) {
+        const coords = d3.mouse(g2.basemap.node());
+        tip2.attr("x", coords[0]);
+        tip2.attr("y", coords[1]);
+        moveLabel();
+      })
+      .on("mouseout.tooltip", function (d) {
+        tip2.style("visibility", "hidden");
+        hideLabel();
+      });
   });
 }
 
@@ -760,9 +848,16 @@ function getMax(category) {
     return d.incident_category == category;
   })
 
-  data_map = data_map.filter(function (d) {
-    return d.incident_year == "2019" && d.incident_category == category;
-  });
+  if (category === "All") {
+    data_map = data_map.filter(function (d) {
+      return d.incident_year == "2019";
+    });
+  } else {
+    data_map = data_map.filter(function (d) {
+      return d.incident_year == "2019" && d.incident_category == category;
+    });
+  }
+
   let dataset_map = data_map;
   data_map = formatDataForMap(data_map);
 
@@ -774,9 +869,15 @@ function getMax(category) {
 
   let data2_map = ORIGINAL_DATASSET;
 
-  data2_map = data2_map.filter(function (d) {
-    return d.incident_year == "2020" && d.incident_category == category;
-  });
+  if (category === "All") {
+    data2_map = data2_map.filter(function (d) {
+      return d.incident_year == "2020";
+    });
+  } else {
+    data2_map = data2_map.filter(function (d) {
+      return d.incident_year == "2020" && d.incident_category == category;
+    });
+  }
   let dataset2_map = data2_map;
   data2_map = formatDataForMap(data2_map);
 
@@ -795,9 +896,9 @@ function getMax(category) {
 }
 
 function clicked(d, category) {
-  console.log(d.properties.name);
+  // console.log(d.properties.name);
   updateBarChart(d.properties.name, ORIGINAL_DATASSET, "2019", category);
-  updateBarChart2(d.properties.name, ORIGINAL_DATASSET, "2020", category);
+  // updateBarChart2(d.properties.name, ORIGINAL_DATASSET, "2020", category);
   // if (d3.select('.background').node() === this) return reset();
 
   // if (active.node() === this) return reset();
@@ -869,7 +970,7 @@ function showLabel(d, year, category) {
       <td class="text">${d.properties.name}</td>
     </tr>
     <tr>
-      <th>Average ${category} Cases in ${year}:</th>
+      <th>Monthly Average ${category} Cases in ${year}:</th>
       <td class="text">${formatDecimal(d.properties.value)}</td>
     </tr>
   </tbody>

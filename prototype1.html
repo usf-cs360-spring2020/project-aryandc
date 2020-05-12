@@ -1,118 +1,127 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- TODO: Change title -->
-    <title>Bar Chart</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Load Bulma from CDN (consider saving it to repository instead) -->
-    <!-- https://bulma.io/ -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <!-- TODO: Change title -->
+  <title>Bar Chart</title>
 
-    <!-- Load Font Awesome 5 (free) icons -->
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  </head>
+  <!-- Load Bulma from CDN (consider saving it to repository instead) -->
+  <!-- https://bulma.io/ -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
 
-  <body>
+  <!-- Load Font Awesome 5 (free) icons -->
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
 
-    <section class="hero is-info is-medium is-bold" style="background-image: url('resources/images/prototype1-image.jpg'); background-repeat: no-repeat; object-fit: cover; width: 100%;
+<body>
+
+  <section class="hero is-info is-medium is-bold" style="background-image: url('resources/images/prototype1-image.jpg'); background-repeat: no-repeat; object-fit: cover; width: 100%;
     background-size: cover;">
-  <div class="hero-head">
-    <nav class="navbar">
-      <div class="container">
+    <div class="hero-head">
+      <nav class="navbar">
+        <div class="container">
           <div class="navbar-brand">
             <span class="navbar-item">
               <h1 style="font-size: 22px">Final Project</h1>
             </span>
-              <span class="navbar-burger burger" data-target="navbarMenu">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-              </span>
+            <span class="navbar-burger burger" data-target="navbarMenu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
           </div>
           <div id="navbarMenu" class="navbar-menu">
-              <div class="navbar-end">
+            <div class="navbar-end">
+              <div class="tabs is-right">
+                <ul>
+
+                  <li>
+                    <a class="is-info is-bold" href="index.html">
+                      <span class="icon">
+                        <i class="fas fa-home"></i>
+                      </span>
+                      <span>Home</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a class=" is-info is-bold" href="data.html">
+                      <span class="icon">
+                        <i class="fas fa-table"></i>
+                      </span>
+                      <span>Data</span>
+                    </a>
+                  </li>
+
+                  <li class="is-active">
+                    <a class=" is-info is-bold" href="prototype1.html">
+                      <span class="icon">
+                        <i class="fas fa-chart-bar"></i>
+                      </span>
+                      <span>Alpha Release</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class=" is-info is-bold" href="prototype2.html">
+                      <span class="icon">
+                        <i class="fas fa-chart-bar"></i>
+                      </span>
+                      <span>Beta Release</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class=" is-info is-bold" href="prototype3.html">
+                      <span class="icon">
+                        <i class="fas fa-chart-bar"></i>
+                      </span>
+                      <span>Final Release</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class=" is-info is-bold" href="acknowledgement.html">
+                      <span class="icon">
+                        <i class="fas fa-tasks"></i>
+                      </span>
+                      <span>Acknowledgement</span>
+                    </a>
+                  </li>
+                </ul>
+                <div class="navbar-end">
                   <div class="tabs is-right">
-                      <ul>
-
-                          <li>
-                            <a class="is-info is-bold" href="index.html">
-                              <span class="icon">
-                                  <i class="fas fa-home"></i>
-                              </span>
-                              <span >Home</span>
-                          </a>
-                          </li>
-
-                          <li>
-                          <a class=" is-info is-bold" href="data.html">
-                            <span class="icon">
-                                <i class="fas fa-table"></i>
-                            </span>
-                            <span >Data</span>
-                        </a>
-                          </li>
-
-                          <li class="is-active">
-                            <a class=" is-info is-bold" href="prototype1.html">
-                              <span class="icon">
-                                  <i class="fas fa-chart-bar"></i>
-                              </span>
-                              <span >Alpha Release</span>
-                          </a>
-                          </li>
-                          <li>
-                            <a class=" is-info is-bold" href="prototype2.html">
-                              <span class="icon">
-                                  <i class="fas fa-chart-bar"></i>
-                              </span>
-                              <span >Beta Release</span>
-                          </a>
-                          </li>
-                          <li>
-                            <a class=" is-info is-bold" href="acknowledgement.html" >
-                              <span class="icon">
-                                  <i class="fas fa-tasks"></i>
-                              </span>
-                              <span >Acknowledgement</span>
-                          </a>
-                          </li>
-                      </ul>
-                      <div class="navbar-end">
-                          <div class="tabs is-right">
-                              <span class="navbar-item">
-                                  <a class=" is-info is-bold" href="about.html">
-                                      <span class="icon">
-                                          <i class="far fa-address-card"></i>
-                                      </span>
-                                      <span >About me</span>
-                                  </a>
-                              </span>
-                          </div>
-                      </div>
+                    <span class="navbar-item">
+                      <a class=" is-info is-bold" href="about.html">
+                        <span class="icon">
+                          <i class="far fa-address-card"></i>
+                        </span>
+                        <span>About me</span>
+                      </a>
+                    </span>
                   </div>
+                </div>
               </div>
+            </div>
           </div>
-      </div>
-    </nav>
-  </div>
+        </div>
+      </nav>
+    </div>
 
-  <div class="hero-body">
-    <div class="container has-text-centered">
-      <p class="title" style="font-size: 60px">
-        SF Police Department Assault Report for March, 2020
-      </p>
-      <!-- <p class="subtitle">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <p class="title" style="font-size: 60px">
+          SF Police Department Assault Report for March, 2020
+        </p>
+        <!-- <p class="subtitle">
         Project Title
       </p> -->
+      </div>
     </div>
-  </div>
 
-  <div class="hero-foot">
+    <div class="hero-foot">
 
-  </div>
+    </div>
   </section>
 
   <section class="section">
@@ -120,7 +129,10 @@
       <!-- Begin page content -->
       <div class="content">
 
-        <p style="font-family: sans-serif; font-style: italic; text-align: right; font-size: smaller;">- (Image Source - <a href="https://www.einfochips.com/blog/best-business-intelligence-and-data-visualization-tools-for-2019/" target="_blank">Best Business Intelligence and Data Visualization Tools for 2029</a> - February 21, 2019)</p>
+        <p style="font-family: sans-serif; font-style: italic; text-align: right; font-size: smaller;">- (Image Source -
+          <a href="https://www.einfochips.com/blog/best-business-intelligence-and-data-visualization-tools-for-2019/"
+            target="_blank">Best Business Intelligence and Data Visualization Tools for 2029</a> - February 21, 2019)
+        </p>
 
         <h3 id="wrangling">Wrangling</h3>
 
@@ -139,27 +151,31 @@ Aggregated By:  Incident Number (sum)
 
         <h3>Tableau Prototype (Alpha Release)</h3>
 
-        <img src="resources/images/Tableau_Prototype_alpha_release.png" alt="tableau-prototype-alpha" width="960px" height="600px">
+        <img src="resources/images/Tableau_Prototype_alpha_release.png" alt="tableau-prototype-alpha" width="960px"
+          height="600px">
 
         <h3>Data Encoding and Interpretation</h3>
-        <p>Color show the incident subcategory - 
-          <ul>
-            <li>Aggravated Assault</li>
-            <li>Simple Assault</li>
-          </ul>
-          The length of the bar indicates the number of incidents. The x axis is represented by the Day, and the y axis is represented by Incident Numbers.
+        <p>Color show the incident subcategory -
+        <ul>
+          <li>Aggravated Assault</li>
+          <li>Simple Assault</li>
+        </ul>
+        The length of the bar indicates the number of incidents. The x axis is represented by the Day, and the y axis is
+        represented by Incident Numbers.
         </p>
 
         <h3>Conclusion based on the prototype</h3>
-        <p><ul>
+        <p>
+        <ul>
           <li>March 2nd has the highest number of assault cases reported.</li>
           <li>There is a little decrease in assault cases after the lockdown period was started (March 17, 2020).</li>
-        </ul></p>
+        </ul>
+        </p>
 
         <h3>Peer Review Feedback</h3>
         <span class="icon is-large">
           <span class="fa-stack fa-lg">
-          <i class="fas fa-spinner fa-pulse"></i>
+            <i class="fas fa-spinner fa-pulse"></i>
           </span>
         </span>
 
@@ -181,7 +197,8 @@ Aggregated By:  Incident Number (sum)
 
       <p>
         <!-- TODO: Change to link to your Github repository -->
-        <a href="https://github.com/usf-cs360-spring2020/project-aryandc" class="button is-small" style="padding-left: 1em; padding-right: 1em;">
+        <a href="https://github.com/usf-cs360-spring2020/project-aryandc" class="button is-small"
+          style="padding-left: 1em; padding-right: 1em;">
           <i class="fab fa-github-alt"></i>&nbsp;<strong>Github</strong>
         </a>
 
@@ -190,7 +207,8 @@ Aggregated By:  Incident Number (sum)
         </a>
 
         <a href="https://bulma.io" class="button is-small">
-          <img src="https://bulma.io/images/made-with-bulma--semiblack.png" alt="Made with Bulma" width="128" height="24">
+          <img src="https://bulma.io/images/made-with-bulma--semiblack.png" alt="Made with Bulma" width="128"
+            height="24">
         </a>
       </p>
     </div>
@@ -200,22 +218,22 @@ Aggregated By:  Incident Number (sum)
   <!-- Mobile menu responsiveness -->
   <!-- https://bulma.io/documentation/components/navbar/ -->
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    document.addEventListener('DOMContentLoaded', () => {
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
-    if ($navbarBurgers.length > 0) {
-      $navbarBurgers.forEach( el => {
-        el.addEventListener('click', () => {
-          const target = el.dataset.target;
-          const $target = document.getElementById(target);
-          el.classList.toggle('is-active');
-          $target.classList.toggle('is-active');
+      if ($navbarBurgers.length > 0) {
+        $navbarBurgers.forEach(el => {
+          el.addEventListener('click', () => {
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+          });
         });
-      });
-    }
-  });
+      }
+    });
   </script>
   <!-- End mobile menu responsiveness -->
-  </body>
+</body>
 
 </html>

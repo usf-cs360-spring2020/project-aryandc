@@ -1,17 +1,18 @@
 var margin = {
     top: 50,
-    right: 100,
+    right: 0,
     bottom: 50,
     left: 40
 },
-    svgwidth = 500,
+    svgwidth = 1000,
     svgheight = 400,
     barchartwidth = svgwidth - margin.left - margin.right,
     barchartheight = svgheight - margin.top - margin.bottom;
 
-var months = ["January", "February", "March", "April", "May",
-    "June", "July", "August", "September", "October", "November", "December", "January", "February", "March", "April"
+var months = ["January 2019", "February 2019", "March 2019", "April 2019", "May 2019",
+    "June 2019", "July 2019", "August 2019", "September 2019", "October 2019", "November 2019", "December 2019", "January 2020", "February 2020", "March 2020", "April 2020"
 ];
+
 
 var formatTimeMonth = d3.timeFormat("%B");
 
@@ -19,7 +20,7 @@ function formatChartData(data) {
     //grouping and sorting of data
     let dataGroup = d3.nest()
         .key(function (d) {
-            return d.analysis_neighborhood;
+            return d.incident_year;
         })
         .key(function (d) {
             return formatTimeMonth(new Date(d.incident_datetime));
@@ -35,16 +36,24 @@ function formatChartData(data) {
         })
         .entries(data)
         .map(function (group) {
-            return {
-                "location": group.key,
-                "values": group.values.map(function (subgroup) {
-                    return {
-                        "month": subgroup.key,
-                        "value": subgroup.values.length
-                    }
-                })
-            }
+            return group.values.map(function (subgroup) {
+                return {
+                    "month": subgroup.key + " " + group.key,
+                    "value": subgroup.values.length
+                }
+            })
         });
+
+    var out = [];
+    dataGroup.forEach(function (test) {
+        test.forEach(function (police_district) {
+            out.push({
+                key: police_district.month,
+                value: parseInt(police_district.value)
+            });
+        })
+    });
+    dataGroup = out;
 
     return dataGroup;
 }
@@ -66,75 +75,51 @@ function updateBarChart(location, data, year, category) {
         .enter().append("text")
         .attr("id", "chart_label")
         .attr("x", "-20px")
-        .attr("y", "-10px")
-        .style("font-size", "12px")
-        .text(category)
+        .attr("y", "-20px")
+        .style("font-size", "14px")
+        .text("Incident Category: " + category)
+
+
+    barchart.selectAll("text#chart_neighborhood").remove();
+
+    barchart.selectAll("text#chart_neighborhood")
+        .data(category)
+        .enter().append("text")
+        .attr("id", "chart_neighborhood")
+        .attr("x", "-20px")
+        .attr("y", "-35px")
+        .style("font-size", "14px")
+        .attr("text-anchor", "start")
+        .text("Neighborhood: " + location)
+
+    barchart.selectAll("text#chart_year")
+        .data(category)
+        .enter().append("text")
+        .attr("id", "chart_year")
+        .attr("x", barchartwidth / 2)
+        .attr("y", barchartheight + margin.top / 2 + 10)
+        .style("font-size", "10px")
+        .text("2019")
 
     var main_data = data;
 
-    data = data.filter(function (d) {
-        return d.incident_category == category && d.incident_year == year;
-    });
-
-    var data2 = main_data.filter(function (d) {
-        return d.incident_category == category && d.incident_year == "2020";
-    });
-
-    // console.log("BAR DATA", data);
+    if (category === "All") {
+        data = data.filter(function (d) {
+            return d.analysis_neighborhood == location;
+        });
+    } else {
+        data = data.filter(function (d) {
+            return d.incident_category == category && d.analysis_neighborhood == location;
+        });
+    }
 
     data = formatChartData(data);
-    data2 = formatChartData(data2);
-
-    // console.log("BAR DATA", data);
-    // console.log("BAR DATA2", data);
-
-    var newData = data.filter(function (d) {
-        if (location === "all")
-            return true;
-        else
-            return d.location === location;
-    }).map(function (d) {
-        return d.values.map(d => d.value);
-    });
-
-    console.log(newData)
-
-    var newData2 = data2.filter(function (d) {
-        if (location === "all")
-            return true;
-        else
-            return d.location === location;
-    }).map(function (d) {
-        return d.values.map(d => d.value);
-    });
-
-    console.log(newData2)
-
-    var res = [];
-
-    for (var i = 0; i < months.length; i++) {
-        res[i] = 0;
-        for (var j = 0; j < newData.length; j++) {
-            res[i] += parseInt(newData[j][i]);
-        }
-    }
-
-    var res2 = [];
-
-    for (var i = 0; i < months.length; i++) {
-        res2[i] = 0;
-        for (var j = 0; j < newData2.length; j++) {
-            res2[i] += parseInt(newData2[j][i]);
-        }
-    }
-
-    data = (location === "all" ? res : newData[0]);
-    data2 = (location === "all" ? res2 : newData2[0]);
-    console.log(data2)
 
     let countMin = 0;
-    let countMax = d3.max(data) < d3.max(data2) ? d3.max(data2) : d3.max(data);
-    console.log(countMax);
+    let arr = [];
+    let countMax = d3.max(data, function (d) {
+        return d.value;
+    });
 
     if (isNaN(countMax)) {
         countMax = 0;
@@ -165,9 +150,7 @@ function updateBarChart(location, data, year, category) {
         .call(xAxis);
 
     xAxis.append("text")
-        .attr("transform",
-            "translate(" + (barchartwidth / 2) + " ," +
-            margin.top + ")")
+        .attr("transform", "translate(" + (barchartwidth - 20) + " ," + margin.top + ")")
         .style("text-anchor", "middle")
         .style("fill", "black")
         .text("Month");
@@ -218,7 +201,11 @@ function updateBarChart(location, data, year, category) {
             <td class="text">${location}</td>
         </tr>
         <tr>
-            <th>${category} Cases Count in ${year}:</th>
+            <th>Year:</th>
+            <td class="text">${year}</td>
+        </tr>
+        <tr>
+            <th>${category} Cases Count:</th>
             <td class="text">${d}</td>
         </tr>
         </tbody>
@@ -233,6 +220,7 @@ function updateBarChart(location, data, year, category) {
         tooltip.style("opacity", 0)
     }
 
+    console.log("bars", bars)
     bars.enter()
         .append("rect")
         .attr("class", "bar")
@@ -241,11 +229,12 @@ function updateBarChart(location, data, year, category) {
         })
         .attr("width", xScale.bandwidth())
         .attr("y", function (d, i) {
-            return yScale(d);
+            return yScale(d.value);
         })
         .attr("height", function (d, i) {
-            return barchartheight - yScale(d);
-        });
+            // console.log("HKJDGSHKDS", d)
+            return barchartheight - yScale(d.value);
+        })
 
     d3.select("#barchart").selectAll("rect")
         .on("mouseover", mouseover)
@@ -256,10 +245,10 @@ function updateBarChart(location, data, year, category) {
     bars
         .transition().duration(700)
         .attr("y", function (d, i) {
-            return yScale(d);
+            return yScale(d.value);
         })
         .attr("height", function (d, i) {
-            return barchartheight - yScale(d);
+            return barchartheight - yScale(d.value);
         });
 
     // Remove old ones
@@ -267,30 +256,38 @@ function updateBarChart(location, data, year, category) {
 };
 
 function monthFormatter(month) {
-    if (month == "January") {
-        return "Jan";
-    } else if (month == "February") {
-        return "Feb"
-    } else if (month == "March") {
-        return "Mar"
-    } else if (month == "April") {
-        return "Apr"
-    } else if (month == "May") {
-        return "May"
-    } else if (month == "June") {
-        return "June"
-    } else if (month == "July") {
-        return "July"
-    } else if (month == "August") {
-        return "Aug"
-    } else if (month == "September") {
-        return "Sept"
-    } else if (month == "October") {
-        return "Oct"
-    } else if (month == "November") {
-        return "Nov"
-    } else if (month == "December") {
-        return "Dec"
+    if (month == "January 2019") {
+        return "Jan 2019";
+    } else if (month == "February 2019") {
+        return "Feb 2019"
+    } else if (month == "March 2019") {
+        return "Mar 2019"
+    } else if (month == "April 2019") {
+        return "Apr 2019"
+    } else if (month == "May 2019") {
+        return "May 2019"
+    } else if (month == "June 2019") {
+        return "June 2019"
+    } else if (month == "July 2019") {
+        return "July 2019"
+    } else if (month == "August 2019") {
+        return "Aug 2019"
+    } else if (month == "September 2019") {
+        return "Sept 2019"
+    } else if (month == "October 2019") {
+        return "Oct 2019"
+    } else if (month == "November 2019") {
+        return "Nov 2019"
+    } else if (month == "December 2019") {
+        return "Dec 2019"
+    } else if (month == "January 2020") {
+        return "Jan 2020";
+    } else if (month == "February 2020") {
+        return "Feb 2020"
+    } else if (month == "March 2020") {
+        return "Mar 2020"
+    } else if (month == "April 2020") {
+        return "Apr 2020"
     }
     return month;
 }

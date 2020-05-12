@@ -1,8 +1,8 @@
 body {
     background-color: white;
-    font-family: sans-serif;
-    text-align: center;
-    font-size: 9pt;
+    /* font-family: sans-serif; */
+    /* text-align: center; */
+    /* font-size: 9pt; */
   }
 
   select {
@@ -134,7 +134,7 @@ select#categoryButton {
   .legend {
     position: absolute;
     left: 1200px;
-    top: 130px;
+    top: 220px;
   }
 
   rect.bordered {
@@ -143,6 +143,23 @@ select#categoryButton {
   }
 
   .bar {
-    fill: rgb(194, 66, 56);
+    fill: #b64142;
     opacity: 0.8;
+  }
+
+  text#chart_year {
+    font-weight: 200;
+    text-anchor: middle;
+  }
+
+  text#chart_neighborhood {
+    font-weight: 200;
+    text-anchor: start;
+    font-family: sans-serif;
+  }
+
+  text#chart_label {
+    font-weight: 200;
+    text-anchor: start;
+    font-family: sans-serif;
   }
